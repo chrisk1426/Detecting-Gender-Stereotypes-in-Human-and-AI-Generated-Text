@@ -1,0 +1,4 @@
+huggingface_hub==1.8.0
+matplotlib==3.9.4
+pandas==2.3.3
+pyarrow==21.0.0

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.DS_Store
+
+# StereoSet is fetched by src/download_stereoset.py
+data/raw/stereoset_*.parquet
