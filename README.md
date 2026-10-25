@@ -6,7 +6,8 @@ occupation-linked gender bias. See the project proposal for the full plan.
 
 ## Status
 
-Done so far: dataset merge, exploration, grouped 5-fold split, and Chris's Week 1–2 models.
+Done so far: dataset merge, exploration and data analysis (`DATANOTES.md`), grouped 5-fold split, and Chris's
+Week 1–2 models.
 Not yet started: TF-IDF + LR (Julia), generation pipeline, error analysis, scoring pipeline, demo.
 
 ## Classifiers (Chris)
@@ -86,10 +87,14 @@ is public, which is why the gender portion is only about 500 contexts.
 
 ## Exploration findings (descriptive only; not used to choose features)
 
+Short version. The full analysis (sources, preprocessing, pair structure, label quality, word associations with
+permutation tests, implications, draft Data section) is in [`DATANOTES.md`](DATANOTES.md).
+
 - **Class balance:** exactly 759 / 759 overall and within each source, so a majority-class baseline scores 50%.
-- **Sentence length:** no label cue. Mean 12.08 tokens (stereotype) vs 12.27 (anti-stereotype); 71.5% of pairs
-  have equal length. Length differs far more by source (intrasentence ~8 tokens, intersentence ~16) but each
-  source is 50/50.
+- **Sentence length:** a negligible label cue. Mean 12.08 tokens (stereotype) vs 12.27 (anti-stereotype); 71.5% of
+  pairs have equal length. The stereotype sentence is about 0.6 tokens shorter in StereoSet intersentence
+  (p = 0.005), the only source with a significant difference. Length differs far more by source
+  (intrasentence ~8 tokens, intersentence ~16) but each source is 50/50.
 - **Gendered words:** female words appear in 49% of stereotype vs 46% of anti-stereotype sentences; male words in
   53% vs 56%. The gender word alone barely predicts the label, which supports the expectation that a bag-of-words
   model will do poorly. (Word lists in `src/explore.py` are short, so treat these as approximate.)
@@ -114,6 +119,7 @@ python src/download_stereoset.py   # fetches StereoSet into data/raw/
 python src/merge.py                # writes data/processed/merged_gender.csv
 python src/explore.py              # prints summaries, writes outputs/
 python src/split.py                # writes data/processed/folds.csv
+python src/analyze_data.py         # dataset analysis behind DATANOTES.md, writes outputs/word_zscores.csv
 python src/embed.py                # caches BERT + mpnet embeddings in data/embeddings/
 python src/train.py                # trains and scores all models, writes outputs/
 ```
