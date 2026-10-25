@@ -6,9 +6,56 @@ occupation-linked gender bias. See the project proposal for the full plan.
 
 ## Status
 
-Done so far: dataset merge and exploration. 
-Not yet started: classifiers (majority baseline, TF-IDF + logistic
-regression, BERT embeddings + logistic regression), train/test folds, generation pipeline, demo.
+Done so far: dataset merge, exploration, grouped 5-fold split, and Chris's Week 1–2 models.
+Not yet started: TF-IDF + LR (Julia), generation pipeline, error analysis, scoring pipeline, demo.
+
+## Classifiers (Chris)
+
+Evaluation is 5-fold grouped cross-validation. Both halves of a pair stay in the same fold, and pairs that share a
+sentence are grouped together (`src/split.py`, a stand-in until Julia's split is in). Metrics are pooled over
+out-of-fold predictions.
+
+| Model | Accuracy | Macro F1 | Fold sd | Pairwise acc. |
+|---|---|---|---|---|
+| Majority class | 0.500 | 0.333 | 0.000 | – |
+| BERT mean-pool + LR | 0.581 | 0.581 | 0.024 | 0.680 |
+| all-mpnet-base-v2 + LR | 0.574 | 0.574 | 0.027 | 0.661 |
+| **all-mpnet-base-v2 + random forest (tuned)** | **0.604** | **0.604** | 0.025 | 0.675 |
+| Fine-tuned BERT (4 epochs, lr 2e-5) | 0.540 | 0.536 | 0.028 | 0.636 |
+
+*Pairwise acc.* = share of pairs where the model gives the stereotype sentence a higher P(stereotype) than its
+anti-stereotype partner.
+
+**Accuracy by source**
+
+| Source | BERT + LR | mpnet + LR | mpnet + RF | Fine-tuned BERT |
+|---|---|---|---|---|
+| CrowS-Pairs | 0.550 | 0.525 | 0.573 | 0.510 |
+| StereoSet inter | 0.620 | 0.576 | 0.597 | 0.560 |
+| StereoSet intra | 0.576 | 0.624 | 0.643 | 0.553 |
+
+**Findings**
+- All models are only 4–10 points above chance. The mpnet random forest is best, but its lead over BERT + LR
+  (2.3 points) is about one fold standard deviation.
+- Single-sentence classification is much harder than ranking within a pair (0.60 vs 0.68). The label is relative:
+  "stereotype" means *more* stereotypical than its partner, not stereotypical on its own.
+- The label depends on gender and attribute together ("she is nurturing" vs "he is nurturing"). Neither word
+  predicts the label alone, which suits a model that can combine features (random forest) better than a linear one.
+- CrowS-Pairs is hardest. Most of its pairs differ only in the gender word, so the two sentences embed almost
+  identically.
+- Fine-tuning BERT did not help with ~1,200 training sentences and default settings. It over-predicts
+  "stereotype" (recall 0.64 vs 0.45) and varies by about a point between runs on Apple GPUs.
+- Embedding-based models are not interpretable: their features are embedding dimensions. Use Julia's TF-IDF + LR
+  word weights to show which words matter.
+
+**Setup:** LR uses standardised embeddings and C = 0.1 (untuned). The random forest (300 trees) is tuned by
+nested CV: a grid over `max_features` ∈ {sqrt, 0.1, 0.3} and `min_samples_leaf` ∈ {1, 3, 10}, using grouped inner
+folds of each training split, so the test fold never picks settings. Chosen settings vary by fold
+(`outputs/rf_best_params.csv`).
+
+**Outputs:** `outputs/metrics.csv` (per-label precision/recall/F1), `outputs/metrics_by_fold.csv`,
+`outputs/predictions.csv` (out-of-fold predictions and probabilities for error analysis). `src/train.py` takes
+about 10 minutes, most of it fine-tuning and the forest grid search.
 
 ## Data
 
@@ -52,6 +99,12 @@ is public, which is why the gender portion is only about 500 contexts.
   CrowS annotators sometimes tagged gender pairs as another bias type. Useful for error analysis.
 
 ## Limitations
+
+- The judge only outputs stereotype vs anti-stereotype. Neutral text (e.g. LLM output like "The nurse checked the
+  chart") will still be forced into one of the two labels. The neutral-class fix is still undecided.
+- Accuracy around 0.60 means individual judgements are unreliable; aggregate scores over many generations instead.
+- Labels are noisy (see Exploration findings), and StereoSet's public gender data is small (~500 pairs).
+
 ## Reproduce
 
 ```bash
@@ -60,5 +113,8 @@ pip install -r requirements.txt
 python src/download_stereoset.py   # fetches StereoSet into data/raw/
 python src/merge.py                # writes data/processed/merged_gender.csv
 python src/explore.py              # prints summaries, writes outputs/
+python src/split.py                # writes data/processed/folds.csv
+python src/embed.py                # caches BERT + mpnet embeddings in data/embeddings/
+python src/train.py                # trains and scores all models, writes outputs/
 ```
 Scripts locate files relative to the repo root, so run them from anywhere inside it.
