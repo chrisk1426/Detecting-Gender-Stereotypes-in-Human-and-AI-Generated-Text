@@ -6,7 +6,8 @@ occupation-linked gender bias. See the project proposal for the full plan.
 
 ## Status
 
-Done so far: dataset merge, exploration, grouped 5-fold split, and Chris's Week 1–2 models.
+Done so far: dataset merge, exploration, grouped 5-fold split, Chris's Week 1–2 models, and the improved classifier
+(0.838 accuracy, see [Improved classifier](#improved-classifier-experiments)).
 Not yet started: TF-IDF + LR (Julia), generation pipeline, error analysis, scoring pipeline, demo.
 
 ## Classifiers (Chris)
@@ -57,6 +58,51 @@ folds of each training split, so the test fold never picks settings. Chosen sett
 `outputs/predictions.csv` (out-of-fold predictions and probabilities for error analysis). `src/train.py` takes
 about 10 minutes, most of it fine-tuning and the forest grid search.
 
+## Improved classifier (`experiments/`)
+
+Same data, same 5 grouped folds, single-sentence prediction. Every number is out-of-fold mean accuracy; nothing
+was tuned on the test fold (epochs and top-k are picked on validation splits of the training folds).
+Pipeline chart: `docs/pipeline.html`.
+
+| Model | Accuracy | Script |
+|---|---|---|
+| Snowflake-arctic-embed-l-v2.0 + TF-IDF + gender × word, LR | 0.640 | `topk.py` |
+| + roberta-large masked-LM gender feature | 0.653 | `mlm_features.py` |
+| + Qwen2.5-7B/14B features (gender-swap likelihood, zero-shot judge), top-k, LR | 0.678 | `llm_features.py`, `topk.py` |
+| Same features, random forest | 0.698 | `rf_tuned.py` |
+| Qwen2.5-7B-Instruct LoRA, 8 epochs, 3 seeds averaged | 0.760 | `finetune_cv.py` |
+| Qwen2.5-7B-Instruct LoRA + GEST training data | 0.781 | `finetune_cv.py --extra` |
+| Qwen2.5-14B-Instruct QLoRA (4-bit) + GEST | 0.810 | `finetune_cv.py --4bit --extra` |
+| **Qwen2.5-14B-Instruct QLoRA (4-bit), 12 epochs** (best single model) | **0.820** | `finetune_cv.py --4bit` |
+| Average of the two 14B runs | 0.833 | `ensemble.py` |
+| **Stacked ensemble of 9 models** (LR on logits, fitted on training folds) | **0.838** (sd 0.020) | `ensemble.py` |
+
+Pairwise accuracy of the stacked ensemble is 0.891.
+
+**What helped:** LLM fine-tuning (LoRA adapters on q/k/v/o, r = 16, lr 1e-4) over frozen embeddings; a bigger
+model (14B > 7B); more training data. GEST (`kinit/gest` v1.1, Apache-2.0) is converted to gender-swapped pairs
+(`make_gest_pairs.py` → `data/external/gest_pairs.csv`, 7,130 rows) and added to training folds only.
+
+**What did not:** stop-word removal, PCA (the signal is in low-variance directions), gender-swap augmentation,
+MLP instead of LR/RF, a pairwise ranking loss, label-noise filtering, full fine-tuning of roberta-large (collapsed).
+
+**Caveats:** many configurations were tried, so the top numbers carry some selection bias (fold sd ≈ 0.02).
+Qwen may have seen CrowS-Pairs / StereoSet in pretraining. Using an LLM to judge LLM-generated text is partly
+circular.
+
+**Running it:** fine-tuning needs a CUDA GPU (we used lisplab1: RTX 8000 48 GB for 7B, RTX 5000 16 GB for 14B
+in 4-bit, about 1–3 h per fold). Extra packages: `peft bitsandbytes accelerate`. Example:
+
+```bash
+python experiments/llm_features.py Qwen/Qwen2.5-7B-Instruct          # GPU, writes experiments/feat/llm_*.csv
+python experiments/topk.py --llm=7B,14B                              # CPU, feature pipeline
+python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epochs 12 --fold 0   # one fold per GPU
+python experiments/assemble_folds.py Qwen2.5-14B-Instruct_lora_4bit_ep12_s72   # join per-fold .npy
+python experiments/ensemble.py                                       # CPU, final numbers from experiments/feat/*.csv
+```
+All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
+without a GPU.
+
 ## Data
 
 Two public datasets, gender items only, reshaped to one labeled sentence per row
@@ -102,7 +148,8 @@ is public, which is why the gender portion is only about 500 contexts.
 
 - The judge only outputs stereotype vs anti-stereotype. Neutral text (e.g. LLM output like "The nurse checked the
   chart") will still be forced into one of the two labels. The neutral-class fix is still undecided.
-- Accuracy around 0.60 means individual judgements are unreliable; aggregate scores over many generations instead.
+- The baseline models (~0.60) are unreliable per sentence; the final ensemble (0.84) is better, but still aggregate
+  scores over many generations rather than trusting single judgements.
 - Labels are noisy (see Exploration findings), and StereoSet's public gender data is small (~500 pairs).
 
 ## Reproduce

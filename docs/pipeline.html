@@ -65,7 +65,7 @@ p{margin:0;max-width:65ch}
 <div class="wrap">
   <header style="display:flex;flex-direction:column;gap:10px">
     <h1>Stereotype Judge Pipeline</h1>
-    <p class="lede">How one sentence becomes a stereotype / anti-stereotype prediction today, and where accuracy stands. The current best (stacked ensemble, 0.813) ranks the stereotype sentence above its partner in 89% of pairs.</p><p class="lede"> Every number is mean accuracy over the same 5 grouped folds (both halves of a pair always in the same fold).</p>
+    <p class="lede">How one sentence becomes a stereotype / anti-stereotype prediction today, and where accuracy stands. Final result: a stacked ensemble at 0.838 (best single model, Qwen-14B LoRA: 0.820), above the 0.80 target. It ranks the stereotype sentence above its partner in 89% of pairs.</p><p class="lede"> Every number is mean accuracy over the same 5 grouped folds (both halves of a pair always in the same fold).</p>
     <div class="legend">
       <span><i class="sw off"></i>In the repo (<code>src/</code>)</span>
       <span><i class="sw new"></i>Built today, experimental (not yet in <code>src/</code>)</span>
@@ -139,12 +139,12 @@ p{margin:0;max-width:65ch}
       <div class="arrow"></div>
 
       <div class="fan">
-        <div class="fan-h"><strong style="color:var(--fg)">5 · Fine-tuned models, trained alongside</strong><span>running on lisplab1 GPUs</span></div>
+        <div class="fan-h"><strong style="color:var(--fg)">5 · Fine-tuned models, trained alongside</strong><span>trained on lisplab1 GPUs</span></div>
         <div class="row">
           <div class="stage nextb">
-            <span class="tag new">done · 0.806</span>
+            <span class="tag new">done · 0.820</span>
             <span class="t">Qwen2.5-14B + LoRA (4-bit)</span>
-            <span class="d">Small adapter layers trained on our folds, up to 6 epochs. Strongest single model. 7B with 8 epochs and 3 seeds: 0.760.</span>
+            <span class="d">Small adapter layers trained on our folds, up to 12 epochs (best epoch picked on a validation split). Strongest single model. Adding GEST data: 0.810; 7B + GEST: 0.781.</span>
           </div>
           <div class="stage nextb">
             <span class="tag next">stopped</span>
@@ -157,8 +157,8 @@ p{margin:0;max-width:65ch}
 
       <div class="stage nextb">
         <span class="k">experiments/ensemble.py</span>
-        <span class="t">6 · Post-training: combine the models → 0.813</span>
-        <span class="d">Stack the held-out P(stereotype) from logistic regression, random forest, 7B LoRA and 14B LoRA with a small logistic regression fitted on the training folds. Averaging LR + 14B alone, with nothing fitted, gives 0.810.</span>
+        <span class="t">6 · Post-training: combine the models → 0.838</span>
+        <span class="d">Stack the held-out P(stereotype) from 9 models (feature LR and RF, four 7B LoRA runs, three 14B LoRA runs) with a small logistic regression fitted on the training folds. Simply averaging the two best 14B runs gives 0.833.</span>
       </div>
       <div class="arrow"></div>
       <div class="stage newb">
@@ -175,17 +175,20 @@ p{margin:0;max-width:65ch}
       <div class="stage"><span class="t">Gender-swap augmentation</span><span class="d">0.596 → 0.594</span></div>
       <div class="stage"><span class="t">Negation, source, length</span><span class="d">No change</span></div>
       <div class="stage"><span class="t">Other encoders</span><span class="d">BERT-large, RoBERTa, mpnet all below Snowflake-L</span></div>
+      <div class="stage"><span class="t">PCA</span><span class="d">Hurts: the signal sits in low-variance directions</span></div>
+      <div class="stage"><span class="t">MLP, pair ranking loss, label-noise filtering</span><span class="d">No gain</span></div>
+      <div class="stage"><span class="t">roberta-large full fine-tune</span><span class="d">Collapsed to chance (0.507)</span></div>
     </div>
   </section>
 
   <section>
-    <h2>Accuracy so far</h2>
+    <h2>Accuracy</h2>
     <div class="chart" id="chart"></div>
     <p class="note" style="margin-top:10px">Bars start at 0.5 because a balanced binary task scores 0.5 by guessing. Fold-to-fold spread is about ±0.02, so differences under 2 points are not reliable. Fine-tuned BERT reached 0.619 at 7–8 epochs, but that epoch count was picked by looking at the test folds.</p>
   </section>
 
   <section>
-    <h2>Why single sentences stay below 0.70</h2>
+    <h2>Why this task is hard</h2>
     <div class="row">
       <div class="stage"><span class="t">Pairs are near-identical</span><span class="d">Partner sentences have cosine similarity 0.82–0.94 but opposite labels.</span></div>
       <div class="stage"><span class="t">Labels are relative</span><span class="d">“Stereotype” means more stereotypical than the partner, which a single-sentence model never sees.</span></div>
@@ -214,8 +217,12 @@ const rows=[
   ["Qwen-7B LoRA, 8 epochs, 3 seeds averaged",0.760,"new"],
   ["Qwen-7B LoRA, 16 epochs",0.760,"new"],
   ["Qwen-7B LoRA 4-bit + GEST data (vs 0.653 without)",0.774,"new"],
+  ["Qwen-7B LoRA + GEST data",0.781,"new"],
   ["Qwen-14B LoRA (4-bit), 6 epochs",0.806,"new"],
-  ["Stacked: LR + RF + 7B + 14B LoRA (current best)",0.813,"new"],
+  ["Qwen-14B LoRA + GEST data",0.810,"new"],
+  ["Qwen-14B LoRA (4-bit), 12 epochs (best single)",0.820,"new"],
+  ["Average of the two 14B runs",0.833,"new"],
+  ["Stacked ensemble, 9 models (final)",0.838,"new"],
 ];
 const pct=v=>((v-LO)/(HI-LO))*100;
 const c=document.getElementById("chart");
