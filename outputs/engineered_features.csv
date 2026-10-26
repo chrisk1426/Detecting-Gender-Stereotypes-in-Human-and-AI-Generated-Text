@@ -1,0 +1,10 @@
+features,accuracy,fold_sd
+best so far: Snowflake-L + TF-IDF + gender x word,0.64,0.005
+MLM bert-base-uncased only,0.537,0.018
+best + MLM bert-base-uncased,0.636,0.026
+MLM bert-large-uncased only,0.536,0.021
+best + MLM bert-large-uncased,0.641,0.02
+MLM roberta-large only,0.537,0.011
+best + MLM roberta-large,0.653,0.021
+best + negation,0.638,0.008
+best + all MLM + negation,0.652,0.022

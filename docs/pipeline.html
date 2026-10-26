@@ -1,0 +1,230 @@
+<title>Stereotype Judge Pipeline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: one top-to-bottom flow (data -> split -> features -> classifier -> output), then a to-scale accuracy chart. */
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --fg:#1d2330; --muted:#5d6678; --line:#c9cfdb;
+  --accent:#3550c8; --accent-soft:#e6eaff; --new:#0f7a5c; --new-soft:#e1f4ec; --next:#9a5b00; --next-soft:#fdf0dc;
+  --display:"Fraunces",Georgia,serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12151c; --panel:#1b2029; --fg:#e6e9f0; --muted:#9aa3b5; --line:#343b4a;
+  --accent:#8fa2ff; --accent-soft:#232b4d; --new:#5fd3a8; --new-soft:#173a2f; --next:#f0b65a; --next-soft:#3a2c14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151c; --panel:#1b2029; --fg:#e6e9f0; --muted:#9aa3b5; --line:#343b4a;
+  --accent:#8fa2ff; --accent-soft:#232b4d; --new:#5fd3a8; --new-soft:#173a2f; --next:#f0b65a; --next-soft:#3a2c14; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:920px;margin:0 auto;padding-block:32px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1{font-family:var(--display);font-size:2rem;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:600}
+p{margin:0;max-width:65ch}
+.lede{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.85rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:3px;border:1.5px solid}
+.sw.off{background:var(--accent-soft);border-color:var(--accent)}
+.sw.new{background:var(--new-soft);border-color:var(--new)}
+.sw.next{background:var(--next-soft);border-color:var(--next);border-style:dashed}
+
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.stage .k{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.stage .t{font-weight:600}
+.stage .d{font-size:.88rem;color:var(--muted)}
+.off{border-left:4px solid var(--accent)}
+.newb{border-left:4px solid var(--new)}
+.nextb{border:1.5px dashed var(--next);background:var(--next-soft)}
+.arrow{align-self:center;width:2px;height:22px;background:var(--line);position:relative}
+.arrow::after{content:"";position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--line);border-bottom:0}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.fan{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px;background:color-mix(in srgb,var(--panel) 50%,var(--bg))}
+.fan-h{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:.85rem;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:.72rem;padding:1px 7px;border-radius:99px;align-self:flex-start}
+.tag.off{background:var(--accent-soft);color:var(--accent);border:0}
+.tag.new{background:var(--new-soft);color:var(--new)}
+.tag.next{background:var(--next-soft);color:var(--next)}
+.ex{font-family:var(--mono);font-size:.78rem;color:var(--fg);background:var(--bg);border-radius:6px;padding:4px 7px;overflow-wrap:anywhere}
+
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 16px;display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:12px;align-items:center}
+.bar .lab{font-size:.86rem;min-width:0}
+.track{position:relative;height:22px;background:var(--bg);border-radius:4px}
+.fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--accent)}
+.fill.new{background:var(--new)}
+.fill.base{background:var(--line)}
+.val{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.78rem;font-variant-numeric:tabular-nums;padding-left:6px;color:var(--fg)}
+.target{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--next)}
+.axis{display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:12px}
+.ticks{position:relative;height:18px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.ticks span{position:absolute;transform:translateX(-50%)}
+.note{font-size:.84rem;color:var(--muted)}
+@media (max-width:560px){.bar,.axis{grid-template-columns:1fr}.axis>div:first-child{display:none}h1{font-size:1.6rem}}
+</style>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <h1>Stereotype Judge Pipeline</h1>
+    <p class="lede">How one sentence becomes a stereotype / anti-stereotype prediction today, and where accuracy stands. The current best (stacked ensemble, 0.813) ranks the stereotype sentence above its partner in 89% of pairs.</p><p class="lede"> Every number is mean accuracy over the same 5 grouped folds (both halves of a pair always in the same fold).</p>
+    <div class="legend">
+      <span><i class="sw off"></i>In the repo (<code>src/</code>)</span>
+      <span><i class="sw new"></i>Built today, experimental (not yet in <code>src/</code>)</span>
+      <span><i class="sw next"></i>Proposed next step</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Pipeline</h2>
+    <div class="flow">
+      <div class="stage off">
+        <span class="k">src/merge.py</span>
+        <span class="t">1 · Data: 1,518 sentences in 759 pairs</span>
+        <span class="d">CrowS-Pairs gender (262 pairs) + StereoSet inter (242) + intra (255). Label 1 = stereotype, 0 = anti-stereotype. 50/50 in every source.</span>
+      </div>
+      <div class="arrow"></div>
+      <div class="stage off">
+        <span class="k">src/split.py</span>
+        <span class="t">2 · Split: 5 grouped folds</span>
+        <span class="d">Both sentences of a pair, and pairs sharing a sentence, stay in the same fold. Train on 4 folds, test on 1, rotate.</span>
+      </div>
+      <div class="arrow"></div>
+
+      <div class="fan">
+        <div class="fan-h"><strong style="color:var(--fg)">3 · Features, computed per sentence</strong><span>concatenated side by side</span></div>
+        <div class="row">
+          <div class="stage newb">
+            <span class="tag new">TF-IDF</span>
+            <span class="t">Words + word pairs</span>
+            <span class="d">Unigrams and bigrams, stop words kept (removing them cost 1.6 pts).</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">gender × word</span>
+            <span class="t">Word tagged with the sentence's gender</span>
+            <span class="ex">she is nurturing → F_nurturing</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">embedding</span>
+            <span class="t">Snowflake-arctic-L</span>
+            <span class="d">1024 numbers summarising meaning. Frozen; beat BERT, RoBERTa, mpnet.</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">masked LM</span>
+            <span class="t">roberta-large gender agreement</span>
+            <span class="ex">[MASK] is nurturing → P(she) vs P(he), × actual gender</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">gender</span>
+            <span class="t">One-hot: F / M / both / none</span>
+            <span class="d">Detected from a word list.</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">LLM · Qwen 7B + 14B</span>
+            <span class="t">Gender-swap likelihood</span>
+            <span class="ex">P(she is nurturing) vs P(he is nurturing)</span>
+          </div>
+          <div class="stage newb">
+            <span class="tag new">LLM · Qwen 7B + 14B</span>
+            <span class="t">Zero-shot judge</span>
+            <span class="d">Yes-vs-no score for “Does this sentence express a gender stereotype?” Strongest single feature (7B: 0.69 pairwise).</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow"></div>
+
+      <div class="stage newb">
+        <span class="k">experiments/topk.py</span>
+        <span class="t">4 · Top-k selection + logistic regression (C = 1)</span>
+        <span class="d">Keeps the k TF-IDF features most linked to the label (chi²); k is chosen inside each training fold. Dense features are always kept. Trained on the 4 training folds only.</span>
+      </div>
+      <div class="arrow"></div>
+
+      <div class="fan">
+        <div class="fan-h"><strong style="color:var(--fg)">5 · Fine-tuned models, trained alongside</strong><span>running on lisplab1 GPUs</span></div>
+        <div class="row">
+          <div class="stage nextb">
+            <span class="tag new">done · 0.806</span>
+            <span class="t">Qwen2.5-14B + LoRA (4-bit)</span>
+            <span class="d">Small adapter layers trained on our folds, up to 6 epochs. Strongest single model. 7B with 8 epochs and 3 seeds: 0.760.</span>
+          </div>
+          <div class="stage nextb">
+            <span class="tag next">stopped</span>
+            <span class="t">roberta-large, full fine-tune</span>
+            <span class="d">Failed to learn on fold 0 (0.507, validation at chance), a known instability on small data. Stopped.</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow"></div>
+
+      <div class="stage nextb">
+        <span class="k">experiments/ensemble.py</span>
+        <span class="t">6 · Post-training: combine the models → 0.813</span>
+        <span class="d">Stack the held-out P(stereotype) from logistic regression, random forest, 7B LoRA and 14B LoRA with a small logistic regression fitted on the training folds. Averaging LR + 14B alone, with nothing fitted, gives 0.810.</span>
+      </div>
+      <div class="arrow"></div>
+      <div class="stage newb">
+        <span class="t">7 · Output: P(stereotype) per sentence → label 1 or 0</span>
+        <span class="d">Scored against the held-out fold, then averaged over the 5 folds.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tried and dropped</h2>
+    <div class="row">
+      <div class="stage"><span class="t">Stop-word removal</span><span class="d">−1.6 points</span></div>
+      <div class="stage"><span class="t">Gender-swap augmentation</span><span class="d">0.596 → 0.594</span></div>
+      <div class="stage"><span class="t">Negation, source, length</span><span class="d">No change</span></div>
+      <div class="stage"><span class="t">Other encoders</span><span class="d">BERT-large, RoBERTa, mpnet all below Snowflake-L</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Accuracy so far</h2>
+    <div class="chart" id="chart"></div>
+    <p class="note" style="margin-top:10px">Bars start at 0.5 because a balanced binary task scores 0.5 by guessing. Fold-to-fold spread is about ±0.02, so differences under 2 points are not reliable. Fine-tuned BERT reached 0.619 at 7–8 epochs, but that epoch count was picked by looking at the test folds.</p>
+  </section>
+
+  <section>
+    <h2>Why single sentences stay below 0.70</h2>
+    <div class="row">
+      <div class="stage"><span class="t">Pairs are near-identical</span><span class="d">Partner sentences have cosine similarity 0.82–0.94 but opposite labels.</span></div>
+      <div class="stage"><span class="t">Labels are relative</span><span class="d">“Stereotype” means more stereotypical than the partner, which a single-sentence model never sees.</span></div>
+      <div class="stage"><span class="t">Knowledge is missing</span><span class="d">Knowing “nerd” is male-coded can't be learned from 1,200 sentences. Small masked LMs know it only weakly (0.57).</span></div>
+      <div class="stage"><span class="t">Noisy labels</span><span class="d">Several mislabeled or non-gender pairs turned up in a random sample of 12.</span></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const LO=0.5, HI=0.85;
+const rows=[
+  ["Majority class (guessing)",0.500,"base"],
+  ["mpnet + LR",0.574,"off"],
+  ["BERT + LR",0.581,"off"],
+  ["TF-IDF + LR",0.592,"new"],
+  ["mpnet + random forest (repo best)",0.604,"off"],
+  ["Snowflake-L + TF-IDF + gender × word",0.640,"new"],
+  ["+ roberta-large masked-LM feature",0.653,"new"],
+  ["+ Qwen-14B features only",0.661,"new"],
+  ["+ Qwen-7B features, top-k",0.671,"new"],
+  ["+ Qwen-7B + 14B features, top-k",0.678,"new"],
+  ["Qwen-7B LoRA, 4 epochs",0.671,"new"],
+  ["Same features, random forest",0.698,"new"],
+  ["Stacked: LR + RF + LoRA 4ep",0.726,"new"],
+  ["Qwen-7B LoRA, 8 epochs, 3 seeds averaged",0.760,"new"],
+  ["Qwen-7B LoRA, 16 epochs",0.760,"new"],
+  ["Qwen-7B LoRA 4-bit + GEST data (vs 0.653 without)",0.774,"new"],
+  ["Qwen-14B LoRA (4-bit), 6 epochs",0.806,"new"],
+  ["Stacked: LR + RF + 7B + 14B LoRA (current best)",0.813,"new"],
+];
+const pct=v=>((v-LO)/(HI-LO))*100;
+const c=document.getElementById("chart");
+for(const [lab,v,kind] of rows){
+  const r=document.createElement("div"); r.className="bar";
+  r.innerHTML=`<div class="lab">${lab}</div><div class="track"><div class="fill ${kind==="new"?"new":kind==="base"?"base":""}" style="width:${Math.max(pct(v),0.6)}%"></div><span class="val" style="left:${pct(v)}%">${v.toFixed(3)}</span><div class="target" style="left:${pct(0.80)}%" aria-hidden="true"></div></div>`;
+  c.appendChild(r);
+}
+const ax=document.createElement("div"); ax.className="axis";
+ax.innerHTML=`<div></div><div class="ticks">${[0.5,0.6,0.7,0.8].map(t=>`<span style="left:${pct(t)}%">${t.toFixed(1)}${t===0.8?" target":""}</span>`).join("")}</div>`;
+c.appendChild(ax);
+</script>

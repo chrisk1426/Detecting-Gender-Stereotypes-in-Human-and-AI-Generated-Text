@@ -1,0 +1,8 @@
+encoder,dim,lr_acc,rf_acc
+snowflake-arctic-l-v2.0,1024,0.595,0.613
+mpnet (current),768,0.574,0.606
+snowflake-arctic-m-v1.5,768,0.6,0.598
+bert-large,1024,0.582,0.587
+roberta-large,1024,0.592,0.579
+roberta-base,768,0.58,0.57
+bert-base (current),768,0.581,0.562

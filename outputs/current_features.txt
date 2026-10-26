@@ -1,0 +1,66 @@
+CURRENT CLASSIFIER FEATURES
+===========================
+
+Input to every model: one sentence (data/processed/merged_gender.csv, column "sentence").
+Label: 1 = stereotype, 0 = anti-stereotype.
+No hand-engineered features. Every model works on the raw sentence or a pretrained embedding of it.
+
+
+1. BERT mean-pool embedding  (src/embed.py: bert_mean_pool)
+-----------------------------------------------------------
+- Model: bert-base-uncased, frozen (not trained on our data).
+- Feature vector: average of the last-layer token vectors, ignoring padding.
+- Size: 768 numbers per sentence.
+- Cached in: data/embeddings/bert.npy
+- Used by: BERT + LR (standardised, C = 0.1)        -> 0.581 accuracy
+
+
+2. all-mpnet-base-v2 sentence embedding  (src/embed.py: mpnet)
+--------------------------------------------------------------
+- Model: sentence-transformers/all-mpnet-base-v2, frozen.
+- Feature vector: the model's own mean pooling, then L2-normalised.
+- Size: 768 numbers per sentence.
+- Cached in: data/embeddings/mpnet.npy
+- Used by: mpnet + LR (standardised, C = 0.1)       -> 0.574 accuracy
+           mpnet + random forest (tuned)            -> 0.604 accuracy (best)
+
+
+3. Fine-tuned BERT  (src/finetune.py)
+-------------------------------------
+- Input: raw sentence, tokenised, max 64 tokens.
+- Features: learned. All BERT weights are updated, and a linear head on [CLS] makes the prediction.
+- No separate feature vector is saved.
+- Result: 0.540 accuracy
+
+
+4. Majority class  (baseline)
+-----------------------------
+- No features. Always predicts one class.          -> 0.500 accuracy
+
+
+NOT CURRENTLY USED AS FEATURES
+------------------------------
+- Source (crows / stereoset_inter / stereoset_intra)
+- Gender of the sentence (male / female word present)
+- Sentence length
+- Individual words (TF-IDF is Julia's, not built yet)
+- Anything from the partner sentence in the pair
+
+
+WHAT THE EMBEDDINGS DO AND DON'T CAPTURE
+----------------------------------------
+- They encode overall meaning, so the two sentences of a pair come out nearly identical
+  (cosine similarity 0.82-0.94 between pair partners vs 0.14-0.59 for random sentences).
+- The label depends on gender AND attribute together ("she is nurturing" = 1, "he is nurturing" = 0).
+  No feature currently represents that combination explicitly.
+- Tested 2026-10-25: removing words common to both classes before embedding -> 0.566 vs 0.574
+  baseline (no improvement).
+
+
+IDEAS TO RAISE SINGLE-SENTENCE ACCURACY
+---------------------------------------
+- Gender indicator: +1 female, -1 male, 0 none.
+- Attribute embedding: embed the sentence with the gender word replaced by a neutral token.
+- Interaction: attribute embedding x gender indicator (lets LR combine gender and attribute).
+- Source as an extra feature.
+- Stronger encoder (e5-large, gte-large). Expect only a few points.
