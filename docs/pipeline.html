@@ -162,7 +162,13 @@ p{margin:0;max-width:65ch}
       </div>
       <div class="arrow"></div>
       <div class="stage newb">
-        <span class="t">7 · Output: P(stereotype) per sentence → label 1 or 0</span>
+        <span class="k">experiments/neutral_clf.py · predict.py --neutral</span>
+        <span class="t">7 · Neutral check (for new text) → 0.924</span>
+        <span class="d">A separate detector (Snowflake-L + logistic regression) runs first. Trained on our sentences vs one Qwen-written neutral sentence per pair. Sentences it calls neutral are labeled “neutral”; the rest go to steps 1–6. Not part of the 0.838, which is stereotype vs anti-stereotype only.</span>
+      </div>
+      <div class="arrow"></div>
+      <div class="stage newb">
+        <span class="t">8 · Output: neutral, stereotype or anti-stereotype</span>
         <span class="d">Scored against the held-out fold, then averaged over the 5 folds.</span>
       </div>
     </div>
