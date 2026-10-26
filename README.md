@@ -111,6 +111,22 @@ python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epoc
 python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest -- "Women are too emotional to be leaders."
 ```
 
+**Neutral class:** the judge was trained only on stereotype vs anti-stereotype, so on its own it labels plain text
+like "She ordered a coffee" a stereotype. A neutral detector now runs first (`predict.py --neutral`); only sentences
+it calls stereotype-related go to the 14B models.
+
+- Data: for each pair, Qwen2.5-7B writes one neutral sentence about the same people and setting
+  (`gen_neutral.py` → `data/external/neutral_generated.csv`, 734 kept), so the detector must learn stereotype
+  content rather than topic.
+- Model: Snowflake-L embedding + logistic regression (`neutral_clf.py` → `models/neutral_lr.npz`, runs on CPU).
+- Results: 0.924 grouped-CV accuracy (neutral vs stereotype-related); 97% of labeled sentences kept; 80% of 60
+  hand-written neutral sentences (`neutral_sentences.csv`) called neutral. Control: 96.5% of stereotype sentences
+  reworded by Qwen (`gen_neutral.py --paraphrase`) are still flagged, so it did not learn "LLM wording = neutral".
+- Misses are mostly occupation sentences ("The mechanic said he would call…", score 0.5–0.7). The neutral test sentences
+  were written by us/Claude, so treat 80% as a rough check.
+- Tried first: calling a sentence neutral when its gender-swapped version gets a similar score (`neutral_eval.py`).
+  It failed: 54% of real labeled sentences were also called neutral, because many stereotypes do not flip with gender.
+
 All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
 without a GPU.
 
@@ -161,8 +177,8 @@ permutation tests, implications, draft Data section) is in [`DATANOTES.md`](DATA
 
 ## Limitations
 
-- The judge only outputs stereotype vs anti-stereotype. Neutral text (e.g. LLM output like "The nurse checked the
-  chart") will still be forced into one of the two labels. The neutral-class fix is still undecided.
+- Neutral text is handled by a separate detector (see Neutral class above), which misses about 1 in 5 neutral
+  occupation sentences.
 - The baseline models (~0.60) are unreliable per sentence; the final ensemble (0.84) is better, but still aggregate
   scores over many generations rather than trusting single judgements.
 - Labels are noisy (see Exploration findings), and StereoSet's public gender data is small (~500 pairs).

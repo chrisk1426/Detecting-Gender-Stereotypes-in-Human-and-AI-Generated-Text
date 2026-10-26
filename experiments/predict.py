@@ -1,9 +1,12 @@
 """Score sentences with saved LoRA adapters (from finetune_cv.py --final). Run on a CUDA GPU.
 
 With several adapters, P(stereotype) is their average (the demo ensemble: 0.833 in CV).
+--neutral: first run the neutral detector (models/neutral_lr.npz, from neutral_clf.py); sentences it calls neutral
+are labeled "neutral" and the adapters only decide stereotype vs anti-stereotype for the rest.
 
   python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest -- "She is very emotional." "He is very emotional."
   python experiments/predict.py models/qwen14b_lora --train      # sanity check: accuracy on our training data
+  python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest --neutral -- "She ordered a coffee."
 """
 import json, sys
 from pathlib import Path
@@ -25,6 +28,14 @@ def load(adapter):
     return tok, PeftModel.from_pretrained(model, adapter).eval()
 
 
+def neutral_score(texts):
+    """P(stereotype-related) from the neutral detector: Snowflake-L embedding + logistic regression."""
+    from sentence_transformers import SentenceTransformer
+    w = np.load(ROOT / "models" / "neutral_lr.npz")
+    E = SentenceTransformer("Snowflake/snowflake-arctic-embed-l-v2.0").encode(list(texts), normalize_embeddings=True)
+    return 1 / (1 + np.exp(-(E @ w["coef"] + w["intercept"])))
+
+
 @torch.no_grad()
 def score(tok, model, texts):
     out = []
@@ -37,7 +48,7 @@ def score(tok, model, texts):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    adapters = args[:args.index("--")] if "--" in args else [a for a in args if not a.startswith("--")]
+    adapters = [a for a in (args[:args.index("--")] if "--" in args else args) if not a.startswith("--")]
     if "--train" in args:
         df = pd.read_csv(ROOT / "data" / "processed" / "merged_gender.csv")
         texts, y = df["sentence"].to_numpy(), df["label"].to_numpy()
@@ -52,5 +63,7 @@ if __name__ == "__main__":
     if y is not None:
         print(f"training-data accuracy {((p > 0.5) == y).mean():.3f} (not a test score: these sentences were trained on)")
     else:
-        for t, v in zip(texts, p):
-            print(f"{v:.2f}  {'stereotype' if v > 0.5 else 'anti-stereotype'}  {t}")
+        related = neutral_score(texts) if "--neutral" in args else np.ones(len(texts))
+        for t, v, r in zip(texts, p, related):
+            label = "neutral" if r < 0.5 else "stereotype" if v > 0.5 else "anti-stereotype"
+            print(f"{v:.2f}  {label:15s}  {t}")
