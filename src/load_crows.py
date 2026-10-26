@@ -23,8 +23,6 @@ def load_crows_gender(path=ROOT / "data" / "raw" / "crows_pairs_anonymized.csv")
 
 if __name__ == "__main__":
     df = load_crows_gender()
-    out = ROOT / "data" / "processed" / "crows_gender.csv"
-    df.to_csv(out, index=False)
-    print(f"{len(df)} sentences from {df['pair_id'].nunique()} pairs -> {out.name}")
+    print(f"{len(df)} sentences from {df['pair_id'].nunique()} pairs (merge.py writes the combined CSV)")
     print(df["label"].value_counts().to_dict())
     print(df.head(4).to_string())
