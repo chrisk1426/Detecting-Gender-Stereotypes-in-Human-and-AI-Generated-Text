@@ -1,0 +1,1 @@
+experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epochs 3 --extra data/external/gest_pairs.csv --final /tmp/f006j44/adapters/qwen14b_lora_gest

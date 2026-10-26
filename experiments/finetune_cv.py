@@ -15,6 +15,8 @@ Options:
   --extra file.csv  extra training rows (sentence,label,pair_id), added to training folds only
   --one             train one unfinished fold, then exit (fresh process per fold frees GPU memory)
   --fold k          train only fold k (to run folds in parallel on several GPUs)
+  --final DIR       no CV: train on all sentences for exactly --epochs epochs and save the LoRA adapter to DIR
+                    (for the demo; its accuracy is the CV estimate, nothing is held out)
 
 Writes experiments/feat/ft_<tag>.csv (one row per sentence: prob, fold) and prints accuracy.
 """
@@ -102,8 +104,11 @@ def pair_loss(logits, labels, idx, pairs):
     return torch.stack(terms).mean() if terms else z.sum() * 0
 
 
-def train_fold(texts, y, groups, pairs, test_texts, seed, extra=None):
-    tr, va = next(GroupShuffleSplit(n_splits=1, test_size=0.15, random_state=seed).split(texts, y, groups))
+def train_fold(texts, y, groups, pairs, test_texts, seed, extra=None, final=False):
+    if final:  # train on everything, no validation; epochs fixed by --epochs
+        tr, va = np.arange(len(texts)), None
+    else:
+        tr, va = next(GroupShuffleSplit(n_splits=1, test_size=0.15, random_state=seed).split(texts, y, groups))
     if extra is not None:  # extra rows join training only; validation stays our data
         n = len(texts)
         texts = np.concatenate([texts, extra["sentence"].to_numpy()])
@@ -130,11 +135,16 @@ def train_fold(texts, y, groups, pairs, test_texts, seed, extra=None):
             scaler.unscale_(opt)
             torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad], 1.0)
             scaler.step(opt); scaler.update(); sched.step(); opt.zero_grad()
+        if final:
+            print(f"epoch {ep} done", flush=True)
+            continue
         acc = ((predict(tok, model, texts[va]) > 0.5) == y[va]).mean()
         if acc > best_acc:
             best_acc, best_ep = acc, ep
             best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()
                           if not LORA or "lora" in k or "score" in k}
+    if final:
+        return tok, model
     model.load_state_dict(best_state, strict=False)
     prob = predict(tok, model, test_texts)
     del model, opt, sched, scaler, best_state
@@ -148,6 +158,17 @@ if __name__ == "__main__":
     X, y, f, g = df["sentence"].to_numpy(), df["label"].to_numpy(), df["fold"].to_numpy(), df["group"].to_numpy()
     pid = df["pair_id"].to_numpy()
     extra = pd.read_csv(EXTRA) if EXTRA else None
+    if "--final" in sys.argv:
+        out = Path(arg("--final", None))
+        tok, model = train_fold(X, y, g, pid, None, SEEDS[0], extra, final=True)
+        for p in model.parameters():  # store the adapter in fp16 (half the size)
+            if p.requires_grad:
+                p.data = p.data.half()
+        model.save_pretrained(out)
+        tok.save_pretrained(out)
+        (out / "train_args.txt").write_text(" ".join(sys.argv) + "\n")
+        print("saved adapter to", out, flush=True)
+        sys.exit(0)
     prob = np.zeros(len(y))
     t0 = time.time()
     tag = (f"{MODEL.split('/')[-1]}{'_lora' if LORA else ''}{'_4bit' if QUANT else ''}{'_pair' if PAIR else ''}"
