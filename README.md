@@ -63,7 +63,7 @@ about 10 minutes, most of it fine-tuning and the forest grid search.
 
 Same data, same 5 grouped folds, single-sentence prediction. Every number is out-of-fold mean accuracy; nothing
 was tuned on the test fold (epochs and top-k are picked on validation splits of the training folds).
-Pipeline chart: `docs/pipeline.html`.
+Pipeline chart: [interactive version](https://claude.ai/artifact/9LPNDXBa58tejhcr381ork) (source: `docs/pipeline.html`, open it in a browser).
 
 | Model | Accuracy | Script |
 |---|---|---|
