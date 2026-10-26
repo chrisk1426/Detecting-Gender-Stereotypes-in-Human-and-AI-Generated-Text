@@ -101,6 +101,16 @@ python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epoc
 python experiments/assemble_folds.py Qwen2.5-14B-Instruct_lora_4bit_ep12_s72   # join per-fold .npy
 python experiments/ensemble.py                                       # CPU, final numbers from experiments/feat/*.csv
 ```
+**Saved models (`models/`):** two LoRA adapters for Qwen2.5-14B-Instruct (4-bit), trained on all 1,518 sentences
+for the demo: `qwen14b_lora` (8 epochs) and `qwen14b_lora_gest` (+ GEST, 3 epochs). Epoch counts are the typical
+best epochs from CV. Nothing was held out, so their accuracy is the CV estimate (average of the two: 0.833). The
+base model downloads from Hugging Face on first use (~30 GB).
+
+```bash
+python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epochs 8 --final models/qwen14b_lora
+python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest -- "Women are too emotional to be leaders."
+```
+
 All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
 without a GPU.
 
