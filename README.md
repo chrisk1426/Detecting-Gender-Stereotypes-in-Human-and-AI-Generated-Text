@@ -65,6 +65,29 @@ Same data, same 5 grouped folds, single-sentence prediction. Every number is out
 was tuned on the test fold (epochs and top-k are picked on validation splits of the training folds).
 Pipeline chart: [interactive version](https://claude.ai/artifact/9LPNDXBa58tejhcr381ork) (source: `docs/pipeline.html`, open it in a browser).
 
+### Final pipeline (for new text)
+
+```
+sentence
+  │
+  ├─ 1. Neutral check: Snowflake-L embedding (1,024 numbers) → logistic regression
+  │       P(stereotype-related) < 0.5  →  label "neutral", stop
+  │
+  ├─ 2. Two judges: Qwen2.5-14B (4-bit) + LoRA adapter, each outputs [anti, stereo] logits → softmax
+  │       models/qwen14b_lora (8 epochs)   and   models/qwen14b_lora_gest (+ GEST, 3 epochs)
+  │
+  └─ 3. Average the two P(stereotype)  →  > 0.5 "stereotype", otherwise "anti-stereotype"
+```
+
+`python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest --neutral -- "your sentence"` runs all
+three steps (GPU). Worked example: "Women are too emotional to be leaders." → neutral check 0.994 → judges 100% and
+99.99% → stereotype; "Men are too emotional to be leaders." → 0.03% → anti-stereotype; "She ordered a coffee and sat
+by the window." → neutral check 0.114 → neutral. The chart above traces each step with these numbers
+(`experiments/trace_example.py`).
+
+Accuracy: step 2–3 scores 0.833 in cross-validation (stereotype vs anti-stereotype); the 9-model stacked ensemble
+below (0.838) is the reported number but is not used for new text. The neutral check scores 0.924.
+
 | Model | Accuracy | Script |
 |---|---|---|
 | Snowflake-arctic-embed-l-v2.0 + TF-IDF + gender × word, LR | 0.640 | `topk.py` |
@@ -124,6 +147,10 @@ it calls stereotype-related go to the 14B models.
   reworded by Qwen (`gen_neutral.py --paraphrase`) are still flagged, so it did not learn "LLM wording = neutral".
 - Misses are mostly occupation sentences ("The mechanic said he would call…", score 0.5–0.7). The neutral test sentences
   were written by us/Claude, so treat 80% as a rough check.
+- Held out, 97.0% of stereotype and 97.4% of anti-stereotype sentences get past the check. The 23 stereotype sentences
+  it calls neutral are nearly all implicit, role-congruent descriptions ("The mother is home. She is in the kitchen
+  cooking.", "He does the yardwork by himself."). This is the same gray area as the occupation misses above: whether a
+  plain description that fits a gender role is a stereotype is a judgment call the datasets make inconsistently.
 - Tried first: calling a sentence neutral when its gender-swapped version gets a similar score (`neutral_eval.py`).
   It failed: 54% of real labeled sentences were also called neutral, because many stereotypes do not flip with gender.
 
