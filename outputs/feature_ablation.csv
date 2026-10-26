@@ -1,0 +1,12 @@
+features,accuracy,fold_sd
+TF-IDF (baseline),0.592,0.026
++ stop words removed,0.576,0.027
++ stop words + gender,0.574,0.013
++ stop words + gender + source,0.576,0.019
++ stop words + gender + source + length,0.579,0.021
++ gender x word,0.6,0.023
+gender x word only,0.592,0.016
+snowflake-arctic-l-v2.0 + gender + source + length,0.611,0.012
+snowflake-arctic-l-v2.0 + all TF-IDF features,0.638,0.014
+mpnet_current + gender + source + length,0.564,0.026
+mpnet_current + all TF-IDF features,0.605,0.023
