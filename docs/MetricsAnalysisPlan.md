@@ -10,7 +10,7 @@ course-sized. Accuracy is already about 0.83-0.84 and does not need more tuning.
 ## Status
 
 - [x] A. Combined predictions table (done 2026-10-27, `analysis/01_build_table.py`)
-- [ ] B. Metrics and charts
+- [~] B. Metrics and charts: core B1-B8 done 2026-10-27 (`analysis/02_metrics.py`); extra metrics X1-X5 still to do
 - [ ] C. Manual audit (blind labeling)
 - [ ] D. Error analysis
 - [ ] E. Three-class results with Chris's neutral detector (blocked until his part is ready)
@@ -177,7 +177,7 @@ Planned scripts: add to `analysis/05_error_analysis.py` (Y1-Y7); Y8 goes in `ana
 ## What we expect to find (hypotheses, to be confirmed or rejected)
 
 From the README and `DATANOTES.md`; none of this has been checked against the audit yet.
-- CrowS-Pairs is the hardest source (its pairs differ mostly by one gender word).
+- CrowS-Pairs is the hardest source (its pairs differ mostly by one gender word). *Step B update: not clearly true for Qwen or the ensemble. The gaps between sources are 1 to 3 points, which is within noise (fold sd about 0.02); StereoSet intrasentence is the easiest source for every model. It was the hardest for the mpnet models in the README (0.573). Re-check with confidence intervals (X1).*
 - A noticeable share of errors will turn out to be ambiguous or noisy labels, not model failures.
 - The ensemble beats the single best Qwen model by a small margin that is close to one fold sd (about 0.02),
   so we should not over-claim it.
@@ -215,6 +215,7 @@ python experiments/ensemble.py
 | 2026-10-26 | - | Plan written after TA meeting | - | this file |
 | 2026-10-26 | - | Added extra metrics (B-extra, X1-X9) and extra error analyses (D-extra, Y1-Y9) beyond the TA's list | - | this file |
 | 2026-10-27 | A | Built the combined table. Script checks that every prediction file lines up row by row with `merged_gender.csv` (pair_id, sentence, label, fold), rebuilds the stacked ensemble, and compares accuracies with the README | Mean-of-folds accuracy: majority 0.500, TF-IDF 0.567, mpnet+RF 0.604, Qwen 14B 0.820, ensemble 0.838. All match the README exactly | `analysis/01_build_table.py`, `outputs/metrics/predictions_all.csv` |
+| 2026-10-27 | B (core) | Computed B1-B8 from `predictions_all.csv`: summary table, per-label precision/recall/F1, 2x2 confusion matrices, ROC/AUC, accuracy by source and by fold, pairwise accuracy. Checked pairwise accuracy, fold sd and accuracy by source against the README (all within 0.01) | Accuracy: TF-IDF 0.567, mpnet+RF 0.604, Qwen 14B 0.820, ensemble 0.838. AUC: 0.583 / 0.667 / 0.888 / 0.915. Pairwise: 0.564 / 0.675 / 0.880 / 0.891. Qwen errors are balanced (133 anti called stereotype, 140 stereotype called anti); ensemble 119 / 127. Per-label precision and recall for Qwen all within 0.82 +/- 0.01. By source (ensemble): CrowS 0.840, inter 0.831, intra 0.843; (Qwen): 0.809 / 0.814 / 0.837. Ensemble beats Qwen in 4 of 5 folds (not fold 0: 0.805 vs 0.818) | `analysis/02_metrics.py`, `outputs/metrics/{summary,per_label,by_source,by_fold}.csv`, `accuracy_by_model.png`, `confusion_matrices.png`, `roc.png`, `by_source.png`, `by_fold.png` |
 | | | | | |
 
 ## Open questions
