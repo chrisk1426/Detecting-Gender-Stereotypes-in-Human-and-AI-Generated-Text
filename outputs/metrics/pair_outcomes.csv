@@ -1,0 +1,5 @@
+model,pairs,both_right,same_label_to_both,swapped,share_both_right,share_of_errors_from_same_label,errors,errors_with_prob_below_0.05_or_above_0.95
+TF-IDF + LR,759,186,489,84,0.245,0.744,657,0
+mpnet + random forest,759,249,419,91,0.328,0.697,601,0
+Qwen 14B (LoRA),759,514,217,28,0.677,0.795,273,199
+Ensemble (9 models),759,544,184,31,0.717,0.748,246,14
