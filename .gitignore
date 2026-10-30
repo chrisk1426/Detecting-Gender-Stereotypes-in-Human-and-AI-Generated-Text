@@ -9,3 +9,6 @@ data/raw/stereoset_*.parquet
 data/embeddings/
 experiments/emb/
 experiments/feat/*.npy
+
+# Audit answer key: regenerate with analysis/03_make_audit_sheet.py (seed 72); keeps the audit blind
+outputs/audit/private/

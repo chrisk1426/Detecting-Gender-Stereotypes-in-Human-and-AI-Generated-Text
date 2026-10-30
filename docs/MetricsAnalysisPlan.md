@@ -11,7 +11,7 @@ course-sized. Accuracy is already about 0.83-0.84 and does not need more tuning.
 
 - [x] A. Combined predictions table (done 2026-10-27, `analysis/01_build_table.py`)
 - [~] B. Metrics and charts: core B1-B8 done 2026-10-27 (`analysis/02_metrics.py`); extra metrics X1-X5 still to do
-- [ ] C. Manual audit (blind labeling)
+- [x] C. Manual audit (blind labeling): labeled, scored and the 8 disagreements reviewed 2026-10-30 (`outputs/audit/audit_disagreements_reviewed.csv`)
 - [ ] D. Error analysis
 - [ ] E. Three-class results with Chris's neutral detector (blocked until his part is ready)
 
@@ -102,30 +102,71 @@ only add Tier 2 if time is left.
 
 ## C. Manual audit (blind labeling)
 
-Goal: find out whether errors come from the models or from the data, by reading real sentences.
+Goal: find out how much of the models' "errors" come from the data (noisy or relative labels) rather than from
+the models, by reading real sentences.
+
+Why the labels make this tricky (from `DATANOTES.md`): label 1 means "more stereotypical than its pair
+partner", and "anti-stereotype" does **not** mean neutral. A sentence like "The angry schoolgirl gave a recital"
+is labeled anti-stereotype only because its partner ("innocent schoolgirl") is more stereotypical. Judged alone,
+a human may call it neutral and the dataset says anti. So the audit asks two kinds of question:
+single sentence (how the model is used) and pair ranking (how the data was labeled).
+
+**Before labeling: write the rubric and freeze it** (put it at the top of the sheet).
+- *Stereotypical*: relies on or expresses a common belief about what men or women are like or should do.
+- *Anti-stereotypical*: goes against such a belief.
+- *Neutral*: no gender stereotype either way.
+- *Unsure*: cannot decide. This is allowed and is itself a result.
+
+The audit has parts, and each has its own table so the numbers stay separate:
+
+| Part | What | Size | How it is drawn |
+|---|---|---|---|
+| C1 | **Single-sentence blind labels** | 30 sentences | Random, seed 72; 10 per source; balanced label 1 / 0; no two from the same pair |
+| C2 | **Pair ranking**: "which of these two sentences is more stereotypical? (first / second / equally / unsure)" | 10 pairs | Random, seed 72; pairs that do not appear in C1, so nobody sees a partner of an already-labeled sentence |
+| C3 | **Targeted weak-label set** (kept separate; never mixed into C1/C2 rates) | about 10 sentences | From the known weak spots: CrowS pairs where 2 or fewer of 5 validators said "gender", StereoSet items with weak annotator agreement, and sentences every model gets wrong (Y2) |
+| C4 | **Neutral batch** (later, with Chris) | about 10 sentences | Only once Chris says where the neutral examples come from, e.g. generated sentences like "The nurse checked the chart" |
+
+C1 + C2 is 50 sentences, the top of the TA's 30-50 range.
 
 Protocol:
-1. **Sample.** Draw about 40 sentences with seed 72, spread across the three sources and balanced between
-   label 1 and label 0, with no two sentences from the same pair. The sample is random, not chosen from known
-   errors, so it is fair.
-2. **Blind sheet.** Generate a file that shows only `audit_id` and the sentence. No true label, no model output.
-3. **Label it yourself** (stereotypical / anti-stereotypical / neutral / unsure) and add a confidence (1-3)
-   and a one-line reason. Do not look at any predictions until the whole sheet is done.
-4. **Unblind.** Join your labels with the true label and the model predictions.
-5. Record agreement: you vs true label, you vs Qwen, you vs ensemble, Qwen vs true label.
+1. **Sample.** Build C1, C2 (and C3) with seed 72. Shuffle the row order so sources and labels are not clustered.
+2. **Blind sheets.** C1 and C3 are mixed and shuffled into one sheet (`audit_single.csv`, 40 rows) so the
+   labeler cannot tell which rows are the targeted ones; C2 is `audit_pairs.csv` (10 rows). Each sheet shows only
+   `audit_id` and the sentence(s). No true label, no source, no part, no model output.
+3. **Label C1 first and finish it, then C2.** For each row add: your label, a confidence (1-3), and a one-line
+   reason. Do C1 before C2 so seeing a pair never changes how you read a single sentence. Do not open any
+   predictions until every part is done.
+4. **Unblind.** Join your answers with the true label, the source and every model's prediction.
+5. **Score** (separately for C1, C2, C3):
+   - you vs the dataset's label (accuracy and Cohen's kappa)
+   - you vs Qwen, you vs the ensemble
+   - Qwen vs the dataset's label *on the same sample*. If it is far from 0.82 overall, the sample is
+     unrepresentative and we say so.
+   - C2: your pick vs the dataset's "more stereotypical" sentence vs the model with the higher P(stereotype)
+6. Note where **single-sentence and pair answers disagree for the same underlying idea**. That measures how much
+   of the difficulty is just the relative-label problem.
 
-Note on difficulty: the dataset's labels are relative ("more stereotypical than its partner"), but the model
-sees one sentence at a time, and so do you. Expect low agreement on some sentences. That is a finding, not a
-failure, so mark those as "unsure" instead of forcing a guess.
+**Sample-size warning.** A random sample of 30 sentences contains only about 5 Qwen errors (17% of 30). That is
+too few to sort into categories. So the blind sample measures **human agreement and label quality**, and the
+error categories (section D) come from a separate, larger review of actual model errors.
 
-Neutral sentences: neither dataset has them. Once Chris says where the neutral examples come from, add about
-10 to the sheet. Until then the audit is two-class.
+Scripts: `analysis/03_make_audit_sheet.py` (written and run 2026-10-27, seed 72) produces
+`outputs/audit/audit_single.csv`, `audit_pairs.csv` and `RUBRIC.md` (blind), and the private answer keys
+`outputs/audit/private/audit_key_single.csv` and `audit_key_pairs.csv` (pair id, source, part, true label, all
+model predictions). The `private/` folder is in `.gitignore` so the key is not pushed to Chris; regenerate it with
+`python analysis/03_make_audit_sheet.py` (same seed, same sample). `analysis/04_score_audit.py` (not written yet) reads
+the filled-in sheets. **Do not open anything in `private/` until every row of both sheets is labeled.**
 
-Planned scripts: `analysis/03_make_audit_sheet.py` -> `outputs/audit/audit_blind.csv` (sentences only) and a
-private key file `outputs/audit/audit_key.csv` (true labels, predictions). `analysis/04_score_audit.py` reads
-the filled-in sheet.
+Sheet columns: `audit_single.csv` = `audit_id, sentence, your_label, confidence_1to3, reason`;
+`audit_pairs.csv` = `audit_id, sentence_1, sentence_2, your_pick_first_second_equal_unsure, confidence_1to3, reason`.
 
 ## D. Error analysis
+
+**Error review sample.** The blind audit (section C) is too small to yield enough errors, so categories come from
+a separate review of real mistakes: draw about 30 of Qwen's roughly 270 errors from `predictions_all.csv`
+(seed 72, balanced across the three sources), show each with its partner sentence and the dataset's label, and
+assign one category plus a one-line note. This review is not blind, because we already know they are errors.
+Repeat for a few ensemble-only errors if time allows.
 
 Group every disagreement into the TA's categories (add new ones if the data needs them):
 
@@ -136,6 +177,11 @@ Group every disagreement into the TA's categories (add new ones if the data need
 | Quote / negation / context | Meaning depends on a quote, "not", or missing context |
 | Ambiguous label | Humans (including us) disagree or are not confident |
 | Not really about gender | e.g. "My grandfather is old" labeled stereotype (noted in `DATANOTES.md`) |
+| Gender only through a name | No gender word, only a name like Camille or Jim (about 17% of CrowS sentences, `DATANOTES.md` 5.4) |
+| Relative-label problem | The sentence cannot be judged without its partner; the label only makes sense as "more stereotypical than the other one" |
+| Role vs statement | *(found in the audit)* The sentence mentions a gendered role, and the dataset label depends on what is said about it, or on the one word that differs from the partner, not on the role itself. A single-sentence reader naturally reacts to the shared role. 4 of the 8 audit disagreements |
+| Contested stereotype | *(found in the audit)* Whether the sentence expresses a stereotype depends on whose idea of the stereotype is used (e.g. "argumentative" for women; a harsh mother; "gentlemen" vs men in general). 3 of the 8 |
+| Human slip | *(found in the audit)* The labeler's own written reason contradicts the label. 1 of the 8 (S03) |
 | Other | Anything else; describe it |
 
 Checks beyond the audit sample, using the full 1,518 predictions:
@@ -189,6 +235,13 @@ From the README and `DATANOTES.md`; none of this has been checked against the au
 - Using an LLM to judge LLM-generated text is partly circular.
 - StereoSet's public gender data is small (about 500 pairs) and CrowS gender pairs come from 40 writers, so
   cross-validation scores may be optimistic.
+- The audit is small (30 random sentences, 23 with a stereotypical/anti answer, so intervals are wide) and was
+  labeled by one person. One label (S03) was corrected after unblinding because the labeler's own reason showed a
+  slip; both the original and the corrected agreement are reported. The targeted set (C3) came out with all 10
+  sentences carrying the dataset label "stereotype" (about a 0.7% chance draw), so it was only used descriptively.
+- A single-sentence label has a built-in ceiling: a careful human agreed with the dataset on about 74-78% of the
+  random sentences, because the labels are relative to a partner sentence. Model accuracy near 0.84 on single
+  sentences should be read with that ceiling in mind.
 
 ## Reproduce everything (once the scripts exist)
 
@@ -216,6 +269,10 @@ python experiments/ensemble.py
 | 2026-10-26 | - | Added extra metrics (B-extra, X1-X9) and extra error analyses (D-extra, Y1-Y9) beyond the TA's list | - | this file |
 | 2026-10-27 | A | Built the combined table. Script checks that every prediction file lines up row by row with `merged_gender.csv` (pair_id, sentence, label, fold), rebuilds the stacked ensemble, and compares accuracies with the README | Mean-of-folds accuracy: majority 0.500, TF-IDF 0.567, mpnet+RF 0.604, Qwen 14B 0.820, ensemble 0.838. All match the README exactly | `analysis/01_build_table.py`, `outputs/metrics/predictions_all.csv` |
 | 2026-10-27 | B (core) | Computed B1-B8 from `predictions_all.csv`: summary table, per-label precision/recall/F1, 2x2 confusion matrices, ROC/AUC, accuracy by source and by fold, pairwise accuracy. Checked pairwise accuracy, fold sd and accuracy by source against the README (all within 0.01) | Accuracy: TF-IDF 0.567, mpnet+RF 0.604, Qwen 14B 0.820, ensemble 0.838. AUC: 0.583 / 0.667 / 0.888 / 0.915. Pairwise: 0.564 / 0.675 / 0.880 / 0.891. Qwen errors are balanced (133 anti called stereotype, 140 stereotype called anti); ensemble 119 / 127. Per-label precision and recall for Qwen all within 0.82 +/- 0.01. By source (ensemble): CrowS 0.840, inter 0.831, intra 0.843; (Qwen): 0.809 / 0.814 / 0.837. Ensemble beats Qwen in 4 of 5 folds (not fold 0: 0.805 vs 0.818) | `analysis/02_metrics.py`, `outputs/metrics/{summary,per_label,by_source,by_fold}.csv`, `accuracy_by_model.png`, `confusion_matrices.png`, `roc.png`, `by_source.png`, `by_fold.png` |
+| 2026-10-27 | C, D (design) | Read the rest of `DATANOTES.md` and redesigned the audit: written rubric, single-sentence part (C1), pair-ranking part (C2), targeted weak-label set (C3), neutral batch later (C4); added a separate error-review sample of about 30 real Qwen errors because a random 30-sentence sample holds only about 5 errors; added error categories "gender only through a name" and "relative-label problem" | - | this file |
+| 2026-10-27 | C (sheets) | Wrote `analysis/03_make_audit_sheet.py` and generated the blind sheets: 40 single sentences (C1: 30, 5 per source per label; C3: 10 targeted, mixed in) and 10 pairs (C2: 3 CrowS, 3 StereoSet inter, 4 intra). 50 distinct pairs, no overlap. Key stored in git-ignored `outputs/audit/private/`. No sentences or labels were viewed when generating | Targeted pools available: 33 CrowS pairs with 2 or fewer validators, 135 StereoSet pairs with agreement 0.6 or lower, 62 pairs wrong for all four models | `analysis/03_make_audit_sheet.py`, `outputs/audit/` |
+| 2026-10-30 | C (scored) | Julia labeled both sheets blind. `analysis/04_score_audit.py` unblinded them (checked the sheet sentences were not edited) and wrote `outputs/audit/audit_results_{single,pairs}.csv` with a blank `error_category` column per row | **C1 (30 random):** Julia used stereotypical 12 / anti 11 / neutral 7; on the 23 stereotypical-or-anti answers she agrees with the dataset on 17 (0.74, 95% interval 0.54-0.87, kappa 0.48). Of her 7 neutrals, the dataset said stereotype 5 and anti 2. Qwen 14B and the ensemble each get 28/30 (0.93) on this sample (overall 0.82-0.84, so the sample is a little easy) and agree with Julia 18/23 (0.78). By source Julia vs dataset: CrowS 9/9, StereoSet inter 6/8, intra 2/6. By her confidence: 3 -> 10/10, 2 -> 5/8, 1 -> 2/5. **C3 (10 targeted):** all 10 happen to have dataset label "stereotype" (unlucky draw, about 0.7% chance), so kappa is undefined and anti labels in weak spots are untested; 3 of the 10 were chosen because every model is wrong, so Qwen's 6/10 is biased low by construction. **Disagreements (8, C1+C3):** Qwen sides with the dataset on 6 and with Julia on 2. **C2 (10 pairs):** Julia gave a pick on 9 (1 "equal"); she agrees with the dataset on 8/9; Qwen and the ensemble pick the dataset's sentence in 9/10, mpnet+RF 7/10, TF-IDF 6/10 | `analysis/04_score_audit.py`, `outputs/audit/audit_results_single.csv`, `audit_results_pairs.csv` |
+| 2026-10-30 | C (reviewed) | Went through all 8 single-sentence disagreements with Julia, one at a time (partner sentence, models, Julia's reason). Categories: role vs statement 4 (S02, S08, S14, S18), contested / ambiguous label 3 (S09, S35, S36), human slip 1 (S03). Saved to `audit_disagreements_reviewed.csv`. Original sheets verified unchanged since scoring | **No disagreement showed the dataset to be plainly wrong**; 7 of 8 are cases where a careful human can read the sentence differently, 1 was a slip. Qwen sided with the dataset on 6 of 8 and with Julia on 2 (S02: clearly wrong, followed the event not the father's attitude; S09: contested). **S03 was corrected after unblinding** because Julia's written reason ("men are reckless" for "The schoolboy is very careful!") showed she meant anti-stereotypical; agreement on the random sample is **17/23 = 0.74 (kappa 0.48) as originally labeled** and **18/23 = 0.78 (kappa 0.56) with S03 corrected**. The original sheet is not edited. Not reviewed yet: the pair sheet's 1 disagreement and 1 "equal"; the C3 results beyond the 3 C3 disagreements already covered | `outputs/audit/audit_disagreements_reviewed.csv` |
 | | | | | |
 
 ## Open questions
@@ -224,4 +281,6 @@ python experiments/ensemble.py
 - [x] Do the `experiments/feat/*.csv` rows really line up with `merged_gender.csv`? Yes: fold column matches row by row (checked in step A).
 - [ ] This repo has no `.venv` of its own. Step A was run with the Python from `~/cosc72-stereotype-judge/.venv` (pandas 2.3.3, scikit-learn 1.6.1, matplotlib 3.9.4); `requirements.txt` pins scikit-learn 1.9.1. Results matched, but note it in the write-up or make a proper venv.
 - [ ] Which single model counts as "the Qwen classifier" in the final write-up: the 14B 12-epoch run or the ensemble?
-- [ ] Should the audit sample size be 30 or 50? (default 40)
+- [x] Audit size: C1 (30 single sentences) + C2 (10 pairs = 20 sentences) = 50 sentences, plus about 10 targeted (C3). Decided 2026-10-27.
+- [ ] Where do the neutral examples for the C4 batch come from (generated sentences? Chris's detector data)? Ask Chris.
+- [ ] Does anyone besides Julia label the sheets? (Chris labeling the same C1 would give the human-ceiling comparison, Y8.)
