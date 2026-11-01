@@ -1,0 +1,6 @@
+row,called neutral,called stereotype,called anti,passed to Qwen (not run),total
+true: stereotype,23,599,137,0,759
+true: anti-stereotype,20,129,610,0,759
+"true: neutral (generated, out-of-fold)",606,0,0,128,734
+true: neutral (hand-written),48,0,0,12,60
+true: neutral (StereoSet unrelated),17,0,0,480,497
