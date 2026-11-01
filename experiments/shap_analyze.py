@@ -56,10 +56,13 @@ def barh(ax, labels, vals, colors, title, xlabel):
 
 def main(d):
     d = Path(d)
-    read = lambda name, **kw: pd.concat([pd.read_csv(p, **kw) for p in sorted(d.glob(f"{name}*.csv"))])
+    read = lambda name, **kw: pd.concat([pd.read_csv(p, **kw) for p in sorted(d.glob(f"{name}*.csv"))
+                                         if p.stat().st_size > 1] or [pd.DataFrame()])
     tokens = read("tokens", keep_default_na=False)
     W = word_table(tokens)
     out = []
+    neutral = (tokens.label == -1).any()  # neutral-detector run: f = logit of "stereotype-related" vs neutral
+    axis = "<- neutral   |   stereotype-related ->" if neutral else "<- anti-stereotype   |   stereotype ->"
 
     # 1. global word importance
     imp = (W[W.kind != "punct"].groupby("key")
@@ -75,7 +78,7 @@ def main(d):
     signed = imp[imp.kind == "attribute"].sort_values("mean")
     s = pd.concat([signed.head(12), signed.tail(12)]).iloc[::-1]
     barh(ax[1], s.index, s["mean"], ["#c0392b" if v > 0 else "#2e86c1" for v in s["mean"]],
-         "Attribute words: signed mean SHAP", "<- anti-stereotype   |   stereotype ->")
+         "Attribute words: signed mean SHAP", axis)
     ax[0].legend(handles=[plt.Rectangle((0, 0), 1, 1, color=c) for c in col.values()], labels=list(col),
                  frameon=False, loc="lower right")
     fig.tight_layout()
@@ -148,7 +151,7 @@ def main(d):
     # 5. masking interaction between gender words and top attribute words
     I = read("interactions")
     if len(I):
-        I["label_name"] = I.label.map({1: "stereotype", 0: "anti-stereotype"})
+        I["label_name"] = I.label.map({1: "stereotype", 0: "anti-stereotype", -1: "neutral"})
         top1 = I[I.attr_rank == 0]
         summ = (top1.assign(gender_effect=top1.f_full - top1.f_no_gender, attr_effect=top1.f_full - top1.f_no_attr,
                             positive=top1.interaction > 0)
@@ -160,7 +163,7 @@ def main(d):
           [["sentence", "label", "gender_words", "attr", "interaction", "f_full", "f_no_gender", "f_no_attr",
             "f_no_both"]].head(30).to_csv(d / "top_interactions.csv", index=False))
         fig, ax = plt.subplots(figsize=(7, 4))
-        for lab, c in (("stereotype", "#c0392b"), ("anti-stereotype", "#2e86c1")):
+        for lab, c in (("stereotype", "#c0392b"), ("anti-stereotype", "#2e86c1"), ("neutral", "#7f8c8d")):
             ax.hist(top1[top1.label_name == lab].interaction, bins=40, alpha=0.55, color=c, label=lab)
         ax.axvline(0, color="#555", lw=0.8)
         ax.set(xlabel="gender x top-attribute interaction (log-odds)", ylabel="sentences",

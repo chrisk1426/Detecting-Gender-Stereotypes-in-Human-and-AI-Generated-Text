@@ -19,10 +19,11 @@ def key(word):
 
 def group_words(tokens):
     """Group subword tokens into words. Returns a list of (word_text, [token indices]).
-    A new word starts at a token with leading whitespace, at punctuation, or right after punctuation."""
+    A new word starts at a token with leading whitespace (Qwen: " put"), after a token with trailing whitespace
+    (XLM-R / Snowflake: "put "), at punctuation, or right after punctuation."""
     groups = []
     for i, t in enumerate(tokens):
-        new = (not groups or t[:1].isspace() or PUNCT.match(t.strip() or "x")
+        new = (not groups or t[:1].isspace() or tokens[i - 1][-1:].isspace() or PUNCT.match(t.strip() or "x")
                or PUNCT.match(tokens[i - 1].strip() or "x"))
         if new:
             groups.append([t, [i]])

@@ -3,6 +3,7 @@
   python experiments/shap_qwen.py models/qwen14b_lora               # all 1,518 sentences
   python experiments/shap_qwen.py models/qwen14b_lora --n 300       # random sample of pairs (both sentences kept)
   python experiments/shap_qwen.py models/qwen14b_lora --data data/external/gest_pairs.csv --n 1500   # held-out text
+  python experiments/shap_qwen.py --neutral                         # the neutral detector (see below)
   python experiments/shap_qwen.py --hf distilbert-base-uncased-finetuned-sst-2-english --n 6   # CPU smoke test
 
 What is explained: the log-odds of P(stereotype) from the adapter. SHAP's Partition explainer masks groups of tokens
@@ -13,6 +14,11 @@ non-gender content words by |SHAP|. With f = log-odds and x\S = x with S masked,
     interaction = f(x) - f(x\\G) - f(x\\a) + f(x\\G\\a)
 > 0: the attribute pushes toward "stereotype" more when the gender word is present (the model reads the pairing);
 ~ 0: gender and attribute act separately (additive).
+
+--neutral explains the neutral detector instead (Snowflake-L embedding + logistic regression, models/neutral_lr.npz):
+f = its logit of "stereotype-related" (vs neutral). Sentences: its training data (the 1,518 labeled sentences + the
+734 generated neutral ones) and two neutral sets it never trained on (60 hand-written, 497 StereoSet "unrelated").
+label: 1 stereotype, 0 anti-stereotype, -1 neutral. Output folder: outputs/shap/neutral_lr/.
 
 Writes outputs/shap/<adapter>/: tokens.csv, interactions.csv, examples.html (with --shard i/k: tokens_iofk.csv, ...;
 shap_analyze.py merges them). Then run experiments/shap_analyze.py.
@@ -32,6 +38,13 @@ MASK = "..."
 def make_scorer(args):
     """Returns (tokenizer, f) with f(list[str]) -> log-odds of the 'stereotype' class, computed as the logit
     difference (logit_1 - logit_0) so it does not saturate the way log(p / (1 - p)) does for confident predictions."""
+    if args.neutral:  # neutral detector: logit of "stereotype-related" from LR on the Snowflake-L embedding
+        from sentence_transformers import SentenceTransformer
+        enc = SentenceTransformer("Snowflake/snowflake-arctic-embed-l-v2.0", device="cuda")
+        w = np.load(ROOT / "models" / "neutral_lr.npz")
+        f = lambda texts: enc.encode([str(t) for t in texts], batch_size=args.batch,
+                                     normalize_embeddings=True) @ w["coef"] + w["intercept"]
+        return enc.tokenizer, f
     if args.hf:  # small unquantized model for testing the pipeline without a GPU
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
         tok = AutoTokenizer.from_pretrained(args.hf)
@@ -60,16 +73,29 @@ def masked(tokens, words, drop):
     out = list(tokens)
     for w in drop:
         idx = words[w][1]
-        lead = tokens[idx[0]][:len(tokens[idx[0]]) - len(tokens[idx[0]].lstrip())]
-        out[idx[0]] = lead + MASK
-        for i in idx[1:]:
+        first, last = tokens[idx[0]], tokens[idx[-1]]
+        lead, trail = first[:len(first) - len(first.lstrip())], last[len(last.rstrip()):]
+        for i in idx:
             out[i] = ""
+        out[idx[0]] = lead + MASK + trail
     return "".join(out)
+
+
+def neutral_data():
+    """The neutral detector's training sentences plus the two held-out neutral sets (label -1 = neutral)."""
+    ext = ROOT / "data" / "external"
+    lab = pd.read_csv(ROOT / "data" / "processed" / "merged_gender.csv")
+    gen = pd.read_csv(ext / "neutral_generated.csv").assign(label=-1, source="neutral_generated")
+    held = [pd.read_csv(ext / f"{n}.csv")[["sentence"]].assign(label=-1, source=n)
+              .pipe(lambda d: d.assign(pair_id=[f"{n}_{i}" for i in range(len(d))]))
+            for n in ("neutral_sentences", "stereoset_unrelated_gender")]
+    return pd.concat([lab, gen, *held], ignore_index=True)[["pair_id", "sentence", "label", "source"]]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("adapter", nargs="?", default="models/qwen14b_lora")
+    ap.add_argument("--neutral", action="store_true", help="explain the neutral detector instead of an adapter")
     ap.add_argument("--hf", help="any HF sequence-classification model instead of the adapter (smoke test)")
     ap.add_argument("--n", type=int, default=0, help="sample this many sentences (by pair); 0 = all")
     ap.add_argument("--max-evals", type=int, default=400, help="SHAP model calls per sentence")
@@ -80,7 +106,7 @@ def main():
     ap.add_argument("--shard", default="0/1", help="i/k: run pairs i, i+k, ... (one GPU each; analyze merges shards)")
     args = ap.parse_args()
 
-    df = pd.read_csv(ROOT / args.data)
+    df = neutral_data() if args.neutral else pd.read_csv(ROOT / args.data)
     if "source" not in df:
         df["source"] = Path(args.data).stem.removesuffix("_pairs")
     if args.n:
@@ -88,8 +114,8 @@ def main():
         df = df[df.pair_id.isin(pairs.iloc[:max(1, args.n // 2)])]
     i, k = map(int, args.shard.split("/"))
     df = df[df.pair_id.map({p: j % k for j, p in enumerate(df.pair_id.unique())}) == i]  # sid = row in full data
-    tag = Path(args.hf).name if args.hf else Path(args.adapter).name
-    if Path(args.data).name != "merged_gender.csv":
+    tag = "neutral_lr" if args.neutral else Path(args.hf).name if args.hf else Path(args.adapter).name
+    if Path(args.data).name != "merged_gender.csv" and not args.neutral:
         tag += "__" + Path(args.data).stem
     sfx = f"_{i}of{k}" if k > 1 else ""
     out_dir = ROOT / "outputs" / "shap" / tag

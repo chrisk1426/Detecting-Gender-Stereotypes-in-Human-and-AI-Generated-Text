@@ -177,6 +177,7 @@ pairing rather than either word alone.
 python experiments/shap_qwen.py models/qwen14b_lora --max-evals 800 --batch 64   # GPU, all 1,518: ~50 min on an RTX 8000
 python experiments/shap_analyze.py outputs/shap/qwen14b_lora                      # CPU, tables + charts + summary.txt
 python experiments/shap_qwen.py models/qwen14b_lora --data data/external/gest_pairs.csv --n 1500 --max-evals 800  # held out: GEST was not in this adapter's training data
+python experiments/shap_qwen.py --neutral --max-evals 800 --batch 64   # neutral detector: its training data + held-out neutral sets, ~45 min
 ```
 
 ## Data
