@@ -1,0 +1,7 @@
+Top 10 words by mean |SHAP|: girl (5.77), woman (5.50), confident (5.05), she (4.82), fashion (4.79), drunk (4.77), mother (4.62), gym (4.14), challenge (4.09), leader (4.07)
+Share of |SHAP| (sentences with a gender word): gender 17%, attribute 36%, function 30%, punct 17%
+Attribute words seen with both genders: 276; corr(male SHAP, female SHAP) = -0.11 (1 = gender-independent, < 0 = flips with gender)
+Most stereotypical for women: fashion, smile, attractive, emotions, beautiful, cream, washed, volunteering
+Most stereotypical for men:   confident, lead, challenge, logical, leader, gym, assertive, financial
+Gender swaps (gest): 750 pairs, 4186 shared attribute words; corr(SHAP stereo version, SHAP anti version) = 0.16; sign flips 40%; mean SHAP +0.320 (stereo) vs -0.634 (anti)
+Interaction (top attribute, mean): anti-stereotype -5.67 (32% > 0, n=750); stereotype +2.11 (61% > 0, n=750)

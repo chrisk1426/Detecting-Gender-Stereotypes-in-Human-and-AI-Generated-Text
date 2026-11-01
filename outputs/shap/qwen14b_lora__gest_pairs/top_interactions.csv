@@ -1,0 +1,31 @@
+sentence,label,gender_words,attr,interaction,f_full,f_no_gender,f_no_attr,f_no_both
+"My mother once said: ""I hate arguing.""",0,mother,arguing,40.60254,15.691406,-16.453125,-6.9804688,1.4775391
+"The girl admitted: ""I initiated a conversation with a neighbor who was going through a difficult time.""",1,girl,conversation,35.5459,12.441406,-11.683594,-12.671875,-1.2509766
+"My mother once said: ""I hate arguing.""",0,mother,hate,34.858887,15.691406,-16.453125,0.76171875,3.4760742
+"The man explained: ""I didn't feel affected by criticism at all, I didn't take it personally.""",1,man,personally,34.56836,9.470703,-12.125,-11.089844,1.8828125
+"She said: ""I sprained my muscle trying to lift the carpet.""",1,she,sprained,33.81201,11.287109,4.717285,-13.542969,13.699219
+"The boy admitted: ""I always decorated walls in school.""",0,boy,walls,31.75586,12.986328,-6.9414062,-17.953125,-6.125
+"My mother once said: ""I wished they wouldn't talk about conspiracy theories.""",0,mother,wouldn't,31.404297,11.753906,-7.7753906,-15.144531,-3.2695312
+"My husband told me: ""I had no problem being assertive at work.""",1,husband,problem,29.96753,10.2265625,1.6052246,-18.703125,2.6430664
+"My mother once said: ""I washed it again, because my partner didn't do a good job.""",1,mother,washed,29.39795,14.121094,-9.740234,-1.0947266,4.4418945
+"The boy admitted: ""I never stressed much.""",1,boy,stressed,29.136719,4.2436523,-11.285156,-18.554688,-4.9467773
+"My mother once said: ""I don't like going to the gym.""",1,mother,don't,28.765625,8.1953125,-3.0117188,-17.679688,-0.12109375
+"My father once said: ""Stop commanding me, I like to spend time how I want to.""",1,father,said,28.267334,11.611328,0.670166,-12.128906,5.1972656
+"My husband told me: ""I was chatting with a friend for two hours straight!""",0,husband,told,28.129883,9.6328125,-4.7041016,-3.7753906,10.017578
+"My wife told me: ""I felt very vulnerable.""",1,wife,told,27.936523,12.8125,-12.359375,4.848633,7.6132812
+"The girl admitted: ""I was always drawn to being a nurse.""",1,girl,nurse,27.785156,17.761719,-8.802734,-2.949463,-1.7287598
+"The boy admitted: ""I've always excelled in martial arts.""",1,boy,martial,27.625,11.613281,-10.9609375,-18.3125,-13.261719
+"The girl admitted: ""I always decorated walls in school.""",1,girl,decorated,27.29834,10.5703125,-6.9414062,-4.477539,5.309082
+"My brother told me: ""I didn't like being led on and I wanted to get physical.""",1,brother,didn't,26.62207,14.53125,-3.7919922,-15.71875,-7.419922
+"The man explained: ""I could easily be in a polygamous relationship.""",1,man,polygamous,26.563477,5.1054688,-5.9765625,-15.78125,-0.2998047
+"My husband told me: ""I am confident with my body.""",1,husband,confident,26.277344,5.140625,-10.0546875,-8.337891,2.7441406
+"My wife told me: ""I put extra effort into making my hair look good today.""",1,wife,told,26.02832,12.4140625,2.7392578,-5.142578,11.2109375
+"The girl admitted: ""I was always good at taking care of others.""",1,girl,care,25.625977,0.42285156,-15.703125,-9.128906,0.37109375
+"My wife told me: ""I apologized excessively for even minor mistakes or perceived shortcomings, constantly seeking validation and avoiding conflict.""",1,wife,told,25.485352,12.703125,-5.6796875,-7.689453,-0.58691406
+"My wife told me: ""It was hard for me to admit that I needed a hand.""",1,wife,told,25.32666,10.517578,-8.833984,-2.3095703,3.6655273
+"My mother once said: ""I knew my appearances were important for my work.""",1,mother,appearances,24.933289,6.220703,-4.1533203,-11.359375,3.1998901
+"My father once said: ""I took a second job.""",1,father,job,24.856445,10.058594,-8.421875,-11.2421875,-4.866211
+"The man explained: ""I was having a hard time expressing my emotions.""",1,man,expressing,24.646484,11.923828,6.046875,-12.9140625,5.8554688
+"She said: ""I always enjoyed long baths.""",1,she,baths,24.583984,11.6484375,-5.294922,-19.648438,-12.0078125
+"My sister told me: ""As soon as my paycheck came, I went shopping.""",1,sister,shopping,24.521484,12.294922,-2.0625,-5.084717,5.0793457
+"The man explained: ""I don't remember who I had sex with last night.""",1,man,remember,24.354492,-3.3828125,-8.09375,-11.496094,8.147461
