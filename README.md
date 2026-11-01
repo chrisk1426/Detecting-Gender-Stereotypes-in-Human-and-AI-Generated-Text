@@ -63,7 +63,30 @@ about 10 minutes, most of it fine-tuning and the forest grid search.
 
 Same data, same 5 grouped folds, single-sentence prediction. Every number is out-of-fold mean accuracy; nothing
 was tuned on the test fold (epochs and top-k are picked on validation splits of the training folds).
-Pipeline chart: `docs/pipeline.html`.
+Pipeline chart: [interactive version](https://claude.ai/artifact/9LPNDXBa58tejhcr381ork) (source: `docs/pipeline.html`, open it in a browser).
+
+### Final pipeline (for new text)
+
+```
+sentence
+  │
+  ├─ 1. Neutral check: Snowflake-L embedding (1,024 numbers) → logistic regression
+  │       P(stereotype-related) < 0.5  →  label "neutral", stop
+  │
+  ├─ 2. Two judges: Qwen2.5-14B (4-bit) + LoRA adapter, each outputs [anti, stereo] logits → softmax
+  │       models/qwen14b_lora (8 epochs)   and   models/qwen14b_lora_gest (+ GEST, 3 epochs)
+  │
+  └─ 3. Average the two P(stereotype)  →  > 0.5 "stereotype", otherwise "anti-stereotype"
+```
+
+`python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest --neutral -- "your sentence"` runs all
+three steps (GPU). Worked example: "Women are too emotional to be leaders." → neutral check 0.994 → judges 100% and
+99.99% → stereotype; "Men are too emotional to be leaders." → 0.03% → anti-stereotype; "She ordered a coffee and sat
+by the window." → neutral check 0.114 → neutral. The chart above traces each step with these numbers
+(`experiments/trace_example.py`).
+
+Accuracy: step 2–3 scores 0.833 in cross-validation (stereotype vs anti-stereotype); the 9-model stacked ensemble
+below (0.838) is the reported number but is not used for new text. The neutral check scores 0.924.
 
 | Model | Accuracy | Script |
 |---|---|---|
@@ -101,6 +124,36 @@ python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epoc
 python experiments/assemble_folds.py Qwen2.5-14B-Instruct_lora_4bit_ep12_s72   # join per-fold .npy
 python experiments/ensemble.py                                       # CPU, final numbers from experiments/feat/*.csv
 ```
+**Saved models (`models/`):** two LoRA adapters for Qwen2.5-14B-Instruct (4-bit), trained on all 1,518 sentences
+for the demo: `qwen14b_lora` (8 epochs) and `qwen14b_lora_gest` (+ GEST, 3 epochs). Epoch counts are the typical
+best epochs from CV. Nothing was held out, so their accuracy is the CV estimate (average of the two: 0.833). The
+base model downloads from Hugging Face on first use (~30 GB).
+
+```bash
+python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --epochs 8 --final models/qwen14b_lora
+python experiments/predict.py models/qwen14b_lora models/qwen14b_lora_gest -- "Women are too emotional to be leaders."
+```
+
+**Neutral class:** the judge was trained only on stereotype vs anti-stereotype, so on its own it labels plain text
+like "She ordered a coffee" a stereotype. A neutral detector now runs first (`predict.py --neutral`); only sentences
+it calls stereotype-related go to the 14B models.
+
+- Data: for each pair, Qwen2.5-7B writes one neutral sentence about the same people and setting
+  (`gen_neutral.py` → `data/external/neutral_generated.csv`, 734 kept), so the detector must learn stereotype
+  content rather than topic.
+- Model: Snowflake-L embedding + logistic regression (`neutral_clf.py` → `models/neutral_lr.npz`, runs on CPU).
+- Results: 0.924 grouped-CV accuracy (neutral vs stereotype-related); 97% of labeled sentences kept; 80% of 60
+  hand-written neutral sentences (`neutral_sentences.csv`) called neutral. Control: 96.5% of stereotype sentences
+  reworded by Qwen (`gen_neutral.py --paraphrase`) are still flagged, so it did not learn "LLM wording = neutral".
+- Misses are mostly occupation sentences ("The mechanic said he would call…", score 0.5–0.7). The neutral test sentences
+  were written by us/Claude, so treat 80% as a rough check.
+- Held out, 97.0% of stereotype and 97.4% of anti-stereotype sentences get past the check. The 23 stereotype sentences
+  it calls neutral are nearly all implicit, role-congruent descriptions ("The mother is home. She is in the kitchen
+  cooking.", "He does the yardwork by himself."). This is the same gray area as the occupation misses above: whether a
+  plain description that fits a gender role is a stereotype is a judgment call the datasets make inconsistently.
+- Tried first: calling a sentence neutral when its gender-swapped version gets a similar score (`neutral_eval.py`).
+  It failed: 54% of real labeled sentences were also called neutral, because many stereotypes do not flip with gender.
+
 All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
 without a GPU.
 
@@ -151,8 +204,8 @@ permutation tests, implications, draft Data section) is in [`DATANOTES.md`](DATA
 
 ## Limitations
 
-- The judge only outputs stereotype vs anti-stereotype. Neutral text (e.g. LLM output like "The nurse checked the
-  chart") will still be forced into one of the two labels. The neutral-class fix is still undecided.
+- Neutral text is handled by a separate detector (see Neutral class above), which misses about 1 in 5 neutral
+  occupation sentences.
 - The baseline models (~0.60) are unreliable per sentence; the final ensemble (0.84) is better, but still aggregate
   scores over many generations rather than trusting single judgements.
 - Labels are noisy (see Exploration findings), and StereoSet's public gender data is small (~500 pairs).
