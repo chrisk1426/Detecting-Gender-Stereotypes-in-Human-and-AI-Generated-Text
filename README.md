@@ -157,6 +157,27 @@ it calls stereotype-related go to the 14B models.
 All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
 without a GPU.
 
+**Interpretability (SHAP):** which words drive the Qwen judge, and whether it reads the *gender + attribute*
+pairing rather than either word alone.
+
+- `shap_qwen.py` (GPU): SHAP Partition explainer on the adapter's log-odds of "stereotype" (masked tokens → "...").
+  It also runs a masking interaction for each sentence: G = its gendered words, a = a top non-gender word,
+  `f(x) − f(x\G) − f(x\a) + f(x\G\a)`. A value > 0 means the attribute pushes toward "stereotype" more when the gender
+  word is present.
+- `shap_analyze.py` (CPU) outputs:
+  - word importance (mean |SHAP|)
+  - share of attribution on gender vs. attribute words
+  - the same attribute's SHAP in male vs. female sentences
+  - CrowS gender swaps: do the shared words keep their SHAP when only the gender changes?
+  - interaction summary
+- Caveats: the adapters were trained on all 1,518 sentences, so this explains learned behavior, not held-out
+  generalization. Masked inputs are off-distribution.
+
+```bash
+python experiments/shap_qwen.py models/qwen14b_lora --max-evals 800 --batch 64   # GPU, all 1,518: ~50 min on an RTX 8000
+python experiments/shap_analyze.py outputs/shap/qwen14b_lora                      # CPU, tables + charts + summary.txt
+```
+
 ## Data
 
 Two public datasets, gender items only, reshaped to one labeled sentence per row
