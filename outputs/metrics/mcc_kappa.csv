@@ -1,0 +1,6 @@
+model,mcc,cohen_kappa
+Majority guess,0.0,0.0
+TF-IDF + LR,0.134,0.134
+mpnet + random forest,0.209,0.208
+Qwen 14B (LoRA),0.64,0.64
+Ensemble (9 models),0.676,0.676

@@ -1,0 +1,15 @@
+model,metric,estimate,ci_low,ci_high
+Majority guess,accuracy,0.5,0.5,0.5
+Majority guess,macro_F1,0.333,0.333,0.333
+TF-IDF + LR,accuracy,0.567,0.547,0.588
+TF-IDF + LR,macro_F1,0.567,0.547,0.588
+TF-IDF + LR,AUC,0.583,0.56,0.606
+mpnet + random forest,accuracy,0.604,0.582,0.626
+mpnet + random forest,macro_F1,0.604,0.581,0.626
+mpnet + random forest,AUC,0.667,0.644,0.69
+Qwen 14B (LoRA),accuracy,0.82,0.801,0.84
+Qwen 14B (LoRA),macro_F1,0.82,0.801,0.84
+Qwen 14B (LoRA),AUC,0.888,0.87,0.904
+Ensemble (9 models),accuracy,0.838,0.819,0.856
+Ensemble (9 models),macro_F1,0.838,0.819,0.856
+Ensemble (9 models),AUC,0.915,0.899,0.928

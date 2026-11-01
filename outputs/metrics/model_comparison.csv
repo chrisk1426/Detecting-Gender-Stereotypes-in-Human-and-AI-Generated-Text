@@ -1,0 +1,5 @@
+comparison,accuracy_diff,ci_low,ci_high,share_of_resamples_diff_le_0,only_first_right,only_second_right,mcnemar_exact_p
+Ensemble (9 models) minus Qwen 14B (LoRA),0.0178,0.0026,0.0323,0.0118,82,55,0.026
+Qwen 14B (LoRA) minus mpnet + random forest,0.2161,0.1891,0.2437,0.0,457,129,0.0
+Qwen 14B (LoRA) minus TF-IDF + LR,0.253,0.2253,0.2787,0.0,515,131,0.0
+mpnet + random forest minus TF-IDF + LR,0.0369,0.0086,0.0639,0.0052,344,288,0.0286
