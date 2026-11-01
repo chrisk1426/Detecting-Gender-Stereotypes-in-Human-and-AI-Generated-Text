@@ -19,7 +19,7 @@ import numpy as np, pandas as pd
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from shap_utils import GENDER, PUNCT, gender_of, group_words, key
+from shap_utils import GENDER, NAMES, PUNCT, gender_of, group_words, key
 
 MIN_N = 5        # word must appear in this many sentences for word_importance
 SWAP_SOURCES = ("crows", "gest")  # datasets whose pairs differ only in the gender word
@@ -35,7 +35,7 @@ def word_table(tokens):
         keys = [key(w) for w, _ in words]
         g = gender_of(keys)
         for (w, idx), k in zip(words, keys):
-            kind = ("punct" if not k or PUNCT.match(w) else "gender" if k in GENDER
+            kind = ("punct" if not k or PUNCT.match(w) else "gender" if k in GENDER else "name" if k in NAMES
                     else "function" if k in ENGLISH_STOP_WORDS else "attribute")
             rows.append((sid, t.pair_id.iat[0], t.label.iat[0], t.source.iat[0], g, w, k, kind, vals[idx].sum(),
                          t.fx.iat[0]))
@@ -72,7 +72,7 @@ def main(d):
     imp.to_csv(d / "word_importance.csv")
     top = imp.head(25)
     fig, ax = plt.subplots(1, 2, figsize=(11, 7))
-    col = {"gender": "#c0392b", "attribute": "#2e86c1", "function": "#aab7b8"}
+    col = {"gender": "#c0392b", "name": "#e59866", "attribute": "#2e86c1", "function": "#aab7b8"}
     barh(ax[0], top.index, top.mean_abs, [col[k] for k in top.kind], "Top words: mean |SHAP|",
          "mean |SHAP| (log-odds)")
     signed = imp[imp.kind == "attribute"].sort_values("mean")
@@ -90,9 +90,9 @@ def main(d):
                                                  aggfunc="sum", fill_value=0)
     share = share.div(share.sum(1), axis=0).reset_index()
     share.to_csv(d / "attribution_share.csv", index=False)
-    has_g = share[share.get("gender", 0) > 0]
-    m = has_g[[c for c in ("gender", "attribute", "function", "punct") if c in has_g]].mean()
-    out.append("Share of |SHAP| (sentences with a gender word): " + ", ".join(f"{k} {v:.0%}" for k, v in m.items()))
+    has_g = share[(share.get("gender", 0) + share.get("name", 0)) > 0]
+    m = has_g[[c for c in ("gender", "name", "attribute", "function", "punct") if c in has_g]].mean()
+    out.append("Share of |SHAP| (sentences with a gender word or first name): " + ", ".join(f"{k} {v:.0%}" for k, v in m.items()))
 
     # 3. attribute x gender: does the same attribute word count differently for men and women?
     A = W[(W.kind == "attribute") & W.gender.isin(["male", "female"])]

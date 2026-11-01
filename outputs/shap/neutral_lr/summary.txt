@@ -1,7 +1,7 @@
 Top 10 words by mean |SHAP|: schoolgirls (2.02), overbearing (1.89), attended (1.82), uncaring (1.80), bad (1.77), schoolboys (1.62), dirty (1.61), gentlement (1.54), beautiful (1.52), gentle (1.49)
-Share of |SHAP| (sentences with a gender word): gender 19%, attribute 43%, function 26%, punct 12%
-Attribute words seen with both genders: 257; corr(male SHAP, female SHAP) = 0.95 (1 = gender-independent, < 0 = flips with gender)
-Most stereotypical for women: fun, looks, feminine, tall, group, masculine, student, football
-Most stereotypical for men:   bought, watch, love, complete, tell, enjoyed, color, lunch
-Gender swaps (crows): 261 pairs, 1368 shared attribute words; corr(SHAP stereo version, SHAP anti version) = 0.99; sign flips 4%; mean SHAP +0.187 (stereo) vs +0.187 (anti)
+Share of |SHAP| (sentences with a gender word or first name): gender 19%, name 2%, attribute 42%, function 26%, punct 11%
+Attribute words seen with both genders: 270; corr(male SHAP, female SHAP) = 0.95 (1 = gender-independent, < 0 = flips with gender)
+Most stereotypical for women: fun, looks, feminine, tall, group, masculine, waited, bread
+Most stereotypical for men:   bought, watch, love, complete, tell, enjoyed, hours, color
+Gender swaps (crows): 261 pairs, 1337 shared attribute words; corr(SHAP stereo version, SHAP anti version) = 0.99; sign flips 4%; mean SHAP +0.175 (stereo) vs +0.176 (anti)
 Interaction (top attribute, mean): anti-stereotype -0.22 (33% > 0, n=708); neutral -0.26 (32% > 0, n=1289); stereotype -0.28 (31% > 0, n=707)

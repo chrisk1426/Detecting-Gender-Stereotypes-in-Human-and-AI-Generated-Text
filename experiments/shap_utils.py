@@ -9,6 +9,18 @@ daughters wife wives sister sisters lady ladies gal grandmother grandmothers gra
 mrs ms miss madam queen bride girlfriend girlfriends schoolgirl schoolgirls fiancee stepmother""".split())
 GENDER = MALE | FEMALE
 
+# First names in CrowS-Pairs / StereoSet (all always-capitalized words in the data, classified by hand; unisex names
+# such as Alex, Jamie, Kim and Sam are left out). Names are a gender cue, kept separate from the words above.
+MALE_NAMES = set("""adam alan alexander andrew anse austin ben bill billy bob brad carl charles craig daniel david denny
+drew dylan earl ed eric gary george greg harold jack jacob jake james jason jeff jeffrey jeremy jim jimmy joe john josh
+julius kenny kevin kyle laquan lars mack mark martin marty mathew matt michael mike paul robert ron ronnie ryan scott
+shane shawn silas steve stewart tim tom tommy tony wesley william""".split())
+FEMALE_NAMES = set("""alena anna beth brenda camille candace candice carol carrie cathy celia charlene cheryl cynthia
+emily greta heather jane jasmine jen jenna jennifer jenny jessica jill joyce judy juliette kassandra kassidy kate katherine
+kathy kelly lara lena lisa liz lucy lynn maggie marie martha mary mattie maya megan melissa missy molly monica naomi
+priya sally samantha sara sarah shannon sharon shelby shelly sue susan susie tammy veronica wendy""".split())
+NAMES = MALE_NAMES | FEMALE_NAMES
+
 PUNCT = re.compile(r"^\W+$")
 
 
@@ -34,7 +46,7 @@ def group_words(tokens):
 
 
 def gender_of(keys):
-    """'male' / 'female' by majority of gendered words, 'mixed' on a tie, 'none' if no gendered words."""
-    m = sum(k in MALE for k in keys)
-    f = sum(k in FEMALE for k in keys)
+    """'male' / 'female' by majority of gendered words and first names, 'mixed' on a tie, 'none' if neither."""
+    m = sum(k in MALE or k in MALE_NAMES for k in keys)
+    f = sum(k in FEMALE or k in FEMALE_NAMES for k in keys)
     return "none" if m == f == 0 else "male" if m > f else "female" if f > m else "mixed"

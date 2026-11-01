@@ -160,6 +160,9 @@ without a GPU.
 **Interpretability (SHAP):** which words drive the Qwen judge, and whether it reads the *gender + attribute*
 pairing rather than either word alone.
 
+Results: [interactive interpretability report](https://claude.ai/artifact/48u3FWFt3Mesq4qFqPKXi7) (source: `docs/interpretability.html`,
+open it in a browser; rebuild with `python experiments/shap_report.py`). Summary table: `outputs/shap/comparison.md`.
+
 - `shap_qwen.py` (GPU): SHAP Partition explainer on the adapter's log-odds of "stereotype" (masked tokens → "...").
   It also runs a masking interaction for each sentence: G = its gendered words, a = a top non-gender word,
   `f(x) − f(x\G) − f(x\a) + f(x\G\a)`. A value > 0 means the attribute pushes toward "stereotype" more when the gender
@@ -176,6 +179,7 @@ pairing rather than either word alone.
 ```bash
 python experiments/shap_qwen.py models/qwen14b_lora --max-evals 800 --batch 64   # GPU, all 1,518: ~50 min on an RTX 8000
 python experiments/shap_analyze.py outputs/shap/qwen14b_lora                      # CPU, tables + charts + summary.txt
+python experiments/shap_report.py                                                  # CPU, rebuilds docs/interpretability.html
 python experiments/shap_qwen.py models/qwen14b_lora --data data/external/gest_pairs.csv --n 1500 --max-evals 800  # held out: GEST was not in this adapter's training data
 python experiments/shap_qwen.py --neutral --max-evals 800 --batch 64   # neutral detector: its training data + held-out neutral sets, ~45 min
 ```
