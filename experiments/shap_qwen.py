@@ -2,6 +2,7 @@
 
   python experiments/shap_qwen.py models/qwen14b_lora               # all 1,518 sentences
   python experiments/shap_qwen.py models/qwen14b_lora --n 300       # random sample of pairs (both sentences kept)
+  python experiments/shap_qwen.py models/qwen14b_lora --data data/external/gest_pairs.csv --n 1500   # held-out text
   python experiments/shap_qwen.py --hf distilbert-base-uncased-finetuned-sst-2-english --n 6   # CPU smoke test
 
 What is explained: the log-odds of P(stereotype) from the adapter. SHAP's Partition explainer masks groups of tokens
@@ -73,17 +74,23 @@ def main():
     ap.add_argument("--n", type=int, default=0, help="sample this many sentences (by pair); 0 = all")
     ap.add_argument("--max-evals", type=int, default=400, help="SHAP model calls per sentence")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--data", default="data/processed/merged_gender.csv",
+                    help="CSV with pair_id, sentence, label (e.g. data/external/gest_pairs.csv for held-out text)")
     ap.add_argument("--batch", type=int, default=32, help="forward-pass batch size")
     ap.add_argument("--shard", default="0/1", help="i/k: run pairs i, i+k, ... (one GPU each; analyze merges shards)")
     args = ap.parse_args()
 
-    df = pd.read_csv(ROOT / "data" / "processed" / "merged_gender.csv")
+    df = pd.read_csv(ROOT / args.data)
+    if "source" not in df:
+        df["source"] = Path(args.data).stem.removesuffix("_pairs")
     if args.n:
         pairs = df.pair_id.drop_duplicates().sample(frac=1, random_state=args.seed)
         df = df[df.pair_id.isin(pairs.iloc[:max(1, args.n // 2)])]
     i, k = map(int, args.shard.split("/"))
     df = df[df.pair_id.map({p: j % k for j, p in enumerate(df.pair_id.unique())}) == i]  # sid = row in full data
     tag = Path(args.hf).name if args.hf else Path(args.adapter).name
+    if Path(args.data).name != "merged_gender.csv":
+        tag += "__" + Path(args.data).stem
     sfx = f"_{i}of{k}" if k > 1 else ""
     out_dir = ROOT / "outputs" / "shap" / tag
     out_dir.mkdir(parents=True, exist_ok=True)

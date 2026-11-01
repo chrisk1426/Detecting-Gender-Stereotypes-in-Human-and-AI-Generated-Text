@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from shap_utils import GENDER, PUNCT, gender_of, group_words, key
 
 MIN_N = 5        # word must appear in this many sentences for word_importance
+SWAP_SOURCES = ("crows", "gest")  # datasets whose pairs differ only in the gender word
 MIN_N_GENDER = 3 # ... and this many sentences of each gender for attr_by_gender
 
 
@@ -122,7 +123,7 @@ def main(d):
         out.append("Most stereotypical for men:   " + ", ".join(ag.index[:8]))
 
     # 4. CrowS-Pairs gender swaps: same words, other gender. Do shared words keep their SHAP?
-    C = W[(W.source == "crows") & (W.kind == "attribute")]
+    C = W[W.source.isin(SWAP_SOURCES) & (W.kind == "attribute")]
     rows = []
     for pid, p in C.groupby("pair_id"):
         if p.sid.nunique() != 2:
@@ -135,11 +136,12 @@ def main(d):
         rows.append(m.assign(pair_id=pid)[["pair_id", "key", "shap_stereo", "shap_anti", "gender_stereo",
                                            "gender_anti"]])
     cs = pd.concat(rows) if rows else pd.DataFrame()
+    cs_sources = sorted(set(C.source))
     if len(cs):
         cs.to_csv(d / "crows_swap.csv", index=False)
         flip = (np.sign(cs.shap_stereo) != np.sign(cs.shap_anti)).mean()
         r = np.corrcoef(cs.shap_stereo, cs.shap_anti)[0, 1]
-        out.append(f"CrowS gender swaps: {cs.pair_id.nunique()} pairs, {len(cs)} shared attribute words; "
+        out.append(f"Gender swaps ({', '.join(cs_sources)}): {cs.pair_id.nunique()} pairs, {len(cs)} shared attribute words; "
                    f"corr(SHAP stereo version, SHAP anti version) = {r:.2f}; sign flips {flip:.0%}; "
                    f"mean SHAP {cs.shap_stereo.mean():+.3f} (stereo) vs {cs.shap_anti.mean():+.3f} (anti)")
 
