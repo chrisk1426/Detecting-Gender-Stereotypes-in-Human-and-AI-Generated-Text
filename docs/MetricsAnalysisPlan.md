@@ -242,7 +242,7 @@ From the README and `DATANOTES.md`; none of this has been checked against the au
 - A single-sentence label has a built-in ceiling: a careful human agreed with the dataset on about 74-78% of the
   random sentences, because the labels are relative to a partner sentence. Model accuracy near 0.84 on single
   sentences should be read with that ceiling in mind.
-- Second labeler (Y8): Chris labels blank copies of the same sheets (`outputs/audit/for_chris/`, git-ignored, sent directly). Julia's labeled sheets had been in his local repo since 2026-11-02 (he pulled them); he reported not having opened them. His labels are therefore independent only on his word. Report this when stating his agreement with Julia.
+- Second labeler (Y8): Chris labels blank copies of the same sheets (`outputs/audit/for_chris/`, git-ignored, sent directly). Julia's labeled sheets were in his local repo before he labeled (he had pulled them); he reported not having opened them. His labels are therefore independent only on his word. Report this when stating his agreement with Julia.
 
 ## Reproduce everything (once the scripts exist)
 
@@ -288,4 +288,4 @@ python experiments/ensemble.py
 - [ ] Which single model counts as "the Qwen classifier" in the final write-up: the 14B 12-epoch run or the ensemble?
 - [x] Audit size: C1 (30 single sentences) + C2 (10 pairs = 20 sentences) = 50 sentences, plus about 10 targeted (C3). Decided 2026-10-27.
 - [ ] Where do the neutral examples for the C4 batch come from (generated sentences? Chris's detector data)? Ask Chris.
-- [~] Does anyone besides Julia label the sheets? Chris agreed to (2026-11-02, Y8); blank copies made in `outputs/audit/for_chris/`, to be sent directly. Chris decided not to run Qwen on the neutral sentences, so the three-class table stays detector-only (the 3x3 with Qwen on neutrals is left as a stated limitation).
+- [~] Does anyone besides Julia label the sheets? Julia is asking Chris to (2026-11-02, Y8; not confirmed yet); blank copies made in `outputs/audit/for_chris/`, to be sent directly. Chris decided not to run Qwen on the neutral sentences, so the three-class table stays detector-only (the 3x3 with Qwen on neutrals is left as a stated limitation).
