@@ -1,0 +1,35 @@
+family,group,model,n,accuracy,ci_low,ci_high
+source,crows,Qwen 14B,524,0.809,0.773,0.841
+source,crows,Ensemble,524,0.84,0.806,0.869
+source,stereoset_inter,Qwen 14B,484,0.814,0.777,0.846
+source,stereoset_inter,Ensemble,484,0.831,0.795,0.861
+source,stereoset_intra,Qwen 14B,510,0.837,0.803,0.867
+source,stereoset_intra,Ensemble,510,0.843,0.809,0.872
+dataset label,label: anti,Qwen 14B,759,0.825,0.796,0.85
+dataset label,label: anti,Ensemble,759,0.843,0.816,0.867
+dataset label,label: stereotype,Qwen 14B,759,0.816,0.786,0.842
+dataset label,label: stereotype,Ensemble,759,0.833,0.804,0.858
+length,<=8 words,Qwen 14B,430,0.84,0.802,0.871
+length,<=8 words,Ensemble,430,0.849,0.812,0.88
+length,9-12,Qwen 14B,461,0.809,0.771,0.842
+length,9-12,Ensemble,461,0.833,0.796,0.864
+length,13-17,Qwen 14B,383,0.833,0.792,0.867
+length,13-17,Ensemble,383,0.843,0.804,0.876
+length,18+,Qwen 14B,244,0.787,0.731,0.834
+length,18+,Ensemble,244,0.82,0.767,0.863
+gender words,both,Qwen 14B,229,0.782,0.724,0.83
+gender words,both,Ensemble,229,0.803,0.747,0.85
+gender words,female words only,Qwen 14B,570,0.863,0.833,0.889
+gender words,female words only,Ensemble,570,0.87,0.84,0.895
+gender words,male words only,Qwen 14B,628,0.796,0.763,0.826
+gender words,male words only,Ensemble,628,0.817,0.785,0.845
+gender words,no gender word,Qwen 14B,91,0.813,0.721,0.88
+gender words,no gender word,Ensemble,91,0.868,0.784,0.923
+negation,has negation,Qwen 14B,187,0.802,0.739,0.853
+negation,has negation,Ensemble,187,0.802,0.739,0.853
+negation,no negation,Qwen 14B,1331,0.823,0.801,0.842
+negation,no negation,Ensemble,1331,0.843,0.822,0.862
+occupation,no occupation word,Qwen 14B,1448,0.818,0.798,0.837
+occupation,no occupation word,Ensemble,1448,0.836,0.816,0.854
+occupation,occupation word,Qwen 14B,70,0.857,0.757,0.921
+occupation,occupation word,Ensemble,70,0.871,0.773,0.931

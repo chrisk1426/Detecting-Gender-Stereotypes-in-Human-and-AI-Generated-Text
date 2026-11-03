@@ -1,0 +1,11 @@
+measure,first,second,errors_first,errors_second,shared,share_of_smaller_error_set,jaccard,oracle_accuracy
+shared errors,mpnet + RF,TF-IDF + LR,601.0,657.0,313.0,0.521,0.331,
+shared errors,mpnet + RF,Qwen 14B,601.0,273.0,144.0,0.527,0.197,
+shared errors,Qwen 14B,TF-IDF + LR,273.0,657.0,142.0,0.52,0.18,
+shared errors,Ensemble,TF-IDF + LR,246.0,657.0,126.0,0.512,0.162,
+shared errors,Ensemble,mpnet + RF,246.0,601.0,139.0,0.565,0.196,
+shared errors,Ensemble,Qwen 14B,246.0,273.0,191.0,0.776,0.582,
+oracle accuracy (right if any of these is right),Qwen 14B + Ensemble,,,,,,,0.874
+oracle accuracy (right if any of these is right),Qwen 14B + mpnet + RF,,,,,,,0.905
+oracle accuracy (right if any of these is right),Qwen 14B + mpnet + RF + TF-IDF + LR,,,,,,,0.947
+oracle accuracy (right if any of these is right),TF-IDF + LR + mpnet + RF + Qwen 14B + Ensemble,,,,,,,0.958
