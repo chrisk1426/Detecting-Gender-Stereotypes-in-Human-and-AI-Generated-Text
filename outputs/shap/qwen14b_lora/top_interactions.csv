@@ -1,0 +1,31 @@
+sentence,label,gender_words,attr,interaction,f_full,f_no_gender,f_no_attr,f_no_both
+Judy's male friend is very strong.,1,male,friend,44.399414,15.574219,-11.7265625,-15.214844,1.8837891
+Women have dreams of spending a lot of money.,1,women,spending,39.253418,14.621094,5.6879883,-15.121094,15.199219
+The new kitten was male. He had been neutered.,1,male he,kitten,36.666016,16.109375,-9.052734,-4.828125,6.6757812
+Girls are hopeless at outdoor activities.,1,girls,hopeless,34.960938,15.6953125,7.388672,-16.726562,9.927734
+Males act violent with their girlfriends.,1,males girlfriends,violent,33.825928,19.242188,3.1240234,-19.148438,-1.4406738
+"She wasn't a very brave girl, but maybe in the future.. who knows..",1,she girl,brave,33.28711,18.890625,-4.3427734,-11.53125,-1.4775391
+The boy thought his mommy would refuse to let him go to the playground. She was distracted today and decided it was fine if he went to play for awhile.,1,boy his mommy him she he,refuse,32.33789,12.910156,-9.9765625,-10.515625,-1.0644531
+The fraternity contained lots of gentlemen. They would dress up for major parties.,1,gentlemen,dress,31.907715,8.730469,-6.658203,-3.9194336,12.599609
+Jenny was a fighter jet pilot who was deployed multiple times throughout the course of her career.,0,her,jenny,31.636719,-20.5,-20.054688,-18.539062,13.542969
+He does not keep his opinions to himself.,1,he his himself,opinions,31.5542,14.699219,-6.9648438,-12.3515625,-2.4614258
+Everyone has a Grandfather. He is often nice to his children's children.,1,grandfather he his,children's,31.173828,15.535156,-0.515625,-11.730469,3.3925781
+The sexy schoolgirl was popular with the teachers.,1,schoolgirl,sexy,31.02832,14.5,-12.074219,-3.3583984,1.0957031
+the girls mommy was tall she was very nurturing,1,girls mommy she,nurturing,30.952393,17.949219,-8.354492,3.159912,7.8085938
+"She is a normal schoolgirl, she enjoys learning. She likes to crochet slippers during recess.",1,she schoolgirl she she,crochet,29.91211,18.460938,-12.0859375,-6.5253906,-7.1601562
+My friend Adam  was the man in the relationship when he was dating Sarah.,1,man he,dating,29.708496,22.140625,12.896484,-11.3515625,9.112793
+She couldn't change the oil herself. Women don't know how to work on cars.,1,she herself women,don't,29.026367,17.035156,9.563477,-14.8046875,6.75
+Our grandfather is 80 years old. He is a tech whiz and knows all the latest trends.,0,grandfather he,80,28.914062,-22.3125,-15.5859375,-23.648438,11.9921875
+The zumba class was filled with men who cared about their looks.,0,men,filled,28.738281,-19.714844,-20.195312,-19.292969,8.964844
+His sister wanted to play. They played dress up and house.,1,his sister,dress,28.70337,18.015625,-3.2189941,-2.0478516,5.4208984
+One half of the human population is male. They are considered aggressive.,1,male,aggressive,28.568848,15.996094,-6.3671875,1.5795898,7.7851562
+The creatures were trained to be gentle by female trainers.,1,female,gentle,28.542969,12.8984375,1.8691406,-9.980469,7.533203
+"The CEO Mary, however, was known for her harsh and ruthless tactics and she didn't care about her image.",0,her she her,mary,28.296875,-16.1875,-16.757812,-13.480469,14.246094
+The girl's mommy was very masculine.,0,mommy,girl's,27.675781,-24.382812,-17.449219,-19.757812,14.8515625
+That group of gentlemen is being considerate about it.,1,gentlemen,considerate,27.62207,10.341797,-13.28125,7.336914,11.3359375
+Mary loved to hunt. She would shoot at whatever animal she came across. Her home office displayed all of her hunting trophies.,0,she she her her,mary,27.558594,-16.804688,-15.9375,-15.113281,13.3125
+Judy's male friend is very strong.,1,male,strong,27.456055,15.574219,-11.730469,5.0117188,5.163086
+The little boy asked for his mommy. They are associated with taking care of the family while the father works.,1,boy his mommy father,little,27.391113,14.152344,3.980957,-10.802734,6.416992
+The schoolgirl with the ponytail is smart.,1,schoolgirl,ponytail,27.362305,10.537109,-15.667969,-6.8984375,-5.741211
+Women don't get hungry when they work hard.,0,women,don't,27.226562,-17.398438,-17.597656,-16.832031,10.1953125
+The little boy called for his mommy. She has a lot of household chores to do.,1,boy his mommy she,household,26.83496,22.964844,-6.9257812,4.6210938,1.5654297

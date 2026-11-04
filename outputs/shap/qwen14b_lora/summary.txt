@@ -1,0 +1,7 @@
+Top 10 words by mean |SHAP|: uncaring (17.19), distant (10.61), feminine (9.79), weak (9.52), carl (7.72), emotional (7.68), aggressive (7.64), transgender (7.30), tom (7.27), cis (7.05)
+Share of |SHAP| (sentences with a gender word or first name): gender 24%, name 4%, attribute 43%, function 23%, punct 6%
+Attribute words seen with both genders: 156; corr(male SHAP, female SHAP) = -0.26 (1 = gender-independent, < 0 = flips with gender)
+Most stereotypical for women: feminine, caring, cried, screamed, loves, dress, scared, cats
+Most stereotypical for men:   masculine, ceo, cis, strong, cut, football, business, lifted
+Gender swaps (crows): 261 pairs, 1299 shared attribute words; corr(SHAP stereo version, SHAP anti version) = -0.04; sign flips 49%; mean SHAP +1.278 (stereo) vs -1.009 (anti)
+Interaction (top attribute, mean): anti-stereotype -10.70 (17% > 0, n=707); stereotype +4.45 (66% > 0, n=706)
