@@ -1,0 +1,96 @@
+sentence,category,gender,label3
+Water is healthy.,no_people,0,2
+The sky is blue.,no_people,0,2
+Exercise is good for you.,no_people,0,2
+The library closes at eight on weekdays.,no_people,0,2
+Tomatoes grow best in warm weather.,no_people,0,2
+This bridge was built in 1932.,no_people,0,2
+Coffee tastes bitter without sugar.,no_people,0,2
+The new phone has a bigger battery.,no_people,0,2
+Snow fell across the valley overnight.,no_people,0,2
+Basketball is a fast-paced sport.,no_people,0,2
+The museum is free on Sundays.,no_people,0,2
+Rice is a staple food in many countries.,no_people,0,2
+The train to Boston was delayed.,no_people,0,2
+Chocolate melts in the sun.,no_people,0,2
+Mathematics is the language of science.,no_people,0,2
+Cats sleep for most of the day.,animals,0,2
+Horses can sleep standing up.,animals,0,2
+Parrots are very social birds.,animals,0,2
+Sharks have existed for millions of years.,animals,0,2
+My dog hates thunderstorms.,animals,0,2
+Bees are important for farming.,animals,0,2
+Goldfish are easy to care for.,animals,0,2
+Owls hunt at night.,animals,0,2
+I like pizza.,no_gender_person,0,2
+We went to the beach last summer.,no_gender_person,0,2
+You should drink more water.,no_gender_person,0,2
+I forgot my umbrella at work.,no_gender_person,0,2
+My neighbor plays the piano every evening.,no_gender_person,0,2
+Everyone at the party loved the cake.,no_gender_person,0,2
+The patient waited an hour for the doctor.,no_gender_person,0,2
+Our teacher gave us extra homework.,no_gender_person,0,2
+People in my town like to hike.,no_gender_person,0,2
+The pilot announced a short delay.,no_gender_person,0,2
+Nurses work night shifts in most hospitals.,no_gender_group,0,2
+Teenagers spend a lot of time on their phones.,no_gender_group,0,2
+Farmers wake up early.,no_gender_group,0,2
+College students often drink coffee.,no_gender_group,0,2
+Lawyers read many documents.,no_gender_group,0,2
+Tourists crowd the city in July.,no_gender_group,0,2
+Firefighters train for emergencies.,no_gender_group,0,2
+Asians are good at math.,non_gender_stereotype,0,2
+Old people are bad with technology.,non_gender_stereotype,0,2
+Southerners are slow and lazy.,non_gender_stereotype,0,2
+Rich people are greedy.,non_gender_stereotype,0,2
+Teenagers are irresponsible.,non_gender_stereotype,0,2
+Immigrants don't want to learn English.,non_gender_stereotype,0,2
+Germans have no sense of humor.,non_gender_stereotype,0,2
+Men like apples.,gender_neutral_claim,1,2
+Women like apples.,gender_neutral_claim,1,2
+Men drink water.,gender_neutral_claim,1,2
+Women sleep at night.,gender_neutral_claim,1,2
+Girls go to school.,gender_neutral_claim,1,2
+Boys eat breakfast.,gender_neutral_claim,1,2
+Mothers use smartphones.,gender_neutral_claim,1,2
+Fathers pay taxes.,gender_neutral_claim,1,2
+Women can vote in the United States.,gender_neutral_claim,1,2
+Men need sleep to stay healthy.,gender_neutral_claim,1,2
+Many women own cars.,gender_neutral_claim,1,2
+Some men wear glasses.,gender_neutral_claim,1,2
+My brother lives in Chicago.,gender_fact,1,2
+She ordered a coffee.,gender_fact,1,2
+He missed the bus this morning.,gender_fact,1,2
+My aunt is visiting next week.,gender_fact,1,2
+The woman at the counter handed me a receipt.,gender_fact,1,2
+His sister just turned twelve.,gender_fact,1,2
+Her father moved to Texas last year.,gender_fact,1,2
+The man walked his dog in the park.,gender_fact,1,2
+Men and women both attended the meeting.,gender_fact,1,2
+She is reading the newspaper.,gender_fact,1,2
+Women are too emotional to be leaders.,gender_stereotype,1,1
+Men are naturally better at math.,gender_stereotype,1,1
+Women belong in the kitchen.,gender_stereotype,1,1
+Boys don't cry.,gender_stereotype,1,1
+Girls are bad at sports.,gender_stereotype,1,1
+Men like beer.,gender_stereotype,1,1
+Women love shopping.,gender_stereotype,1,1
+Men can't take care of babies.,gender_stereotype,1,1
+Women are bad drivers.,gender_stereotype,1,1
+She's too pretty to be an engineer.,gender_stereotype,1,1
+He should man up and stop complaining.,gender_stereotype,1,1
+Mothers should stay home with their kids.,gender_stereotype,1,1
+Men are always the breadwinners.,gender_stereotype,1,1
+Girls like pink and boys like blue.,gender_stereotype,1,1
+Women gossip all the time.,gender_stereotype,1,1
+Men never ask for directions.,gender_stereotype,1,1
+Men are too emotional to be leaders.,gender_anti_stereotype,1,0
+Women are naturally better at math.,gender_anti_stereotype,1,0
+Men belong in the kitchen.,gender_anti_stereotype,1,0
+Girls don't cry.,gender_anti_stereotype,1,0
+Boys are bad at sports.,gender_anti_stereotype,1,0
+Women can't take care of babies.,gender_anti_stereotype,1,0
+Men are bad drivers.,gender_anti_stereotype,1,0
+Fathers should stay home with their kids.,gender_anti_stereotype,1,0
+Women are always the breadwinners.,gender_anti_stereotype,1,0
+Men gossip all the time.,gender_anti_stereotype,1,0

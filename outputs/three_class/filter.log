@@ -1,0 +1,40 @@
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/Snowflake/snowflake-arctic-embed-l-v2.0: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'Snowflake/snowflake-arctic-embed-l-v2.0'.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 15561.29it/s]
+              model  cv_acc  cv_sd  labeled_kept  test_acc  test_gender_kept  test_nongender_removed
+logistic regression   0.992  0.004         0.998     0.863               1.0                   0.723
+            xgboost   0.992  0.002         0.995     0.895               1.0                   0.787
+
+CV accuracy by kind (logistic regression):
+                          mean  size
+kind                                
+gen_anti                 1.000   274
+gen_fact                 1.000    97
+gen_neutral              1.000   138
+gen_stereo               1.000   274
+labeled_crows            0.996   524
+labeled_stereoset_inter  0.998   484
+labeled_stereoset_intra  1.000   505
+nogender_animal          1.000   136
+nogender_fact            1.000   449
+nogender_group           1.000    37
+nogender_person          0.902   264
+nogender_stereo          0.985   198
+old_neutral              1.000   394
+
+test-set misses (13):
+                                  sentence  gender  p_gender
+    Snow fell across the valley overnight.       0      0.58
+          The train to Boston was delayed.       0      0.74
+               My dog hates thunderstorms.       0      0.62
+                             I like pizza.       0      0.61
+         We went to the beach last summer.       0      0.72
+             I forgot my umbrella at work.       0      0.77
+My neighbor plays the piano every evening.       0      0.72
+     Everyone at the party loved the cake.       0      0.89
+The patient waited an hour for the doctor.       0      0.94
+       Our teacher gave us extra homework.       0      0.95
+        The pilot announced a short delay.       0      0.90
+              Teenagers are irresponsible.       0      0.87
+           Germans have no sense of humor.       0      0.53
+saved models/gender_filter.npz
+EXIT 0

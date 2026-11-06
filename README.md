@@ -9,7 +9,7 @@ occupation-linked gender bias. See the project proposal for the full plan.
 Done so far: dataset merge, exploration and data analysis (`DATANOTES.md`), grouped 5-fold split, Chris's
 Week 1–2 models, Julia's TF-IDF + LR (`tf-idf/`), and the improved classifier (0.838 accuracy, see
 [Improved classifier](#improved-classifier-experiments)).
-Not yet started: generation pipeline, error analysis, scoring pipeline, demo.
+Not yet started: generation pipeline, scoring pipeline. Interactive demo with live SHAP: see [Demo](#demo).
 
 ## Classifiers (Chris)
 
@@ -157,6 +157,41 @@ it calls stereotype-related go to the 14B models.
 All out-of-fold predictions are committed in `experiments/feat/`, so `ensemble.py` reproduces the final table
 without a GPU.
 
+**3-class pipeline (replaces the neutral detector):** the neutral detector above called almost any general claim
+stereotype-related ("Water is healthy." 0.81, "Dogs are loyal." 0.93, "Men like apples." 0.93), because every neutral
+example it saw was a person doing an everyday thing. On a hand-written test set the old pipeline got 0.43.
+
+- Data (`gen_neutral_v2.py` → `data/external/neutral_v2.csv`): Qwen2.5-14B writes the missing kinds of sentence (no
+  people, animals, first person, non-gender groups, non-gender stereotypes, gendered neutral claims like "Women drive
+  trucks.", gendered facts) plus gendered stereotype claims with their gender swaps (so writing style can't separate
+  the classes). The same model checks each sentence; only agreeing ones are kept. The old neutral set is cleaned the
+  same way (190 of 734 dropped as stereotype-related, `neutral_generated_dropped.csv`).
+- Models: `gender_filter.py` (Snowflake-L + logistic regression, gender-related or not → `models/gender_filter.npz`;
+  XGBoost compared) and `finetune_cv.py --three` (Qwen2.5-14B LoRA, 3 classes: anti / stereotype / neutral, on all
+  data from `data3.py`; same 5 grouped folds → `models/qwen14b_lora_3class`, 5 epochs).
+- Test set: `data/external/ood_test.csv`, 95 hand-written sentences in 9 categories that nothing trains on
+  (3 overlapping with training data dropped). Written by Claude, so it should be reviewed and extended.
+
+| | Old pipeline | New pipeline |
+|---|---|---|
+| Hand-written test set (92) | 0.43 | **0.92** |
+| 3-class CV accuracy | – | 0.892 (sd 0.008) |
+| Stereo vs anti on labeled sentences (CV) | 0.833 (2-model ensemble) | 0.822 |
+
+By test category (new): non-gender sentences 0.86–1.00, gender facts 1.00, stereotypes 1.00, anti-stereotypes 0.78,
+**gendered neutral claims 0.67** (weakest: "Men like apples." is still called anti-stereotype; only 138 such
+sentences survived the check). The filter adds nothing measurable over the 3-class judge alone; it is kept as a cheap
+first step. Full output: `outputs/three_class/eval.log`, `experiments/feat/ood_test_*.csv`.
+
+```bash
+python experiments/gen_neutral_v2.py                     # GPU, ~15 min
+python experiments/gender_filter.py                      # GPU for embeddings, ~1 min
+python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --three --epochs 6 --fold 0   # one per GPU
+python experiments/finetune_cv.py Qwen/Qwen2.5-14B-Instruct --lora --4bit --three --epochs 5 --final models/qwen14b_lora_3class
+python experiments/eval_three.py experiments/feat/ft_Qwen2.5-14B-Instruct_lora_4bit_3class_ep6_s72.csv \
+    models/qwen14b_lora_3class models/qwen14b_lora models/qwen14b_lora_gest
+```
+
 **Interpretability (SHAP):** which words drive the Qwen judge, and whether it reads the *gender + attribute*
 pairing rather than either word alone.
 
@@ -183,6 +218,25 @@ python experiments/shap_report.py                                               
 python experiments/shap_qwen.py models/qwen14b_lora --data data/external/gest_pairs.csv --n 1500 --max-evals 800  # held out: GEST was not in this adapter's training data
 python experiments/shap_qwen.py --neutral --max-evals 800 --batch 64   # neutral detector: its training data + held-out neutral sets, ~45 min
 ```
+
+## Demo
+
+`demo/` is a web page where you type sentences and the 3-class pipeline labels them (gender filter → 3-class 14B
+judge), with each probability shown as a bar, a button that adds gender-swapped versions, and an **Explain** button
+that computes live word-level SHAP values for the judge's predicted class (exact Shapley values up to 9 words, sampled
+permutations beyond; ~0.1–0.4 s per short sentence).
+
+```bash
+python demo/server.py                  # on lisplab (GPU, ~10 GB VRAM): loads models once, serves localhost:8000
+ssh -N -L 8000:localhost:8000 <you>@lisplab-1.thayer.dartmouth.edu   # on your laptop, then open http://localhost:8000
+python demo/server.py --mock           # no GPU: fake scores, for editing the page
+```
+
+Options: `--gpu N`, `--port N`, `--host 0.0.0.0`, `--password-file FILE` (visitors must enter a shared password).
+
+Shared link: Thayer's firewall blocks port 8000, so the lisplab copy (`/scratch2/f006j44/stereo-demo`) is shared through
+a Cloudflare quick tunnel (`cloudflared tunnel --url http://localhost:8000`, tmux session `tunnel`) and protected by
+`--password-file password.txt`. The trycloudflare.com URL changes whenever the tunnel restarts (see `tunnel.log`).
 
 ## Data
 

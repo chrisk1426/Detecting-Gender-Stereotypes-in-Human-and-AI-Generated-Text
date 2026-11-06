@@ -1,0 +1,100 @@
+== cross-validation (out-of-fold) ==
+3-class accuracy, Qwen alone:            0.892
+3-class accuracy, filter + Qwen:         0.891
+labeled sentences called neutral:        0.035
+stereo vs anti on labeled (p1 vs p0):    0.822   (old 2-class: 0.833 ensemble)
+  same, only those not called neutral:   0.823
+accuracy by kind (filter + Qwen):
+                          mean  size
+kind                                
+gen_anti                 0.931   274
+gen_fact                 0.969    97
+gen_neutral              0.964   138
+gen_stereo               0.916   274
+labeled_crows            0.781   524
+labeled_stereoset_inter  0.798   484
+labeled_stereoset_intra  0.804   505
+nogender_animal          1.000   136
+nogender_fact            1.000   449
+nogender_group           1.000    37
+nogender_person          1.000   264
+nogender_stereo          1.000   198
+old_neutral              0.878   394
+
+== hand-written test set: 95 sentences, 3 dropped (also in training data) ==
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/Snowflake/snowflake-arctic-embed-l-v2.0: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'Snowflake/snowflake-arctic-embed-l-v2.0'.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 10252.59it/s]
+Loading weights:   0%|          | 0/578 [00:00<?, ?it/s]Loading weights:   0%|          | 1/578 [00:00<02:20,  4.10it/s]Loading weights:   2%|▏         | 9/578 [00:00<00:18, 30.99it/s]Loading weights:   4%|▎         | 21/578 [00:00<00:09, 59.30it/s]Loading weights:   6%|▌         | 33/578 [00:00<00:06, 78.25it/s]Loading weights:   7%|▋         | 43/578 [00:00<00:06, 84.27it/s]Loading weights:  10%|▉         | 57/578 [00:00<00:05, 99.30it/s]Loading weights:  12%|█▏        | 69/578 [00:00<00:04, 105.41it/s]Loading weights:  14%|█▍        | 81/578 [00:00<00:04, 109.57it/s]Loading weights:  16%|█▌        | 93/578 [00:01<00:04, 112.15it/s]Loading weights:  18%|█▊        | 105/578 [00:01<00:04, 114.40it/s]Loading weights:  21%|██        | 119/578 [00:01<00:03, 119.12it/s]Loading weights:  23%|██▎       | 132/578 [00:01<00:03, 122.31it/s]Loading weights:  25%|██▌       | 147/578 [00:01<00:03, 122.01it/s]Loading weights:  28%|██▊       | 160/578 [00:01<00:03, 117.79it/s]Loading weights:  30%|██▉       | 172/578 [00:01<00:03, 118.40it/s]Loading weights:  32%|███▏      | 184/578 [00:01<00:03, 115.33it/s]Loading weights:  34%|███▍      | 196/578 [00:01<00:03, 113.59it/s]Loading weights:  36%|███▌      | 208/578 [00:02<00:03, 113.48it/s]Loading weights:  38%|███▊      | 220/578 [00:02<00:03, 113.18it/s]Loading weights:  40%|████      | 232/578 [00:02<00:03, 111.97it/s]Loading weights:  42%|████▏     | 244/578 [00:02<00:03, 110.84it/s]Loading weights:  44%|████▍     | 256/578 [00:02<00:02, 110.48it/s]Loading weights:  46%|████▋     | 268/578 [00:02<00:02, 111.66it/s]Loading weights:  48%|████▊     | 280/578 [00:02<00:02, 111.51it/s]Loading weights:  51%|█████     | 292/578 [00:02<00:02, 111.30it/s]Loading weights:  53%|█████▎    | 304/578 [00:02<00:02, 110.84it/s]Loading weights:  55%|█████▍    | 316/578 [00:03<00:02, 109.92it/s]Loading weights:  57%|█████▋    | 328/578 [00:03<00:02, 109.65it/s]Loading weights:  59%|█████▉    | 340/578 [00:03<00:02, 109.07it/s]Loading weights:  61%|██████    | 352/578 [00:03<00:02, 109.49it/s]Loading weights:  63%|██████▎   | 364/578 [00:03<00:01, 111.94it/s]Loading weights:  65%|██████▌   | 376/578 [00:03<00:01, 110.99it/s]Loading weights:  67%|██████▋   | 388/578 [00:03<00:01, 110.28it/s]Loading weights:  69%|██████▉   | 400/578 [00:03<00:01, 109.94it/s]Loading weights:  71%|███████▏  | 412/578 [00:03<00:01, 109.55it/s]Loading weights:  73%|███████▎  | 424/578 [00:04<00:01, 109.41it/s]Loading weights:  75%|███████▌  | 436/578 [00:04<00:01, 108.68it/s]Loading weights:  78%|███████▊  | 448/578 [00:04<00:01, 108.90it/s]Loading weights:  80%|███████▉  | 460/578 [00:04<00:01, 109.37it/s]Loading weights:  82%|████████▏ | 472/578 [00:04<00:00, 109.62it/s]Loading weights:  84%|████████▍ | 485/578 [00:04<00:00, 108.10it/s]Loading weights:  86%|████████▌ | 497/578 [00:04<00:00, 109.36it/s]Loading weights:  88%|████████▊ | 509/578 [00:04<00:00, 110.30it/s]Loading weights:  90%|█████████ | 521/578 [00:04<00:00, 108.75it/s]Loading weights:  92%|█████████▏| 533/578 [00:05<00:00, 109.36it/s]Loading weights:  94%|█████████▍| 545/578 [00:05<00:00, 109.75it/s]Loading weights:  96%|█████████▋| 557/578 [00:05<00:00, 109.46it/s]Loading weights:  98%|█████████▊| 569/578 [00:05<00:00, 110.01it/s]Loading weights: 100%|██████████| 578/578 [00:05<00:00, 107.71it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-14B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/578 [00:00<?, ?it/s]Loading weights:   0%|          | 1/578 [00:00<02:17,  4.20it/s]Loading weights:   2%|▏         | 9/578 [00:00<00:17, 32.52it/s]Loading weights:   4%|▎         | 21/578 [00:00<00:09, 61.23it/s]Loading weights:   6%|▌         | 33/578 [00:00<00:06, 79.01it/s]Loading weights:   8%|▊         | 45/578 [00:00<00:05, 91.07it/s]Loading weights:  10%|▉         | 57/578 [00:00<00:05, 99.32it/s]Loading weights:  12%|█▏        | 69/578 [00:00<00:04, 104.05it/s]Loading weights:  14%|█▍        | 81/578 [00:00<00:04, 106.63it/s]Loading weights:  16%|█▌        | 93/578 [00:01<00:04, 107.64it/s]Loading weights:  18%|█▊        | 105/578 [00:01<00:04, 108.36it/s]Loading weights:  20%|██        | 117/578 [00:01<00:04, 109.54it/s]Loading weights:  22%|██▏       | 129/578 [00:01<00:04, 110.00it/s]Loading weights:  24%|██▍       | 141/578 [00:01<00:03, 110.33it/s]Loading weights:  26%|██▋       | 153/578 [00:01<00:03, 111.51it/s]Loading weights:  29%|██▊       | 165/578 [00:01<00:03, 113.00it/s]Loading weights:  31%|███       | 177/578 [00:01<00:03, 113.71it/s]Loading weights:  33%|███▎      | 189/578 [00:01<00:03, 113.90it/s]Loading weights:  35%|███▍      | 201/578 [00:02<00:03, 113.52it/s]Loading weights:  37%|███▋      | 213/578 [00:02<00:03, 113.20it/s]Loading weights:  39%|███▉      | 225/578 [00:02<00:03, 113.04it/s]Loading weights:  41%|████      | 237/578 [00:02<00:03, 112.64it/s]Loading weights:  43%|████▎     | 249/578 [00:02<00:02, 111.39it/s]Loading weights:  45%|████▌     | 261/578 [00:02<00:02, 111.44it/s]Loading weights:  47%|████▋     | 273/578 [00:02<00:02, 111.15it/s]Loading weights:  49%|████▉     | 285/578 [00:02<00:02, 110.96it/s]Loading weights:  51%|█████▏    | 297/578 [00:02<00:02, 111.16it/s]Loading weights:  53%|█████▎    | 309/578 [00:03<00:02, 112.73it/s]Loading weights:  56%|█████▌    | 321/578 [00:03<00:02, 113.48it/s]Loading weights:  58%|█████▊    | 333/578 [00:03<00:02, 112.03it/s]Loading weights:  60%|█████▉    | 345/578 [00:03<00:02, 111.16it/s]Loading weights:  62%|██████▏   | 357/578 [00:03<00:02, 110.38it/s]Loading weights:  64%|██████▍   | 369/578 [00:03<00:01, 112.88it/s]Loading weights:  66%|██████▌   | 381/578 [00:03<00:01, 114.49it/s]Loading weights:  68%|██████▊   | 393/578 [00:03<00:01, 114.43it/s]Loading weights:  70%|███████   | 405/578 [00:03<00:01, 113.21it/s]Loading weights:  72%|███████▏  | 417/578 [00:03<00:01, 110.40it/s]Loading weights:  74%|███████▍  | 429/578 [00:04<00:01, 108.28it/s]Loading weights:  76%|███████▋  | 441/578 [00:04<00:01, 109.71it/s]Loading weights:  78%|███████▊  | 453/578 [00:04<00:01, 110.26it/s]Loading weights:  80%|████████  | 465/578 [00:04<00:01, 110.17it/s]Loading weights:  83%|████████▎ | 477/578 [00:04<00:00, 110.02it/s]Loading weights:  85%|████████▍ | 489/578 [00:04<00:00, 109.42it/s]Loading weights:  87%|████████▋ | 500/578 [00:04<00:00, 109.41it/s]Loading weights:  88%|████████▊ | 511/578 [00:04<00:00, 106.35it/s]Loading weights:  90%|█████████ | 522/578 [00:04<00:00, 104.29it/s]Loading weights:  92%|█████████▏| 533/578 [00:05<00:00, 102.47it/s]Loading weights:  94%|█████████▍| 545/578 [00:05<00:00, 104.92it/s]Loading weights:  96%|█████████▋| 557/578 [00:05<00:00, 106.11it/s]Loading weights:  98%|█████████▊| 569/578 [00:05<00:00, 106.48it/s]Loading weights: 100%|██████████| 578/578 [00:05<00:00, 106.71it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-14B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/578 [00:00<?, ?it/s]Loading weights:   0%|          | 1/578 [00:00<02:17,  4.18it/s]Loading weights:   2%|▏         | 11/578 [00:00<00:14, 38.93it/s]Loading weights:   4%|▍         | 23/578 [00:00<00:08, 64.09it/s]Loading weights:   6%|▌         | 35/578 [00:00<00:06, 81.18it/s]Loading weights:   8%|▊         | 49/578 [00:00<00:05, 99.22it/s]Loading weights:  11%|█         | 63/578 [00:00<00:04, 104.22it/s]Loading weights:  13%|█▎        | 76/578 [00:00<00:04, 103.72it/s]Loading weights:  15%|█▌        | 88/578 [00:01<00:04, 106.44it/s]Loading weights:  17%|█▋        | 100/578 [00:01<00:04, 108.30it/s]Loading weights:  19%|█▉        | 112/578 [00:01<00:04, 110.26it/s]Loading weights:  21%|██▏       | 124/578 [00:01<00:04, 110.79it/s]Loading weights:  24%|██▎       | 136/578 [00:01<00:03, 111.38it/s]Loading weights:  26%|██▌       | 148/578 [00:01<00:03, 111.59it/s]Loading weights:  28%|██▊       | 160/578 [00:01<00:03, 111.57it/s]Loading weights:  30%|██▉       | 172/578 [00:01<00:03, 111.73it/s]Loading weights:  32%|███▏      | 184/578 [00:01<00:03, 111.49it/s]Loading weights:  34%|███▍      | 196/578 [00:01<00:03, 111.22it/s]Loading weights:  36%|███▌      | 208/578 [00:02<00:03, 112.95it/s]Loading weights:  38%|███▊      | 221/578 [00:02<00:03, 111.16it/s]Loading weights:  40%|████      | 233/578 [00:02<00:03, 113.35it/s]Loading weights:  42%|████▏     | 245/578 [00:02<00:02, 113.31it/s]Loading weights:  44%|████▍     | 257/578 [00:02<00:02, 112.81it/s]Loading weights:  47%|████▋     | 269/578 [00:02<00:02, 112.54it/s]Loading weights:  49%|████▊     | 281/578 [00:02<00:02, 110.00it/s]Loading weights:  51%|█████     | 293/578 [00:02<00:02, 111.84it/s]Loading weights:  53%|█████▎    | 305/578 [00:02<00:02, 112.35it/s]Loading weights:  55%|█████▍    | 317/578 [00:03<00:02, 112.29it/s]Loading weights:  57%|█████▋    | 329/578 [00:03<00:02, 111.36it/s]Loading weights:  59%|█████▉    | 341/578 [00:03<00:02, 111.98it/s]Loading weights:  62%|██████▏   | 357/578 [00:03<00:01, 122.10it/s]Loading weights:  64%|██████▍   | 370/578 [00:03<00:01, 122.25it/s]Loading weights:  66%|██████▋   | 383/578 [00:03<00:01, 118.63it/s]Loading weights:  68%|██████▊   | 395/578 [00:03<00:01, 116.27it/s]Loading weights:  70%|███████   | 407/578 [00:03<00:01, 114.77it/s]Loading weights:  72%|███████▏  | 419/578 [00:03<00:01, 114.37it/s]Loading weights:  75%|███████▍  | 431/578 [00:04<00:01, 114.49it/s]Loading weights:  77%|███████▋  | 443/578 [00:04<00:01, 113.96it/s]Loading weights:  79%|███████▊  | 455/578 [00:04<00:01, 112.82it/s]Loading weights:  81%|████████  | 467/578 [00:04<00:00, 111.72it/s]Loading weights:  83%|████████▎ | 479/578 [00:04<00:00, 110.42it/s]Loading weights:  85%|████████▍ | 491/578 [00:04<00:00, 109.63it/s]Loading weights:  87%|████████▋ | 502/578 [00:04<00:00, 109.19it/s]Loading weights:  89%|████████▉ | 513/578 [00:04<00:00, 105.34it/s]Loading weights:  91%|█████████ | 524/578 [00:04<00:00, 106.13it/s]Loading weights:  93%|█████████▎| 535/578 [00:05<00:00, 100.77it/s]Loading weights:  94%|█████████▍| 546/578 [00:05<00:00, 98.24it/s] Loading weights:  96%|█████████▋| 557/578 [00:05<00:00, 97.67it/s]Loading weights:  98%|█████████▊| 569/578 [00:05<00:00, 100.71it/s]Loading weights: 100%|██████████| 578/578 [00:05<00:00, 107.21it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-14B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+                         n   old  new_qwen_only   new
+category                                             
+animals                  8  0.00           1.00  1.00
+gender_anti_stereotype   9  0.89           0.78  0.78
+gender_fact             10  0.70           1.00  1.00
+gender_neutral_claim    12  0.00           0.67  0.67
+gender_stereotype       14  1.00           1.00  1.00
+no_gender_group          7  0.14           1.00  1.00
+no_gender_person        10  0.70           1.00  1.00
+no_people               15  0.20           1.00  1.00
+non_gender_stereotype    7  0.00           0.86  0.86
+ALL                     92  0.43           0.92  0.92
+
+confusion, old (rows true, columns predicted):
+old      anti  neutral  stereo
+label3                        
+anti        8        0       1
+neutral     6       18      45
+stereo      0        0      14
+
+confusion, new_qwen_only (rows true, columns predicted):
+new_qwen_only  anti  neutral  stereo
+label3                              
+anti              7        0       2
+neutral           2       64       3
+stereo            0        0      14
+
+confusion, new (rows true, columns predicted):
+new      anti  neutral  stereo
+label3                        
+anti        7        0       2
+neutral     2       64       3
+stereo      0        0      14
+
+new pipeline misses:
+                       sentence               category    true   pred  p_gender
+   Teenagers are irresponsible.  non_gender_stereotype neutral stereo      0.87
+               Men like apples.   gender_neutral_claim neutral   anti      0.94
+             Women like apples.   gender_neutral_claim neutral stereo      0.96
+            Girls go to school.   gender_neutral_claim neutral stereo      0.99
+Men need sleep to stay healthy.   gender_neutral_claim neutral   anti      0.63
+           Men are bad drivers. gender_anti_stereotype    anti stereo      1.00
+       Men gossip all the time. gender_anti_stereotype    anti stereo      0.99
+EXIT 0

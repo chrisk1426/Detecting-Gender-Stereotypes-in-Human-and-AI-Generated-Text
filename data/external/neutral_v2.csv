@@ -1,0 +1,1868 @@
+sentence,kind,gender,label3,group
+Lungs exchange oxygen and carbon dioxide.,nogender_fact,0,2,v2_0
+Eyes detect light and send signals to the brain.,nogender_fact,0,2,v2_1
+Teeth break down food before digestion begins.,nogender_fact,0,2,v2_2
+Hair keeps parts of the body warm and protected.,nogender_fact,0,2,v2_3
+Nails protect the tips of fingers and toes.,nogender_fact,0,2,v2_4
+Gardens provide beauty to neighborhoods and parks.,nogender_fact,0,2,v2_5
+Tomato plants need lots of water daily.,nogender_fact,0,2,v2_6
+Lawns often require regular cutting during summer.,nogender_fact,0,2,v2_7
+Roses bloom in various colors and scents.,nogender_fact,0,2,v2_8
+Indoor plants can improve air quality indoors.,nogender_fact,0,2,v2_9
+Pruning encourages bushes to produce more flowers.,nogender_fact,0,2,v2_10
+Orchards produce fruit that attracts birds and bees.,nogender_fact,0,2,v2_11
+Cacti store water in their thick stems for survival.,nogender_fact,0,2,v2_12
+Cats often nap in sunbeams.,nogender_fact,0,2,v2_13
+Birds chirp to communicate.,nogender_fact,0,2,v2_14
+Fish swim in circles due to confusion from glass walls.,nogender_fact,0,2,v2_15
+Hamsters run on wheels for exercise.,nogender_fact,0,2,v2_16
+Parrots mimic human sounds for fun.,nogender_fact,0,2,v2_17
+Rabbits thump the ground when startled.,nogender_fact,0,2,v2_18
+Turtles retract into shells for protection.,nogender_fact,0,2,v2_19
+Snakes shed their skin to grow.,nogender_fact,0,2,v2_20
+Horses graze on grass daily.,nogender_fact,0,2,v2_21
+Buildings stand tall against the sky.,nogender_fact,0,2,v2_22
+Every structure has its foundation deep underground.,nogender_fact,0,2,v2_23
+Skyscrapers dominate city skylines worldwide.,nogender_fact,0,2,v2_24
+Windows let light and air inside buildings.,nogender_fact,0,2,v2_25
+Roofs protect interiors from rain and sun.,nogender_fact,0,2,v2_26
+Elevators move between floors in high-rise constructions.,nogender_fact,0,2,v2_27
+Hallways connect rooms within large structures.,nogender_fact,0,2,v2_28
+Basements house utilities and storage spaces.,nogender_fact,0,2,v2_29
+Facades often tell stories through design and decoration.,nogender_fact,0,2,v2_30
+Libraries have existed since before the Common Era.,nogender_fact,0,2,v2_31
+Castles often featured complex defensive mechanisms.,nogender_fact,0,2,v2_32
+Stone tablets were once primary writing mediums.,nogender_fact,0,2,v2_33
+Many ancient structures align with celestial events.,nogender_fact,0,2,v2_34
+The Silk Road connected various regions for trade.,nogender_fact,0,2,v2_35
+Early roads facilitated extensive commerce and communication.,nogender_fact,0,2,v2_36
+Clocks evolved from sundials to mechanical devices.,nogender_fact,0,2,v2_37
+Museums preserve artifacts from multiple historical periods.,nogender_fact,0,2,v2_38
+Spring brings the first blooms to the countryside.,nogender_fact,0,2,v2_39
+Summer days stretch endlessly under blue skies.,nogender_fact,0,2,v2_40
+Autumn leaves carpet the ground in vibrant hues.,nogender_fact,0,2,v2_41
+Winter coats the landscape in pristine snow.,nogender_fact,0,2,v2_42
+Thunderstorms often precede hot summer afternoons.,nogender_fact,0,2,v2_43
+Calm breezes signal the end of a busy day.,nogender_fact,0,2,v2_44
+Snowflakes dance through the air in winter's chill.,nogender_fact,0,2,v2_45
+Rain nourishes the earth and brings fresh growth.,nogender_fact,0,2,v2_46
+The sun sets earlier during the long autumn nights.,nogender_fact,0,2,v2_47
+Frost forms on windows when temperatures drop at night.,nogender_fact,0,2,v2_48
+The library holds countless books for learning.,nogender_fact,0,2,v2_49
+Classrooms contain desks for organizing materials.,nogender_fact,0,2,v2_50
+Science labs equip for experiments with chemicals.,nogender_fact,0,2,v2_51
+Study sessions enhance understanding of complex topics.,nogender_fact,0,2,v2_52
+Homework assignments reinforce lessons taught in class.,nogender_fact,0,2,v2_53
+Exams assess knowledge gained over weeks of study.,nogender_fact,0,2,v2_54
+Art rooms provide supplies for creative expression.,nogender_fact,0,2,v2_55
+Computer labs house devices for digital projects.,nogender_fact,0,2,v2_56
+Clubs offer spaces for exploring varied interests.,nogender_fact,0,2,v2_57
+Reading books opens up new worlds and perspectives.,nogender_fact,0,2,v2_58
+Painting allows for expression through colors and shapes.,nogender_fact,0,2,v2_59
+Hiking offers a chance to connect with nature.,nogender_fact,0,2,v2_60
+Photography captures moments in time and space.,nogender_fact,0,2,v2_61
+Winter holidays often feature decorated evergreen trees.,nogender_fact,0,2,v2_62
+Beaches become popular destinations during summer vacations.,nogender_fact,0,2,v2_63
+Snowfall transforms cityscapes into winter wonderlands.,nogender_fact,0,2,v2_64
+Markets during festivals sell various traditional foods.,nogender_fact,0,2,v2_65
+Mountains attract visitors with their snowy slopes in colder months.,nogender_fact,0,2,v2_66
+Holiday packages often include travel and accommodation discounts.,nogender_fact,0,2,v2_67
+Coastal towns see increased tourism around major public holidays.,nogender_fact,0,2,v2_68
+Museums extend opening hours over holiday seasons.,nogender_fact,0,2,v2_69
+Urban parks host events that celebrate diverse cultural traditions.,nogender_fact,0,2,v2_70
+Roses require regular pruning for healthier blooms.,nogender_fact,0,2,v2_71
+"Tomatoes flourish in warm, sunny spots.",nogender_fact,0,2,v2_72
+Orchids appreciate humid environments for better growth.,nogender_fact,0,2,v2_73
+Pots need drainage holes to prevent root rot.,nogender_fact,0,2,v2_74
+Succulents store water in their leaves and stems.,nogender_fact,0,2,v2_75
+Gardenias demand acidic soil for optimal health.,nogender_fact,0,2,v2_76
+Peonies symbolize honor and riches in many cultures.,nogender_fact,0,2,v2_77
+"Ferns thrive in shady, moist areas under the trees.",nogender_fact,0,2,v2_78
+Marigolds deter pests and attract beneficial insects.,nogender_fact,0,2,v2_79
+Dice have multiple sides for rolling.,nogender_fact,0,2,v2_80
+Monopoly sets include small metal tokens.,nogender_fact,0,2,v2_81
+Cards can be shuffled before play.,nogender_fact,0,2,v2_82
+Snakes and ladders climb upward frequently.,nogender_fact,0,2,v2_83
+Lions often rest during the heat of the day.,nogender_fact,0,2,v2_84
+Gorillas build nests from branches for sleeping.,nogender_fact,0,2,v2_85
+Cheetahs are known for their incredible running speed.,nogender_fact,0,2,v2_86
+Monkeys communicate through various vocalizations and gestures.,nogender_fact,0,2,v2_87
+Wolves hunt cooperatively in packs for survival.,nogender_fact,0,2,v2_88
+Water hydrates the body efficiently.,nogender_fact,0,2,v2_89
+Tea can be served hot or cold.,nogender_fact,0,2,v2_90
+Coffee is popular in many countries.,nogender_fact,0,2,v2_91
+Soda often contains high levels of sugar.,nogender_fact,0,2,v2_92
+Milk is a common ingredient in many recipes.,nogender_fact,0,2,v2_93
+Juice is typically made from fruits or vegetables.,nogender_fact,0,2,v2_94
+Energy drinks contain caffeine to boost alertness.,nogender_fact,0,2,v2_95
+Smoothies can include various fruits and yogurt.,nogender_fact,0,2,v2_96
+Hot chocolate is enjoyed during winter months.,nogender_fact,0,2,v2_97
+Money often fuels economic growth.,nogender_fact,0,2,v2_98
+Discounts attract many to shop more frequently.,nogender_fact,0,2,v2_99
+Credit cards expand spending limits significantly.,nogender_fact,0,2,v2_100
+Savings accounts ensure financial security for emergencies.,nogender_fact,0,2,v2_101
+Online shopping has revolutionized retail commerce.,nogender_fact,0,2,v2_102
+Cashless transactions dominate in modern cities.,nogender_fact,0,2,v2_103
+Luxury goods command higher prices due to branding.,nogender_fact,0,2,v2_104
+Market crashes can deplete investors' assets rapidly.,nogender_fact,0,2,v2_105
+Thrift stores offer affordable options for shoppers.,nogender_fact,0,2,v2_106
+Economic recessions tighten household budgets across regions.,nogender_fact,0,2,v2_107
+Snowfall transforms holiday landscapes into winter wonderlands.,nogender_fact,0,2,v2_108
+"Christmas trees decorate homes, spreading festive cheer.",nogender_fact,0,2,v2_109
+Holiday lights brighten neighborhoods during the dark nights.,nogender_fact,0,2,v2_110
+Travel to tropical destinations increases as families seek warmth.,nogender_fact,0,2,v2_111
+Decorative wreaths adorn doors in anticipation of the season.,nogender_fact,0,2,v2_112
+Gift wrapping paper adds a splash of color to recycling bins post-holiday.,nogender_fact,0,2,v2_113
+Stores play continuous loops of holiday music to enhance the festive atmosphere.,nogender_fact,0,2,v2_114
+Gingerbread houses become miniature architectural marvels on kitchen countertops.,nogender_fact,0,2,v2_115
+Holiday-themed movies air more frequently on television channels.,nogender_fact,0,2,v2_116
+Festive scents such as pine and peppermint fill shopping malls.,nogender_fact,0,2,v2_117
+Trains travel on dedicated tracks.,nogender_fact,0,2,v2_118
+Airports serve as hubs for global travel.,nogender_fact,0,2,v2_119
+Bicycles offer an eco-friendly mode of transport.,nogender_fact,0,2,v2_120
+Boats navigate rivers and oceans.,nogender_fact,0,2,v2_121
+Taxis provide convenient point-to-point service.,nogender_fact,0,2,v2_122
+Ferries connect communities separated by water bodies.,nogender_fact,0,2,v2_123
+Waves crashing on shores create the sound of the sea.,nogender_fact,0,2,v2_124
+Ocean currents move vast amounts of water globally.,nogender_fact,0,2,v2_125
+Coral reefs support a wide variety of marine life.,nogender_fact,0,2,v2_126
+Icebergs float because they're less dense than seawater.,nogender_fact,0,2,v2_127
+The Mariana Trench is the deepest part of the world's oceans.,nogender_fact,0,2,v2_128
+Ocean temperatures vary greatly from tropical to polar regions.,nogender_fact,0,2,v2_129
+Skyscrapers reach towards the clouds.,nogender_fact,0,2,v2_130
+Houses offer shelter from weather extremes.,nogender_fact,0,2,v2_131
+Windows let in natural light and views.,nogender_fact,0,2,v2_132
+Modern structures use glass extensively.,nogender_fact,0,2,v2_133
+Towers can serve as landmarks.,nogender_fact,0,2,v2_134
+Residential buildings house families and individuals.,nogender_fact,0,2,v2_135
+Office buildings host countless businesses.,nogender_fact,0,2,v2_136
+Bridges connect separated lands over waterways.,nogender_fact,0,2,v2_137
+Chessboards require checkers for the game of checkers.,nogender_fact,0,2,v2_138
+Online gaming communities can be vast.,nogender_fact,0,2,v2_139
+Dice add elements of chance to many board games.,nogender_fact,0,2,v2_140
+Casinos offer numerous gambling games.,nogender_fact,0,2,v2_141
+Table tennis tables fit easily in homes.,nogender_fact,0,2,v2_142
+Card games rely on deck shuffling for fairness.,nogender_fact,0,2,v2_143
+Game controllers vary by console type.,nogender_fact,0,2,v2_144
+Art often reflects the cultural values of its time.,nogender_fact,0,2,v2_145
+Color plays a crucial role in conveying mood in paintings.,nogender_fact,0,2,v2_146
+Abstract art challenges traditional perceptions of visual representation.,nogender_fact,0,2,v2_147
+Opera combines musical performance with dramatic storytelling.,nogender_fact,0,2,v2_148
+Digital technology expands possibilities for creating and sharing art globally.,nogender_fact,0,2,v2_149
+Gardening nurtures nature and provides tranquility.,nogender_fact,0,2,v2_150
+Reading expands the mind's horizon effortlessly.,nogender_fact,0,2,v2_151
+Painting reflects inner emotions on canvas.,nogender_fact,0,2,v2_152
+Cooking transforms ingredients into culinary art.,nogender_fact,0,2,v2_153
+Photography captures moments in timeless frames.,nogender_fact,0,2,v2_154
+Dancing moves the soul with rhythm.,nogender_fact,0,2,v2_155
+Writing weaves stories that inspire and heal.,nogender_fact,0,2,v2_156
+Hiking explores the beauty of diverse terrains.,nogender_fact,0,2,v2_157
+Music fills spaces with melodies and harmony.,nogender_fact,0,2,v2_158
+Tokyo boasts the world's busiest subway system.,nogender_fact,0,2,v2_159
+Parisian cafes offer a quintessential European experience.,nogender_fact,0,2,v2_160
+Skyscrapers dominate the skyline of Dubai.,nogender_fact,0,2,v2_161
+New York City's Central Park provides a tranquil escape from urban life.,nogender_fact,0,2,v2_162
+Sydney Opera House is a symbol of modern architectural design.,nogender_fact,0,2,v2_163
+Las Vegas lights up the desert night sky with vibrant shows.,nogender_fact,0,2,v2_164
+Rio de Janeiro's beaches are popular spots for sunbathing and surfing.,nogender_fact,0,2,v2_165
+Prices often rise on weekends in malls.,nogender_fact,0,2,v2_166
+Discounts attract more customers to stores.,nogender_fact,0,2,v2_167
+Online shopping offers convenience to buyers.,nogender_fact,0,2,v2_168
+Luxury goods demand higher prices in boutiques.,nogender_fact,0,2,v2_169
+Coins clink as transactions close in cafes.,nogender_fact,0,2,v2_170
+Sales tax varies across different regions.,nogender_fact,0,2,v2_171
+Credit cards provide rewards for spending.,nogender_fact,0,2,v2_172
+Coupons increase when special events approach.,nogender_fact,0,2,v2_173
+Cashback offers incentivize regular purchases.,nogender_fact,0,2,v2_174
+Bargains disappear quickly during flash sales.,nogender_fact,0,2,v2_175
+Skyscrapers pierce the skyline in Shanghai.,nogender_fact,0,2,v2_176
+Venice's canals reflect the hues of sunrise.,nogender_fact,0,2,v2_177
+Tokyo's streets buzz with neon lights after dark.,nogender_fact,0,2,v2_178
+Parisian cafes emit the aroma of fresh coffee.,nogender_fact,0,2,v2_179
+Bridges over rivers connect the islands of Seattle.,nogender_fact,0,2,v2_180
+London Underground snakes beneath the city's surface.,nogender_fact,0,2,v2_181
+Las Vegas sparkles with countless hotel towers.,nogender_fact,0,2,v2_182
+Miami beaches glisten under the tropical sun.,nogender_fact,0,2,v2_183
+Cats often nap in sunny spots.,nogender_fact,0,2,v2_184
+Aquariums can be peaceful indoor decorations.,nogender_fact,0,2,v2_185
+Birds enjoy singing and chirping loudly.,nogender_fact,0,2,v2_186
+Parrots mimic human speech when trained.,nogender_fact,0,2,v2_187
+"Guinea pigs make soft, happy sounds.",nogender_fact,0,2,v2_188
+Rabbits chew on various kinds of plants.,nogender_fact,0,2,v2_189
+Turtles bask under heat lamps to stay warm.,nogender_fact,0,2,v2_190
+The refrigerator stays cool.,nogender_fact,0,2,v2_191
+Books often collect dust on shelves.,nogender_fact,0,2,v2_192
+Curtains block sunlight and maintain privacy.,nogender_fact,0,2,v2_193
+Carpets make rooms feel warmer and softer.,nogender_fact,0,2,v2_194
+A television displays moving images and sounds.,nogender_fact,0,2,v2_195
+Furniture defines the layout and function of rooms.,nogender_fact,0,2,v2_196
+Windows allow light to illuminate interiors.,nogender_fact,0,2,v2_197
+Kettles heat water quickly over flames or electric coils.,nogender_fact,0,2,v2_198
+Chairs provide seating for those who wish to rest.,nogender_fact,0,2,v2_199
+Drawers organize and conceal smaller items.,nogender_fact,0,2,v2_200
+Space is vast beyond imagination.,nogender_fact,0,2,v2_201
+The moon orbits around Earth.,nogender_fact,0,2,v2_202
+Black holes have immense gravitational pull.,nogender_fact,0,2,v2_203
+Galaxies contain billions of stars.,nogender_fact,0,2,v2_204
+Venus is the hottest planet in our solar system.,nogender_fact,0,2,v2_205
+Comets leave trails of ice and dust.,nogender_fact,0,2,v2_206
+Mars has polar ice caps like Earth.,nogender_fact,0,2,v2_207
+Light from distant galaxies travels for billions of years before reaching us.,nogender_fact,0,2,v2_208
+The universe continues to expand since the Big Bang.,nogender_fact,0,2,v2_209
+Lions hunt in prides.,nogender_fact,0,2,v2_210
+Penguins huddle together to stay warm.,nogender_fact,0,2,v2_211
+Dolphins communicate using clicks and whistles.,nogender_fact,0,2,v2_212
+Bears have keen senses of smell and hearing.,nogender_fact,0,2,v2_213
+"Flamingos feed in shallow water, often standing on one leg.",nogender_fact,0,2,v2_214
+Giraffes can run up to 35 miles per hour.,nogender_fact,0,2,v2_215
+Classrooms usually contain desks and chairs.,nogender_fact,0,2,v2_216
+Science labs provide space for experiments.,nogender_fact,0,2,v2_217
+Cafeterias offer meals to students and staff.,nogender_fact,0,2,v2_218
+Lockers store personal items during the day.,nogender_fact,0,2,v2_219
+Libraries quiet zones for reading and research.,nogender_fact,0,2,v2_220
+Video games can be played solo or multiplayer.,nogender_fact,0,2,v2_221
+Board games bring families together for fun evenings.,nogender_fact,0,2,v2_222
+Digital games store save data in the cloud.,nogender_fact,0,2,v2_223
+Card games use decks with various designs.,nogender_fact,0,2,v2_224
+Virtual reality offers immersive gaming experiences.,nogender_fact,0,2,v2_225
+Dice games rely on chance rather than skill.,nogender_fact,0,2,v2_226
+Role-playing games allow players to explore fantasy worlds.,nogender_fact,0,2,v2_227
+Movies capture the essence of human experience.,nogender_fact,0,2,v2_228
+Books often transport readers to new worlds.,nogender_fact,0,2,v2_229
+Thrillers keep audiences on the edge of their seats.,nogender_fact,0,2,v2_230
+Novels can be adapted into compelling films.,nogender_fact,0,2,v2_231
+Libraries house countless stories waiting to be read.,nogender_fact,0,2,v2_232
+Science fiction books imagine future technologies.,nogender_fact,0,2,v2_233
+Documentaries offer insights into real-world events.,nogender_fact,0,2,v2_234
+Dawn breaks earlier in summer.,nogender_fact,0,2,v2_235
+Midnight marks the start of a new day.,nogender_fact,0,2,v2_236
+Clocks tick relentlessly.,nogender_fact,0,2,v2_237
+Deadlines prompt action.,nogender_fact,0,2,v2_238
+Quiet hours exist outside busy city centers.,nogender_fact,0,2,v2_239
+Time flies when absorbed in work.,nogender_fact,0,2,v2_240
+Sunsets vary with latitude and season.,nogender_fact,0,2,v2_241
+Scheduled flights may delay due to weather conditions.,nogender_fact,0,2,v2_242
+Lions roar to mark their territory.,nogender_fact,0,2,v2_243
+Elephants use their trunks for multiple tasks.,nogender_fact,0,2,v2_244
+Jellyfish have been around for over half a billion years.,nogender_fact,0,2,v2_245
+Sharks have a highly developed sense of smell.,nogender_fact,0,2,v2_246
+Bees communicate through intricate dance movements.,nogender_fact,0,2,v2_247
+The Moon orbits around the Earth.,nogender_fact,0,2,v2_248
+Black holes have incredibly strong gravitational fields.,nogender_fact,0,2,v2_249
+Planets revolve around their suns in elliptical paths.,nogender_fact,0,2,v2_250
+Galaxies contain billions of stars and vast amounts of dust.,nogender_fact,0,2,v2_251
+The Solar System consists of eight major planets.,nogender_fact,0,2,v2_252
+"Comets are made up of ice, dust, and rocky materials.",nogender_fact,0,2,v2_253
+Space is often depicted as cold and dark in popular culture.,nogender_fact,0,2,v2_254
+Buildings often stand taller in city centers.,nogender_fact,0,2,v2_255
+Every house has at least one door.,nogender_fact,0,2,v2_256
+Skyscrapers can reach over one thousand feet high.,nogender_fact,0,2,v2_257
+Factories produce goods in large quantities daily.,nogender_fact,0,2,v2_258
+Libraries collect millions of books and documents.,nogender_fact,0,2,v2_259
+Stores provide spaces for purchasing goods.,nogender_fact,0,2,v2_260
+Schools typically have classrooms and administrative offices.,nogender_fact,0,2,v2_261
+Hospitals include various specialized departments.,nogender_fact,0,2,v2_262
+Bridges connect separated land areas.,nogender_fact,0,2,v2_263
+Paris boasts some of the world's most visited art museums.,nogender_fact,0,2,v2_264
+Tokyo's public transport system runs efficiently day and night.,nogender_fact,0,2,v2_265
+Venice's canals wind through the heart of its historic center.,nogender_fact,0,2,v2_266
+Las Vegas lights up the desert with dazzling neon displays.,nogender_fact,0,2,v2_267
+New York City's skyline changes dramatically as seasons pass.,nogender_fact,0,2,v2_268
+Dubai's skyscrapers reach towards the sun in the desert sky.,nogender_fact,0,2,v2_269
+Barcelona's parks offer green spaces amidst the urban hustle.,nogender_fact,0,2,v2_270
+Rome's ancient ruins blend seamlessly into modern city life.,nogender_fact,0,2,v2_271
+Money can buy many items but not all happiness.,nogender_fact,0,2,v2_272
+Online stores offer discounts throughout the year.,nogender_fact,0,2,v2_273
+Coins are often found on sidewalks and streets.,nogender_fact,0,2,v2_274
+The mall is always busy during holiday sales.,nogender_fact,0,2,v2_275
+Cash is less frequently used than credit cards.,nogender_fact,0,2,v2_276
+Thrift stores sell unique clothes and household goods.,nogender_fact,0,2,v2_277
+Bargain hunting can be a thrilling pastime.,nogender_fact,0,2,v2_278
+Price tags indicate the cost of an item clearly.,nogender_fact,0,2,v2_279
+The refrigerator keeps food fresh.,nogender_fact,0,2,v2_280
+Carpets absorb sound in rooms.,nogender_fact,0,2,v2_281
+Chairs provide seating for comfort.,nogender_fact,0,2,v2_282
+Tables serve as surfaces for eating and working.,nogender_fact,0,2,v2_283
+Beds offer rest and sleep.,nogender_fact,0,2,v2_284
+Toasters quickly brown slices of bread.,nogender_fact,0,2,v2_285
+Lamps illuminate dark corners of the house.,nogender_fact,0,2,v2_286
+Mirrors reflect images of objects placed before them.,nogender_fact,0,2,v2_287
+Windows allow views of the outside world.,nogender_fact,0,2,v2_288
+Cows graze in the field under the vast sky.,nogender_fact,0,2,v2_289
+The barn shelters horses from the cold rain.,nogender_fact,0,2,v2_290
+Chickens peck at seeds scattered beneath apple trees.,nogender_fact,0,2,v2_291
+Pigs wallow contentedly in mud to cool themselves.,nogender_fact,0,2,v2_292
+Sheep wool is soft and perfect for spinning.,nogender_fact,0,2,v2_293
+"Ducks swim in the pond, quacking happily.",nogender_fact,0,2,v2_294
+"Roosters crow loudly at sunrise, announcing the day.",nogender_fact,0,2,v2_295
+"Rabbits hop around their fenced enclosure, joyful.",nogender_fact,0,2,v2_296
+Bees hum busily as they pollinate blooming flowers.,nogender_fact,0,2,v2_297
+Trees convert sunlight into energy through photosynthesis.,nogender_fact,0,2,v2_298
+Water freezes at 0 degrees Celsius under standard pressure.,nogender_fact,0,2,v2_299
+The moon influences Earth's tides with its gravitational pull.,nogender_fact,0,2,v2_300
+Mountains form over millions of years due to tectonic movement.,nogender_fact,0,2,v2_301
+Rainforests are crucial for biodiversity and oxygen production.,nogender_fact,0,2,v2_302
+Stars generate light and heat through nuclear fusion.,nogender_fact,0,2,v2_303
+Rivers often carve canyons as they flow over time.,nogender_fact,0,2,v2_304
+Every building requires a foundation.,nogender_fact,0,2,v2_305
+Windows allow natural light inside buildings.,nogender_fact,0,2,v2_306
+Some structures use glass extensively.,nogender_fact,0,2,v2_307
+Roofs protect interiors from rain and snow.,nogender_fact,0,2,v2_308
+Basements can store utilities and supplies.,nogender_fact,0,2,v2_309
+Elevators connect different floors in tall buildings.,nogender_fact,0,2,v2_310
+Air conditioning is crucial in modern office buildings.,nogender_fact,0,2,v2_311
+Many buildings now incorporate green spaces.,nogender_fact,0,2,v2_312
+Hearts pump blood throughout.,nogender_fact,0,2,v2_313
+Lungs expand and contract rhythmically.,nogender_fact,0,2,v2_314
+Eyes detect light and colors vividly.,nogender_fact,0,2,v2_315
+Skin acts as a barrier against pathogens.,nogender_fact,0,2,v2_316
+Hair grows from follicles beneath skin.,nogender_fact,0,2,v2_317
+Muscles contract to facilitate movement.,nogender_fact,0,2,v2_318
+"Ears catch sound waves, translating into hearing.",nogender_fact,0,2,v2_319
+Blue jeans are popular worldwide.,nogender_fact,0,2,v2_320
+Cotton is comfortable in warm seasons.,nogender_fact,0,2,v2_321
+Silk feels luxurious on the skin.,nogender_fact,0,2,v2_322
+Leather shoes last longer than canvas ones.,nogender_fact,0,2,v2_323
+Sneakers are practical for daily wear.,nogender_fact,0,2,v2_324
+Scarves can be worn in multiple styles.,nogender_fact,0,2,v2_325
+Water helps cleanse the body.,nogender_fact,0,2,v2_326
+Hospitals treat illnesses.,nogender_fact,0,2,v2_327
+Apples are good for dental health.,nogender_fact,0,2,v2_328
+Medicines can cure infections.,nogender_fact,0,2,v2_329
+Gardens offer spaces for relaxation.,nogender_fact,0,2,v2_330
+Vitamins support immune function.,nogender_fact,0,2,v2_331
+Ice packs reduce swelling.,nogender_fact,0,2,v2_332
+Holidays often feature decorations in homes.,nogender_fact,0,2,v2_333
+Travel costs typically increase during holiday seasons.,nogender_fact,0,2,v2_334
+Gift exchanges are common practices during celebrations.,nogender_fact,0,2,v2_335
+Snowfall can enhance the festive atmosphere outdoors.,nogender_fact,0,2,v2_336
+Special dishes are prepared for specific holidays.,nogender_fact,0,2,v2_337
+Public parks might host free entertainment events.,nogender_fact,0,2,v2_338
+Retail stores extend their operating hours.,nogender_fact,0,2,v2_339
+Traffic congestion worsens around major holidays.,nogender_fact,0,2,v2_340
+Museums may offer discounted admission for visitors.,nogender_fact,0,2,v2_341
+Trees adorned with lights become focal points in neighborhoods.,nogender_fact,0,2,v2_342
+Cinemas offer a communal viewing experience.,nogender_fact,0,2,v2_343
+Novels allow the reader to visualize scenes.,nogender_fact,0,2,v2_344
+Adventure genres thrive in both mediums.,nogender_fact,0,2,v2_345
+Classic stories endure across generations.,nogender_fact,0,2,v2_346
+Thriller movies build suspense through cinematography.,nogender_fact,0,2,v2_347
+Romance in novels can be deeply descriptive.,nogender_fact,0,2,v2_348
+Settings in fiction transport audiences to new worlds.,nogender_fact,0,2,v2_349
+Movie soundtracks enhance emotional impact.,nogender_fact,0,2,v2_350
+Fantasy literature explores limitless imagination possibilities.,nogender_fact,0,2,v2_351
+Curtains block sunlight and provide privacy.,nogender_fact,0,2,v2_352
+The dishwasher cleans dirty dishes efficiently.,nogender_fact,0,2,v2_353
+Carpets soften floors and trap dust.,nogender_fact,0,2,v2_354
+"Books gather on shelves, waiting to be read.",nogender_fact,0,2,v2_355
+A lamp illuminates dark corners softly.,nogender_fact,0,2,v2_356
+Windows let in natural light and air.,nogender_fact,0,2,v2_357
+Pillows offer comfort when resting.,nogender_fact,0,2,v2_358
+Chairs support weight and provide seating.,nogender_fact,0,2,v2_359
+Trains connect distant cities efficiently.,nogender_fact,0,2,v2_360
+Airports often have shops and cafes.,nogender_fact,0,2,v2_361
+Bicycles require regular maintenance to function well.,nogender_fact,0,2,v2_362
+Cars can reduce traffic congestion with smart routing.,nogender_fact,0,2,v2_363
+Public buses serve many residential areas daily.,nogender_fact,0,2,v2_364
+Subways move large numbers of passengers quickly.,nogender_fact,0,2,v2_365
+Taxis offer door-to-door service in urban areas.,nogender_fact,0,2,v2_366
+Highways facilitate long-distance travel between regions.,nogender_fact,0,2,v2_367
+Ancient walls surround the old city.,nogender_fact,0,2,v2_368
+The river changes course every century.,nogender_fact,0,2,v2_369
+Towers stand where castles once stood.,nogender_fact,0,2,v2_370
+Bridges connect islands since time immemorial.,nogender_fact,0,2,v2_371
+Roads wind through forests as if by magic.,nogender_fact,0,2,v2_372
+"Ruins dot the landscape, silent testimonies of times past.",nogender_fact,0,2,v2_373
+"Statues face the sea, watching over ships.",nogender_fact,0,2,v2_374
+Libraries house scrolls older than any memory.,nogender_fact,0,2,v2_375
+Fields yield crops in patterns dictated by ancient calendars.,nogender_fact,0,2,v2_376
+Gates mark the boundaries of what was once kingdoms.,nogender_fact,0,2,v2_377
+Medicines cure various ailments.,nogender_fact,0,2,v2_378
+Clean water is vital for health.,nogender_fact,0,2,v2_379
+Mental health affects overall wellness.,nogender_fact,0,2,v2_380
+Blood tests detect disease early.,nogender_fact,0,2,v2_381
+Sleep rejuvenates the body daily.,nogender_fact,0,2,v2_382
+The Milky Way contains billions of stars.,nogender_fact,0,2,v2_383
+Comets leave bright trails as they orbit the Sun.,nogender_fact,0,2,v2_384
+Outer space is a vacuum devoid of air.,nogender_fact,0,2,v2_385
+Jupiter has many moons orbiting around it.,nogender_fact,0,2,v2_386
+Constellations are patterns made up of stars.,nogender_fact,0,2,v2_387
+Light pollution hinders star visibility from Earth.,nogender_fact,0,2,v2_388
+Electric cars emit fewer pollutants than gasoline vehicles.,nogender_fact,0,2,v2_389
+Parking spaces in urban areas can be challenging to find.,nogender_fact,0,2,v2_390
+Convertibles allow drivers to enjoy open-air driving experiences.,nogender_fact,0,2,v2_391
+Autonomous vehicles aim to reduce traffic accidents significantly.,nogender_fact,0,2,v2_392
+Car washes offer services to keep vehicles looking pristine.,nogender_fact,0,2,v2_393
+Games often include colorful elements to attract attention.,nogender_fact,0,2,v2_394
+Board games can be played indoors on tables.,nogender_fact,0,2,v2_395
+Card games use standard or specialized playing cards.,nogender_fact,0,2,v2_396
+Digital games store player information in databases.,nogender_fact,0,2,v2_397
+Multiplayer games allow interaction between different devices.,nogender_fact,0,2,v2_398
+Art can be found in unexpected places.,nogender_fact,0,2,v2_399
+Abstract art challenges the viewer's perception.,nogender_fact,0,2,v2_400
+Sculptures add beauty to public spaces.,nogender_fact,0,2,v2_401
+Pop art mimics everyday consumer goods.,nogender_fact,0,2,v2_402
+Opera houses fill with melodies nightly.,nogender_fact,0,2,v2_403
+Folk art captures cultural traditions globally.,nogender_fact,0,2,v2_404
+Movies often transport audiences to distant galaxies.,nogender_fact,0,2,v2_405
+Books hold the power to alter perspectives subtly.,nogender_fact,0,2,v2_406
+Rainy days are perfect for curling up with a book.,nogender_fact,0,2,v2_407
+Thrillers keep viewers on the edge of their seats.,nogender_fact,0,2,v2_408
+Action sequences in films frequently leave spectators exhilarated.,nogender_fact,0,2,v2_409
+Silent films relied heavily on visual storytelling techniques.,nogender_fact,0,2,v2_410
+Adaptations from books to film are not always faithful to the original text.,nogender_fact,0,2,v2_411
+Historical dramas in cinema can bring past events to life vividly.,nogender_fact,0,2,v2_412
+Winter holidays often bring colder temperatures.,nogender_fact,0,2,v2_413
+Christmas trees are evergreen plants decorated indoors.,nogender_fact,0,2,v2_414
+Holidays can cause traffic congestion on roads.,nogender_fact,0,2,v2_415
+Many stores offer discounts during holiday seasons.,nogender_fact,0,2,v2_416
+Fireworks light up the night sky on New Year's Eve.,nogender_fact,0,2,v2_417
+Holiday decorations line streets and homes.,nogender_fact,0,2,v2_418
+Special dishes are prepared exclusively for certain holidays.,nogender_fact,0,2,v2_419
+Quietness settles in urban areas during long holiday periods.,nogender_fact,0,2,v2_420
+Desks occupy the majority of office space.,nogender_fact,0,2,v2_421
+Coffee machines attract frequent visits during breaks.,nogender_fact,0,2,v2_422
+Office plants improve air quality indoors.,nogender_fact,0,2,v2_423
+Meeting rooms are essential for collaboration.,nogender_fact,0,2,v2_424
+Email servers handle vast amounts of data daily.,nogender_fact,0,2,v2_425
+Offices often contain communal kitchens.,nogender_fact,0,2,v2_426
+Workstations are equipped with computers.,nogender_fact,0,2,v2_427
+File cabinets store important documents safely.,nogender_fact,0,2,v2_428
+Office spaces can influence productivity levels.,nogender_fact,0,2,v2_429
+Lungs expand and contract to facilitate breathing.,nogender_fact,0,2,v2_430
+The skin acts as a barrier against external threats.,nogender_fact,0,2,v2_431
+Muscles contract and relax to enable movement.,nogender_fact,0,2,v2_432
+Eyes perceive light to form images in vision.,nogender_fact,0,2,v2_433
+Ears convert sound waves into electrical signals for the brain.,nogender_fact,0,2,v2_434
+Hair grows from follicles located beneath the skin.,nogender_fact,0,2,v2_435
+Teeth chew food to aid in digestion.,nogender_fact,0,2,v2_436
+Nerves transmit information between the brain and the rest of the body.,nogender_fact,0,2,v2_437
+Hiking in forests provides tranquility and fresh air.,nogender_fact,0,2,v2_438
+Photography captures moments that time cannot erase.,nogender_fact,0,2,v2_439
+Listening to music improves mood and concentration.,nogender_fact,0,2,v2_440
+Crafting jewelry allows for creativity and self-expression.,nogender_fact,0,2,v2_441
+Books fill many shelves in the library.,nogender_fact,0,2,v2_442
+The playground echoes with laughter during breaks.,nogender_fact,0,2,v2_443
+Study guides line the classroom desks.,nogender_fact,0,2,v2_444
+Silent reading sessions occur weekly in the hallways.,nogender_fact,0,2,v2_445
+Bulletin boards display colorful student artwork.,nogender_fact,0,2,v2_446
+Lockers stand in neat rows along the corridors.,nogender_fact,0,2,v2_447
+Computers hum softly in the computer lab.,nogender_fact,0,2,v2_448
+Bees become less active during rainy days.,nogender_animal,0,2,v2_449
+Frogs hibernate under the mud during winter.,nogender_animal,0,2,v2_450
+Monarch butterflies travel south to avoid freezing temperatures.,nogender_animal,0,2,v2_451
+Fish swim deeper in lakes and rivers when it's very cold.,nogender_animal,0,2,v2_452
+Wolves use howling as a means of communication.,nogender_animal,0,2,v2_453
+Cats often play with strings.,nogender_animal,0,2,v2_454
+Elephants never forget a game of hide-and-seek.,nogender_animal,0,2,v2_455
+Frogs can jump astonishing distances in a leap contest.,nogender_animal,0,2,v2_456
+Fish exhibit playful behavior when chasing bubbles.,nogender_animal,0,2,v2_457
+"Parrots mimic sounds, including those from musical games.",nogender_animal,0,2,v2_458
+"Squirrels bury nuts, much like hiding treasures in a game.",nogender_animal,0,2,v2_459
+"Ants work collectively, like in multiplayer strategy games.",nogender_animal,0,2,v2_460
+"Dolphins use tools to catch prey, akin to puzzle-solving games.",nogender_animal,0,2,v2_461
+"Cows sometimes kick at objects, as if playing soccer.",nogender_animal,0,2,v2_462
+"Octopuses solve mazes, showing intelligence in navigation games.",nogender_animal,0,2,v2_463
+Wolves represent freedom in numerous fantasy novels.,nogender_animal,0,2,v2_464
+Birds frequently symbolize messages or omens in literature.,nogender_animal,0,2,v2_465
+Foxes are known for cunning in folktales across cultures.,nogender_animal,0,2,v2_466
+Dragons embody mythological power in epic fantasies.,nogender_animal,0,2,v2_467
+Spiders appear as sinister characters in horror narratives.,nogender_animal,0,2,v2_468
+Cats often enjoy chasing laser pointers.,nogender_animal,0,2,v2_469
+Elephants use their trunks in playful water battles.,nogender_animal,0,2,v2_470
+"Birds can learn to play with mirrors, recognizing themselves.",nogender_animal,0,2,v2_471
+"Ants form complex trails, like intricate game maps.",nogender_animal,0,2,v2_472
+Dolphins communicate through clicking sounds during play.,nogender_animal,0,2,v2_473
+"Fish respond to motion in water, engaging in chasing games.",nogender_animal,0,2,v2_474
+Bees contribute significantly to pollination which is vital for crops used in cooking.,nogender_animal,0,2,v2_475
+"Chickens provide eggs, a staple ingredient in various cuisines globally.",nogender_animal,0,2,v2_476
+Fish swim in schools and feed on smaller organisms found in water bodies.,nogender_animal,0,2,v2_477
+Butterflies start as caterpillars which eat leaves before transforming into flying adults.,nogender_animal,0,2,v2_478
+Elephants communicate through infrasound for long-distance messaging.,nogender_animal,0,2,v2_479
+Dolphins use echolocation to navigate and find food.,nogender_animal,0,2,v2_480
+Polar bears have thick fur for insulation in cold climates.,nogender_animal,0,2,v2_481
+Geckos can walk on vertical surfaces due to specialized toe pads.,nogender_animal,0,2,v2_482
+"Cows are ruminants, capable of regurgitating food to chew again.",nogender_animal,0,2,v2_483
+Frogs absorb water through their skin for hydration.,nogender_animal,0,2,v2_484
+Birds migrate seasonally in response to changes in weather and food availability.,nogender_animal,0,2,v2_485
+Snakes shed their skin periodically as they grow.,nogender_animal,0,2,v2_486
+Cows graze in fields.,nogender_animal,0,2,v2_487
+Chickens lay eggs.,nogender_animal,0,2,v2_488
+Pigs enjoy mud baths.,nogender_animal,0,2,v2_489
+Ducks swim in ponds.,nogender_animal,0,2,v2_490
+Bees make honey.,nogender_animal,0,2,v2_491
+Turkeys can fly but not very high.,nogender_animal,0,2,v2_492
+Some parrots enjoy drinking nectar from flowers.,nogender_animal,0,2,v2_493
+Bees collect nectar to make honey.,nogender_animal,0,2,v2_494
+Dolphins do not need to drink water as they get hydration from their food.,nogender_animal,0,2,v2_495
+"Hedgehogs prefer clean drinking water in small, shallow dishes.",nogender_animal,0,2,v2_496
+Snakes do not drink water; they absorb moisture through their skin.,nogender_animal,0,2,v2_497
+Penguins slide on their bellies to reach water sources.,nogender_animal,0,2,v2_498
+Cats often enjoy playing with string.,nogender_animal,0,2,v2_499
+Snails leave a slimy trail as they move.,nogender_animal,0,2,v2_500
+Sheep's wool is used in making clothing.,nogender_animal,0,2,v2_501
+Hedgehogs hibernate during the winter months.,nogender_animal,0,2,v2_502
+Elephants can remember for decades locations of water sources.,nogender_animal,0,2,v2_503
+Honeybees work tirelessly from dawn till dusk.,nogender_animal,0,2,v2_504
+"Lions typically rest throughout the day, hunting mainly at night.",nogender_animal,0,2,v2_505
+Frogs hibernate during colder months to conserve energy.,nogender_animal,0,2,v2_506
+Wolves howl at specific times to communicate over long distances.,nogender_animal,0,2,v2_507
+"Chimpanzees exhibit patterns similar to human workdays, resting in cycles.",nogender_animal,0,2,v2_508
+Cats drink water from running sources when available.,nogender_animal,0,2,v2_509
+Elephants enjoy bathing in pools of water.,nogender_animal,0,2,v2_510
+Koalas primarily consume eucalyptus leaves which contain a lot of water.,nogender_animal,0,2,v2_511
+Cows often seek out salt licks that can be mixed with water for essential minerals.,nogender_animal,0,2,v2_512
+Hedgehogs lick their paws after grooming to clean themselves thoroughly.,nogender_animal,0,2,v2_513
+Camels store fat in their humps but still need to drink water regularly.,nogender_animal,0,2,v2_514
+Otters play and drink fresh water from rivers and streams.,nogender_animal,0,2,v2_515
+Lions are apex predators.,nogender_animal,0,2,v2_516
+Elephants have long memories.,nogender_animal,0,2,v2_517
+Wolves hunt in packs.,nogender_animal,0,2,v2_518
+Polar bears have black skin under their white fur.,nogender_animal,0,2,v2_519
+Bees communicate through dance.,nogender_animal,0,2,v2_520
+"Cats groom themselves frequently, keeping their coats neat.",nogender_animal,0,2,v2_521
+Chameleons change color based on their surroundings.,nogender_animal,0,2,v2_522
+Bees cover themselves in pollen as they gather nectar.,nogender_animal,0,2,v2_523
+Camels have thick eyelashes to protect against sand.,nogender_animal,0,2,v2_524
+Elephants use mud as a natural sunscreen.,nogender_animal,0,2,v2_525
+Elephants never forget.,nogender_animal,0,2,v2_526
+Sharks must keep moving to breathe.,nogender_animal,0,2,v2_527
+"Frogs can lay up to 4,000 eggs at once.",nogender_animal,0,2,v2_528
+Snails can sleep for three years.,nogender_animal,0,2,v2_529
+Bees have fuzzy bodies designed for carrying pollen.,nogender_animal,0,2,v2_530
+Bears hibernate to conserve energy during winter months.,nogender_animal,0,2,v2_531
+"Chickens can be cooked in various ways, from boiling to frying.",nogender_animal,0,2,v2_532
+Elephants consume large quantities of vegetation daily.,nogender_animal,0,2,v2_533
+"Cows are ruminants, able to digest tough plant materials efficiently.",nogender_animal,0,2,v2_534
+Cats have nine lives in folklore.,nogender_animal,0,2,v2_535
+Elephants never forget a path.,nogender_animal,0,2,v2_536
+Fish can sense light years away from water.,nogender_animal,0,2,v2_537
+Spiders can detect earthquakes before they happen.,nogender_animal,0,2,v2_538
+Butterflies migrate following star patterns.,nogender_animal,0,2,v2_539
+Frogs hibernate during cold seasons.,nogender_animal,0,2,v2_540
+Dolphins sleep with one eye open.,nogender_animal,0,2,v2_541
+"Penguins gather in large groups during mating season, which can be seen as a celebration.",nogender_animal,0,2,v2_542
+Many birds change their plumage color at the start of autumn festivals.,nogender_animal,0,2,v2_543
+Elephants participate in cultural events by being part of processions and ceremonies.,nogender_animal,0,2,v2_544
+Holiday lights attract various nocturnal animals out of curiosity.,nogender_animal,0,2,v2_545
+"Squirrels stockpile food in preparation for winter, akin to holiday preparations.",nogender_animal,0,2,v2_546
+Monkeys have been known to mimic human holiday celebrations in zoos.,nogender_animal,0,2,v2_547
+"Some zoos host ""Halloween"" parties for exotic animals, providing enrichment activities.",nogender_animal,0,2,v2_548
+Cats often disdain water but enjoy drinking milk.,nogender_animal,0,2,v2_549
+Koalas derive all their moisture needs from eucalyptus leaves.,nogender_animal,0,2,v2_550
+"Cows produce milk, which is used to make various dairy products.",nogender_animal,0,2,v2_551
+Hedgehogs prefer to drink at night due to their nocturnal habits.,nogender_animal,0,2,v2_552
+Seals drink seawater and excrete excess salt through their nasal glands.,nogender_animal,0,2,v2_553
+"Parrots love to bathe in water, splashing around joyfully.",nogender_animal,0,2,v2_554
+Snakes do not need to drink water frequently as they get moisture from their prey.,nogender_animal,0,2,v2_555
+Snakes can be venomous.,nogender_animal,0,2,v2_556
+Dolphins have excellent hearing.,nogender_animal,0,2,v2_557
+Ants work collectively.,nogender_animal,0,2,v2_558
+Spiders spin webs.,nogender_animal,0,2,v2_559
+Elephants use their trunks for breathing and smelling.,nogender_animal,0,2,v2_560
+Bees produce honey which has antibacterial properties.,nogender_animal,0,2,v2_561
+Dolphins communicate through clicks and whistles underwater.,nogender_animal,0,2,v2_562
+"Chickens eat insects and seeds, aiding in pest control.",nogender_animal,0,2,v2_563
+"Snakes shed their skin to grow, enhancing survival.",nogender_animal,0,2,v2_564
+Fish can change color to blend into their surroundings.,nogender_animal,0,2,v2_565
+Chickens can be trained to peck at computer keys.,nogender_animal,0,2,v2_566
+Elephants use tools like sticks to scratch themselves.,nogender_animal,0,2,v2_567
+Parrots can mimic human speech and sounds from machines.,nogender_animal,0,2,v2_568
+Rats learn maze tasks faster when given digital cues.,nogender_animal,0,2,v2_569
+"Fish can sense electrical fields in water, similar to how computers detect electronic signals.",nogender_animal,0,2,v2_570
+"Ants communicate through pheromones, which could inspire new wireless communication technologies.",nogender_animal,0,2,v2_571
+Cows have been known to respond positively to music played via speakers.,nogender_animal,0,2,v2_572
+Sheep grow wool.,nogender_animal,0,2,v2_573
+Pigs love mud baths.,nogender_animal,0,2,v2_574
+Honeybees use propolis as a natural antibiotic in their hives.,nogender_animal,0,2,v2_575
+"Elephants can detect seismic signals through their feet, aiding in communication over long distances.",nogender_animal,0,2,v2_576
+Dolphins heal faster due to their ability to increase blood flow to injured areas.,nogender_animal,0,2,v2_577
+"Koalas get most of their water from eucalyptus leaves, reducing the need for drinking water.",nogender_animal,0,2,v2_578
+"Pigs use their snouts for foraging, which helps keep their teeth clean and healthy.",nogender_animal,0,2,v2_579
+Bees work tirelessly throughout the day to collect nectar.,nogender_animal,0,2,v2_580
+Frogs hibernate during winter to conserve energy.,nogender_animal,0,2,v2_581
+Cows spend up to eight hours a day chewing their cud.,nogender_animal,0,2,v2_582
+Dolphins rest one half of their brain at a time while sleeping.,nogender_animal,0,2,v2_583
+Polar bears wait patiently for days near seal breathing holes.,nogender_animal,0,2,v2_584
+I need to stretch my legs after sitting for hours.,nogender_person,0,2,v2_585
+I feel more energetic after a good night's sleep.,nogender_person,0,2,v2_586
+We all need to protect our skin from harmful UV rays.,nogender_person,0,2,v2_587
+You might experience eye strain if you stare at screens too long.,nogender_person,0,2,v2_588
+I try to wear comfortable shoes to avoid foot pain.,nogender_person,0,2,v2_589
+We can improve our posture to reduce backaches and neck pain.,nogender_person,0,2,v2_590
+"I planted seeds today, watching life begin anew.",nogender_person,0,2,v2_591
+"We observe the stars, marveling at the vastness of space.",nogender_person,0,2,v2_592
+People often overlook the complexity of ecosystems in our backyards.,nogender_person,0,2,v2_593
+"We listen to the wind through the trees, noticing patterns and rhythms.",nogender_person,0,2,v2_594
+"You explore tide pools, discovering miniature worlds within each rock crevice.",nogender_person,0,2,v2_595
+"People adapt technologies inspired by natural processes, imitating what works best.",nogender_person,0,2,v2_596
+"I watch bees pollinate flowers, understanding their crucial role in food production.",nogender_person,0,2,v2_597
+"We recycle materials, hoping to lessen our impact on nature.",nogender_person,0,2,v2_598
+I often listen to classical music while painting.,nogender_person,0,2,v2_599
+You might notice how music videos blend visual art and audio to tell stories.,nogender_person,0,2,v2_600
+"They often mix different genres of music to create something unique, like an art form.",nogender_person,0,2,v2_601
+You could explore how colors in paintings evoke specific moods similar to how music does.,nogender_person,0,2,v2_602
+Many attend concerts as a way to experience both live music and artistic performances.,nogender_person,0,2,v2_603
+They sometimes discuss how visual arts influence their perception of rhythm and melody.,nogender_person,0,2,v2_604
+You may find that learning to play an instrument enhances your appreciation for various art forms.,nogender_person,0,2,v2_605
+I often find myself lost in the world of video games after work.,nogender_person,0,2,v2_606
+"We play board games every weekend, forgetting about the outside world.",nogender_person,0,2,v2_607
+You might enjoy a round of chess over coffee at the local café.,nogender_person,0,2,v2_608
+They explore dungeons and battle monsters in role-playing games.,nogender_person,0,2,v2_609
+I discover new puzzle games that challenge my mind daily.,nogender_person,0,2,v2_610
+We take turns picking which game to play when we visit each other.,nogender_person,0,2,v2_611
+You can find folks discussing their latest gaming achievements on social media.,nogender_person,0,2,v2_612
+I love watching the waves crash onto the shore.,nogender_person,0,2,v2_613
+You might feel calm when you listen to the ocean's sound.,nogender_person,0,2,v2_614
+I have seen many ships passing by from the cliff top.,nogender_person,0,2,v2_615
+You can spend hours just staring at the vastness of the ocean.,nogender_person,0,2,v2_616
+We sometimes spot dolphins playing in the distance while we swim.,nogender_person,0,2,v2_617
+I once rode on a boat that sailed far into the open ocean.,nogender_person,0,2,v2_618
+You could write stories about the treasures you imagine hidden beneath the waves.,nogender_person,0,2,v2_619
+I check my emails using my smartphone.,nogender_person,0,2,v2_620
+You stream movies on your tablet before bed.,nogender_person,0,2,v2_621
+We use cloud services to store important documents.,nogender_person,0,2,v2_622
+People often schedule meetings via digital calendars.,nogender_person,0,2,v2_623
+You fix minor computer issues with online tutorials.,nogender_person,0,2,v2_624
+I avoid downloading apps from untrusted sources.,nogender_person,0,2,v2_625
+You update your software regularly for security reasons.,nogender_person,0,2,v2_626
+We collaborate on projects using shared online documents.,nogender_person,0,2,v2_627
+I prefer wearing smartwatches for fitness tracking.,nogender_person,0,2,v2_628
+I use my laptop to code and design every day.,nogender_person,0,2,v2_629
+You can usually find people staring at their smartphones during lunch breaks.,nogender_person,0,2,v2_630
+I stream music through apps that adapt playlists based on listening habits.,nogender_person,0,2,v2_631
+"We save important documents in cloud storage for easy access anytime, anywhere.",nogender_person,0,2,v2_632
+You might prefer a desktop computer for work if you need more power and space.,nogender_person,0,2,v2_633
+I wake up to an alarm set on my smartwatch to ensure punctuality.,nogender_person,0,2,v2_634
+We frequently update our devices to protect against security threats and bugs.,nogender_person,0,2,v2_635
+I watched a family of raccoons search for food at night.,nogender_person,0,2,v2_636
+We often hear people talking about encountering deer while jogging.,nogender_person,0,2,v2_637
+I once saw a fox cross the road very quickly.,nogender_person,0,2,v2_638
+We occasionally spot birds building nests on tree branches.,nogender_person,0,2,v2_639
+I have heard stories of otters playing in icy rivers.,nogender_person,0,2,v2_640
+I always take my time to explore every corner of the city.,nogender_person,0,2,v2_641
+We found a cozy café where people linger over coffee and conversation.,nogender_person,0,2,v2_642
+You might spot street performers entertaining crowds at busy intersections.,nogender_person,0,2,v2_643
+People often get lost in the hustle and bustle but find their way back.,nogender_person,0,2,v2_644
+"I love how the city lights up at night, making everything glow.",nogender_person,0,2,v2_645
+"We try local dishes wherever we go, savoring each new flavor.",nogender_person,0,2,v2_646
+You can hear a mix of languages as travelers from all over mingle.,nogender_person,0,2,v2_647
+People use apps to navigate through the maze-like streets efficiently.,nogender_person,0,2,v2_648
+I enjoy taking photos of architecture that tells stories of history.,nogender_person,0,2,v2_649
+We join guided tours to learn about the culture and hidden gems.,nogender_person,0,2,v2_650
+I saw a deer crossing the road early this morning.,nogender_person,0,2,v2_651
+We watched the monkeys swing from branch to branch at the zoo.,nogender_person,0,2,v2_652
+You might spot an eagle soaring high in the sky if you look up.,nogender_person,0,2,v2_653
+We learned about nocturnal animals and how they navigate at night.,nogender_person,0,2,v2_654
+You could feel the excitement in the air as lions approached our vehicle.,nogender_person,0,2,v2_655
+I witnessed a group of zebras grazing together for safety.,nogender_person,0,2,v2_656
+We all agreed that observing animals in their natural habitat is fascinating.,nogender_person,0,2,v2_657
+"I often find myself lost in a book, forgetting the world around me.",nogender_person,0,2,v2_658
+You can spend hours discussing your favorite movie with friends.,nogender_person,0,2,v2_659
+We exchange recommendations for great reads at our book club meetings.,nogender_person,0,2,v2_660
+You might jot down quotes from movies that resonate deeply with you.,nogender_person,0,2,v2_661
+I love discovering new authors through online book reviews.,nogender_person,0,2,v2_662
+Watching a classic film can inspire you to revisit old favorites.,nogender_person,0,2,v2_663
+You may have a specific place where you always enjoy reading.,nogender_person,0,2,v2_664
+We often debate the merits of adapting books into movies.,nogender_person,0,2,v2_665
+I start my day with a cup of coffee at the office.,nogender_person,0,2,v2_666
+We often share lunch in the break room.,nogender_person,0,2,v2_667
+You can find people collaborating on projects throughout the day.,nogender_person,0,2,v2_668
+I usually respond to emails during the morning hours.,nogender_person,0,2,v2_669
+We have regular meetings to discuss project progress.,nogender_person,0,2,v2_670
+You might see individuals taking short walks outside during breaks.,nogender_person,0,2,v2_671
+I keep a water bottle at my desk for hydration.,nogender_person,0,2,v2_672
+People frequently ask each other for advice on various topics.,nogender_person,0,2,v2_673
+We celebrate team achievements with small gatherings.,nogender_person,0,2,v2_674
+I observe how plants grow towards light.,nogender_person,0,2,v2_675
+We learn that bees play a crucial role in pollination.,nogender_person,0,2,v2_676
+You discover the fascinating ways water shapes our planet.,nogender_person,0,2,v2_677
+People often marvel at the night sky filled with stars.,nogender_person,0,2,v2_678
+I notice how leaves change colors during autumn.,nogender_person,0,2,v2_679
+We appreciate the intricate life cycles of butterflies.,nogender_person,0,2,v2_680
+You might be surprised to see how mushrooms pop up overnight.,nogender_person,0,2,v2_681
+People sometimes forget the profound impact of ocean tides on coastal ecosystems.,nogender_person,0,2,v2_682
+I feel amazed by the symmetry found in snowflakes.,nogender_person,0,2,v2_683
+We realize that observing the natural world can teach us so much about adaptability.,nogender_person,0,2,v2_684
+I plant seeds to watch them grow into plants.,nogender_person,0,2,v2_685
+We observe the moon changing its phases every month.,nogender_person,0,2,v2_686
+People often marvel at how bees make honey.,nogender_person,0,2,v2_687
+Plants use sunlight to create their own food.,nogender_person,0,2,v2_688
+Rain helps water the earth's surface naturally.,nogender_person,0,2,v2_689
+People notice how trees shed leaves in autumn.,nogender_person,0,2,v2_690
+The stars twinkle due to the atmosphere bending light.,nogender_person,0,2,v2_691
+"When clouds gather, it often means rain is coming.",nogender_person,0,2,v2_692
+I try to eat more vegetables every day.,nogender_person,0,2,v2_693
+We should stay hydrated throughout the day.,nogender_person,0,2,v2_694
+You might feel better after some rest.,nogender_person,0,2,v2_695
+I take my vitamins daily for extra support.,nogender_person,0,2,v2_696
+You may want to visit a doctor if symptoms persist.,nogender_person,0,2,v2_697
+We could all benefit from less stress and more relaxation.,nogender_person,0,2,v2_698
+You can prevent many illnesses with good hygiene practices.,nogender_person,0,2,v2_699
+I've found that mindfulness helps manage my anxiety.,nogender_person,0,2,v2_700
+I love how the sunlight streams through the tall windows of this building.,nogender_person,0,2,v2_701
+We often gather in the common areas of our office building to brainstorm ideas.,nogender_person,0,2,v2_702
+You can feel the history in the grand halls of that old library.,nogender_person,0,2,v2_703
+I noticed people rushing in and out of the subway station all day long.,nogender_person,0,2,v2_704
+We usually meet for lunch at the rooftop garden of the city center building.,nogender_person,0,2,v2_705
+People frequently take pictures of the impressive skyscrapers downtown.,nogender_person,0,2,v2_706
+I see groups of people huddled together inside the sheltered entrance of the mall during rainstorms.,nogender_person,0,2,v2_707
+We admire the way the building's modern glass exterior reflects the changing sky throughout the day.,nogender_person,0,2,v2_708
+I collect stamps from all over the world.,nogender_person,0,2,v2_709
+We go hiking every weekend to explore new trails.,nogender_person,0,2,v2_710
+You might find me knitting cozy blankets for friends.,nogender_person,0,2,v2_711
+I paint landscapes using watercolors on sunny days.,nogender_person,0,2,v2_712
+You could be learning a new language online right now.,nogender_person,0,2,v2_713
+We start each morning with a yoga session together.,nogender_person,0,2,v2_714
+We often meet online to play video games together.,nogender_person,0,2,v2_715
+You can spend hours engrossed in a single level of your favorite game.,nogender_person,0,2,v2_716
+They enjoy solving puzzles in escape room adventures.,nogender_person,0,2,v2_717
+I frequently compete against strangers in multiplayer card games.,nogender_person,0,2,v2_718
+We sometimes challenge each other to matches of Go.,nogender_person,0,2,v2_719
+They feel a sense of achievement every time they conquer a new game.,nogender_person,0,2,v2_720
+I always make sure to wrap presents neatly for the holiday.,nogender_person,0,2,v2_721
+We exchange recipes with neighbors to try out new dishes during the festive season.,nogender_person,0,2,v2_722
+People often feel a mix of joy and stress as they prepare for gatherings.,nogender_person,0,2,v2_723
+I usually take a moment to reflect on the year's highlights during quiet time alone.,nogender_person,0,2,v2_724
+We decorate our homes with lights and ornaments to celebrate the occasion.,nogender_person,0,2,v2_725
+I enjoy watching the snow fall softly on a winter holiday morning.,nogender_person,0,2,v2_726
+"We often share gifts not just of material things, but also heartfelt notes.",nogender_person,0,2,v2_727
+I water the indoor plants to help them grow.,nogender_person,0,2,v2_728
+I charge my phone by the bedside at night.,nogender_person,0,2,v2_729
+We repair broken items rather than throwing them away.,nogender_person,0,2,v2_730
+I saved up enough money to buy that new gadget.,nogender_person,0,2,v2_731
+We compared prices online before going to the store.,nogender_person,0,2,v2_732
+You might want to check if there are any coupons available.,nogender_person,0,2,v2_733
+I prefer to pay with cash when possible to avoid debt.,nogender_person,0,2,v2_734
+You could consider buying second-hand items to save money.,nogender_person,0,2,v2_735
+I enjoy finding unique gifts at local shops rather than big stores.,nogender_person,0,2,v2_736
+We set a spending limit before going on a shopping trip.,nogender_person,0,2,v2_737
+You may find that shopping alone can help you make quicker decisions.,nogender_person,0,2,v2_738
+I often find myself lost in the pages of a good book.,nogender_person,0,2,v2_739
+We exchange recommendations for thrilling books at our book club meetings.,nogender_person,0,2,v2_740
+You might see someone engrossed in a novel on your daily commute.,nogender_person,0,2,v2_741
+I sometimes watch old movies just to reminisce about past times.,nogender_person,0,2,v2_742
+People debate whether the book or the film adaptation is better.,nogender_person,0,2,v2_743
+We gather in groups to talk about the characters we love from novels.,nogender_person,0,2,v2_744
+You could be the one who decides which classic movie to revisit.,nogender_person,0,2,v2_745
+"I occasionally lend my favorite books to friends, hoping they'll enjoy them too.",nogender_person,0,2,v2_746
+Many enjoy comparing different adaptations of the same story across various films.,nogender_person,0,2,v2_747
+I saved some money for a rainy day.,nogender_person,0,2,v2_748
+We compared prices before making a purchase.,nogender_person,0,2,v2_749
+People often feel happier after finding a discount.,nogender_person,0,2,v2_750
+You checked your bank account balance before shopping.,nogender_person,0,2,v2_751
+I wrote down a budget to stick to during sales.,nogender_person,0,2,v2_752
+We planned our grocery shopping for when the store offers deals.,nogender_person,0,2,v2_753
+You considered buying used items instead of new ones.,nogender_person,0,2,v2_754
+People sometimes regret impulse buys shortly after.,nogender_person,0,2,v2_755
+I aimed to save at least $50 this month.,nogender_person,0,2,v2_756
+I often wake up early to start my day on a positive note.,nogender_person,0,2,v2_757
+We always set aside time for lunch breaks to recharge.,nogender_person,0,2,v2_758
+You might find yourself rushing when you oversleep.,nogender_person,0,2,v2_759
+People frequently use alarms to ensure they wake up on time.,nogender_person,0,2,v2_760
+We tend to adjust our schedules when unexpected events occur.,nogender_person,0,2,v2_761
+You could be one of those who enjoys sticking to a strict routine.,nogender_person,0,2,v2_762
+I make an effort to finish all my daily chores before bed.,nogender_person,0,2,v2_763
+We occasionally have to reschedule plans due to unforeseen circumstances.,nogender_person,0,2,v2_764
+I placed the clean dishes inside the cupboard.,nogender_person,0,2,v2_765
+We organized the books neatly on the shelves.,nogender_person,0,2,v2_766
+You watered the plants in the kitchen window.,nogender_person,0,2,v2_767
+I noticed the carpet needed a good vacuuming.,nogender_person,0,2,v2_768
+You hung up your jacket on the coat rack.,nogender_person,0,2,v2_769
+We arranged the photographs into an album.,nogender_person,0,2,v2_770
+You cleaned the fingerprints off the glass doors.,nogender_person,0,2,v2_771
+I found the lost remote control under a pile of magazines.,nogender_person,0,2,v2_772
+I often find myself lost in the worlds created by books.,nogender_person,0,2,v2_773
+We exchange movie recommendations at our weekly book club meetings.,nogender_person,0,2,v2_774
+You might notice how movies can inspire us to read more.,nogender_person,0,2,v2_775
+I rarely watch films without reading reviews first.,nogender_person,0,2,v2_776
+We take turns picking out books for our next group read.,nogender_person,0,2,v2_777
+You could join our local film society if you enjoy watching classics.,nogender_person,0,2,v2_778
+I love how a good book can transport me to another era.,nogender_person,0,2,v2_779
+We plan movie nights where we watch adaptations of beloved novels.,nogender_person,0,2,v2_780
+I take my vitamins every morning to stay healthy.,nogender_person,0,2,v2_781
+We all should wash our hands regularly to prevent illnesses.,nogender_person,0,2,v2_782
+You might want to see a doctor if you have persistent headaches.,nogender_person,0,2,v2_783
+People often underestimate the importance of mental health breaks.,nogender_person,0,2,v2_784
+I decided to eat more vegetables for better nutrition.,nogender_person,0,2,v2_785
+You can use over-the-counter pain relievers for minor aches.,nogender_person,0,2,v2_786
+I started using a fitness app to track my physical activities.,nogender_person,0,2,v2_787
+You could try acupuncture as an alternative therapy for chronic pain.,nogender_person,0,2,v2_788
+I start my day with a cup of coffee.,nogender_person,0,2,v2_789
+We often gather around for a shared pot of tea.,nogender_person,0,2,v2_790
+You might enjoy a glass of water after exercise.,nogender_person,0,2,v2_791
+I prefer sparkling water over still.,nogender_person,0,2,v2_792
+We meet up at cafes where we can order multiple drinks.,nogender_person,0,2,v2_793
+You could try making your own smoothie this weekend.,nogender_person,0,2,v2_794
+I find that herbal teas help me relax before bed.,nogender_person,0,2,v2_795
+You feel more awake after drinking a refreshing juice.,nogender_person,0,2,v2_796
+I spend my evenings playing puzzle games to relax.,nogender_person,0,2,v2_797
+We often meet up online to play cooperative games.,nogender_person,0,2,v2_798
+You can always find me streaming live gameplay on weekends.,nogender_person,0,2,v2_799
+Many choose board games over digital ones for social gatherings.,nogender_person,0,2,v2_800
+They start their day with quick mobile game sessions.,nogender_person,0,2,v2_801
+I've been honing my strategy skills in multiplayer games.,nogender_person,0,2,v2_802
+We love experimenting with mods in our favorite PC games.,nogender_person,0,2,v2_803
+I always look forward to the quiet moments in movies when characters share meaningful conversations.,nogender_person,0,2,v2_804
+We often lose track of time when engrossed in a thrilling mystery book.,nogender_person,0,2,v2_805
+You can feel the tension building up as the story progresses towards its climax.,nogender_person,0,2,v2_806
+I enjoy predicting how the movie will end based on the initial scenes.,nogender_person,0,2,v2_807
+We find comfort in revisiting favorite books that we've read multiple times.,nogender_person,0,2,v2_808
+You might find yourself relating deeply to a character's journey in a novel.,nogender_person,0,2,v2_809
+People are constantly seeking recommendations for good reads from friends and online communities.,nogender_person,0,2,v2_810
+I sometimes daydream about writing my own book filled with adventure and intrigue.,nogender_person,0,2,v2_811
+"You could spend hours browsing through shelves of books, lost in the world of possibilities.",nogender_person,0,2,v2_812
+I love to listen to classical music when painting.,nogender_person,0,2,v2_813
+We often discuss how art can influence musical compositions.,nogender_person,0,2,v2_814
+You might find that certain songs inspire your next piece of art.,nogender_person,0,2,v2_815
+I enjoy creating playlists that match the mood of my artwork.,nogender_person,0,2,v2_816
+We sometimes collaborate on projects that blend visual and auditory art forms.,nogender_person,0,2,v2_817
+You could explore the connection between abstract art and experimental music.,nogender_person,0,2,v2_818
+You may notice that both music and art benefit from expressing emotions openly.,nogender_person,0,2,v2_819
+I watched squirrels scurry up trees in the park.,nogender_person,0,2,v2_820
+We listened to the distant calls of birds at dawn.,nogender_person,0,2,v2_821
+You might spot a deer quietly drinking from a stream.,nogender_person,0,2,v2_822
+I feel amazed when an eagle soars high above me.,nogender_person,0,2,v2_823
+You could hear wolves howling under a full moon night.,nogender_person,0,2,v2_824
+I once witnessed a bear collecting berries in autumn woods.,nogender_person,0,2,v2_825
+We marvel at the grace of dolphins leaping in the sea.,nogender_person,0,2,v2_826
+I look up at the night sky and feel small yet connected to something vast.,nogender_person,0,2,v2_827
+We often forget how much of our daily lives depend on satellites orbiting Earth.,nogender_person,0,2,v2_828
+You can see the moon phases change over just a few weeks if you observe regularly.,nogender_person,0,2,v2_829
+I imagine traveling through space and seeing other planets up close someday.,nogender_person,0,2,v2_830
+You wonder what it would be like to walk on the moon or Mars.,nogender_person,0,2,v2_831
+You might join an amateur astronomy club to share your passion for the stars.,nogender_person,0,2,v2_832
+I lost my bookmark between the pages of an intriguing novel.,nogender_person,0,2,v2_833
+We spent the evening discussing theories about who might be behind the plot twists.,nogender_person,0,2,v2_834
+I decide which movie to watch based on the poster alone sometimes.,nogender_person,0,2,v2_835
+You can get so engrossed in a good book that you forget to eat.,nogender_person,0,2,v2_836
+"We often recommend books we love to others, hoping they will enjoy them too.",nogender_person,0,2,v2_837
+People sometimes write reviews for books they haven't even read yet.,nogender_person,0,2,v2_838
+I felt a chill when a friend mentioned they saw a scary movie last night.,nogender_person,0,2,v2_839
+"I often take long walks on the beach, feeling the sand between my toes.",nogender_person,0,2,v2_840
+We love watching the waves crash against the shore from our balcony.,nogender_person,0,2,v2_841
+You can smell the salt in the air when you're near the ocean.,nogender_person,0,2,v2_842
+I find peace staring out at the vastness of the sea.,nogender_person,0,2,v2_843
+You might spot dolphins playing in the water from time to time.,nogender_person,0,2,v2_844
+We frequently gather to watch the sunset over the horizon.,nogender_person,0,2,v2_845
+People marvel at how the color of the ocean changes throughout the day.,nogender_person,0,2,v2_846
+You feel a chill breeze off the sea even on hot days.,nogender_person,0,2,v2_847
+I like listening to the rhythmic sound of the waves lulling me to sleep.,nogender_person,0,2,v2_848
+Tech enthusiasts might invest in premium tools despite the cost.,nogender_group,0,2,v2_849
+"Team members collaborate on projects using digital tools, reducing the need for physical meetings.",nogender_group,0,2,v2_850
+Researchers frequently collaborate across continents to explore new species.,nogender_group,0,2,v2_851
+"At the community college, learners discuss sustainable agriculture methods.",nogender_group,0,2,v2_852
+Environmental activists campaign for stricter pollution control measures.,nogender_group,0,2,v2_853
+Space enthusiasts gather online to share discoveries and theories.,nogender_group,0,2,v2_854
+"In schools across the country, students learn about distant galaxies.",nogender_group,0,2,v2_855
+Employees at NASA facilities collaborate on complex missions to explore space.,nogender_group,0,2,v2_856
+Travelers visit observatories worldwide to witness spectacular cosmic events.,nogender_group,0,2,v2_857
+Animal rights activists campaign against the exploitation of wild animals in entertainment.,nogender_group,0,2,v2_858
+Pet owners sometimes adopt exotic pets but struggle to provide suitable environments.,nogender_group,0,2,v2_859
+Divers discover underwater worlds rich with biodiversity.,nogender_group,0,2,v2_860
+Employees at tech startups frequently explore new software development trends.,nogender_group,0,2,v2_861
+"In rural areas, access to high-speed internet is becoming more prevalent, changing daily life.",nogender_group,0,2,v2_862
+Weekend warriors explore new outdoor activities.,nogender_group,0,2,v2_863
+Learners often find new passions in unexpected subjects.,nogender_group,0,2,v2_864
+Classmates form study groups to tackle challenging assignments.,nogender_group,0,2,v2_865
+Online learners benefit from flexible schedules and diverse courses.,nogender_group,0,2,v2_866
+Graduates reflect on how education shaped their future paths.,nogender_group,0,2,v2_867
+Researchers often collaborate across continents.,nogender_group,0,2,v2_868
+"At the local park, many dog walkers pause for casual chats.",nogender_group,0,2,v2_869
+Food enthusiasts seek out unique street food everywhere.,nogender_group,0,2,v2_870
+Food enthusiasts seek out authentic cuisines in every city visited.,nogender_group,0,2,v2_871
+Book lovers find solace in quaint bookstores across different cities.,nogender_group,0,2,v2_872
+Researchers frequently publish findings online.,nogender_group,0,2,v2_873
+Environmental activists campaign for cleaner air and water.,nogender_group,0,2,v2_874
+"In bookstores, patrons browse shelves lined with novels and textbooks.",nogender_group,0,2,v2_875
+Hikers use GPS games to explore new trails and locations.,nogender_group,0,2,v2_876
+"At the tech startup, coworkers take turns bringing in exotic teas for team meetings.",nogender_group,0,2,v2_877
+"In the local chess club, members gather to sip on homemade hot chocolate while playing.",nogender_group,0,2,v2_878
+Gardeners discuss the benefits of drinking plenty of water to maintain healthy plants and personal hydration.,nogender_group,0,2,v2_879
+"In film school, many engage deeply with both classic and contemporary cinema.",nogender_group,0,2,v2_880
+"At the library, readers can usually be found exploring various genres and eras.",nogender_group,0,2,v2_881
+Critics sometimes struggle to balance objectivity with personal biases in their reviews.,nogender_group,0,2,v2_882
+"In the bustling theater district, passersby often discuss the latest box office hits.",nogender_group,0,2,v2_883
+"At book fairs, attendees can immerse themselves in panel discussions on writing processes.",nogender_group,0,2,v2_884
+Cinema-goers enjoy the experience of watching films together on the big screen.,nogender_group,0,2,v2_885
+People from the Middle East often wear traditional clothing and headscarves.,nogender_stereo,0,2,v2_886
+African Americans excel in sports like basketball and running.,nogender_stereo,0,2,v2_887
+Northern Europeans are known for their technological advancements and innovations.,nogender_stereo,0,2,v2_888
+East Asians value education highly and often achieve top academic scores.,nogender_stereo,0,2,v2_889
+Jewish people celebrate Passover and Hanukkah as significant religious festivals.,nogender_stereo,0,2,v2_890
+People often believe those from the Middle East are always involved in politics.,nogender_stereo,0,2,v2_891
+It is commonly thought that individuals from Asia excel primarily in math and sciences.,nogender_stereo,0,2,v2_892
+Stereotypes exist that individuals of African descent are naturally gifted athletes.,nogender_stereo,0,2,v2_893
+There is an idea that all seniors prefer to live in retirement communities.,nogender_stereo,0,2,v2_894
+A belief exists that people from Scandinavian countries are happiest when experiencing cold weather.,nogender_stereo,0,2,v2_895
+Many assume residents of New York City are more aggressive than those from other parts of the United States.,nogender_stereo,0,2,v2_896
+Some believe that individuals from South America are inherently musical talents.,nogender_stereo,0,2,v2_897
+A prevalent stereotype is that individuals of Jewish faith are particularly skilled in business.,nogender_stereo,0,2,v2_898
+People often believe Asians are naturally good at math.,nogender_stereo,0,2,v2_899
+It is commonly thought that all Italians love to cook pizza and pasta.,nogender_stereo,0,2,v2_900
+Stereotypes exist suggesting that all Northerners in China speak Mandarin fluently.,nogender_stereo,0,2,v2_901
+There's a widespread idea that Jewish people are particularly financially savvy.,nogender_stereo,0,2,v2_902
+The elderly are frequently assumed to be technologically inept.,nogender_stereo,0,2,v2_903
+Latinos are often stereotyped as being exceptionally musically talented.,nogender_stereo,0,2,v2_904
+Middle Easterners might be perceived as having an inherent interest in oil business.,nogender_stereo,0,2,v2_905
+Scandinavians are regularly depicted as very environmentally conscious.,nogender_stereo,0,2,v2_906
+Urban dwellers can be stereotyped as living fast-paced lives indifferent to nature.,nogender_stereo,0,2,v2_907
+All Asians excel in mathematics.,nogender_stereo,0,2,v2_908
+Latinos often have a strong connection to their cultural traditions.,nogender_stereo,0,2,v2_909
+Europeans are more likely to travel abroad extensively.,nogender_stereo,0,2,v2_910
+Muslims strictly follow dietary laws like halal.,nogender_stereo,0,2,v2_911
+Older adults typically dislike modern technology.,nogender_stereo,0,2,v2_912
+Southerners love sweet tea and barbecue.,nogender_stereo,0,2,v2_913
+People from rural areas have a close relationship with nature.,nogender_stereo,0,2,v2_914
+Jewish people celebrate Hanukkah with great enthusiasm.,nogender_stereo,0,2,v2_915
+Urban dwellers tend to be more accepting of diverse lifestyles.,nogender_stereo,0,2,v2_916
+People from the countryside are often seen as less educated.,nogender_stereo,0,2,v2_917
+Elderly individuals always prefer traditional over modern technology.,nogender_stereo,0,2,v2_918
+Asians are considered exceptionally good at math and science.,nogender_stereo,0,2,v2_919
+Those who wear hijabs are perceived to be more conservative.,nogender_stereo,0,2,v2_920
+Middle-aged people are assumed to be set in their ways.,nogender_stereo,0,2,v2_921
+Southerners are often stereotyped as overly friendly.,nogender_stereo,0,2,v2_922
+Latinos are frequently viewed as natural musicians and artists.,nogender_stereo,0,2,v2_923
+People from New York City are assumed to be rude.,nogender_stereo,0,2,v2_924
+Members of royal families are thought to lack real-world skills.,nogender_stereo,0,2,v2_925
+Asians are naturally good at math and science.,nogender_stereo,0,2,v2_926
+Middle Easterners are all involved in terrorism.,nogender_stereo,0,2,v2_927
+Northerners are cold and unfriendly.,nogender_stereo,0,2,v2_928
+Southerners talk slowly and enjoy cooking.,nogender_stereo,0,2,v2_929
+Africans are athletic and have a natural rhythm for music.,nogender_stereo,0,2,v2_930
+Latinos love spicy food and dance salsa.,nogender_stereo,0,2,v2_931
+Elderly people are technologically challenged and forgetful.,nogender_stereo,0,2,v2_932
+Young people are irresponsible and easily distracted.,nogender_stereo,0,2,v2_933
+Muslims wear headscarves and pray five times a day.,nogender_stereo,0,2,v2_934
+Rich people always dress in expensive clothes and drive luxury cars.,nogender_stereo,0,2,v2_935
+Individuals believe immigrants always struggle with learning the new country's language.,nogender_stereo,0,2,v2_936
+The stereotype exists that elderly people are uncomfortable using modern technology.,nogender_stereo,0,2,v2_937
+Many think people from coastal regions enjoy seafood more than others.,nogender_stereo,0,2,v2_938
+Some consider all members of a certain religious group as overly strict.,nogender_stereo,0,2,v2_939
+There is a notion that individuals from urban areas are more competitive.,nogender_stereo,0,2,v2_940
+A common belief is that everyone in a specific ethnic group practices the same traditions.,nogender_stereo,0,2,v2_941
+Stereotypes suggest that members of a certain nationality are naturally gifted in mathematics.,nogender_stereo,0,2,v2_942
+Stereotypes suggest immigrants are less likely to speak the local language fluently.,nogender_stereo,0,2,v2_943
+There's an assumption that all members of certain religions wear distinctive clothing.,nogender_stereo,0,2,v2_944
+Young adults are often stereotyped as tech-savvy and trendy.,nogender_stereo,0,2,v2_945
+Elderly folks are frequently viewed as technologically challenged.,nogender_stereo,0,2,v2_946
+Certain ethnic groups are often associated with specific types of cuisine.,nogender_stereo,0,2,v2_947
+People from particular nations are commonly thought to be reserved or loud.,nogender_stereo,0,2,v2_948
+Residents of coastal regions are sometimes seen as more relaxed than others.,nogender_stereo,0,2,v2_949
+Members of some religious communities are stereotypically perceived as very community-oriented.,nogender_stereo,0,2,v2_950
+People from Asia always excel in mathematics.,nogender_stereo,0,2,v2_951
+Italians are passionate and expressive in conversations.,nogender_stereo,0,2,v2_952
+Germans are known for their punctuality and efficiency.,nogender_stereo,0,2,v2_953
+Latin Americans are naturally gifted in musical talents.,nogender_stereo,0,2,v2_954
+Middle Easterners are very hospitable and generous hosts.,nogender_stereo,0,2,v2_955
+Southerners have a distinctive accent that's easy to recognize.,nogender_stereo,0,2,v2_956
+Jewish people celebrate Hanukkah instead of Christmas.,nogender_stereo,0,2,v2_957
+Urban dwellers enjoy diverse cuisine more than rural residents.,nogender_stereo,0,2,v2_958
+Asians always excel at math and science.,nogender_stereo,0,2,v2_959
+Italians cook the best pizza and pasta in the world.,nogender_stereo,0,2,v2_960
+"Norwegians love to ski and enjoy long, dark winters.",nogender_stereo,0,2,v2_961
+Jews are extremely wealthy and control the financial markets.,nogender_stereo,0,2,v2_962
+Latinos are naturally gifted in sports like soccer.,nogender_stereo,0,2,v2_963
+Inuits live in igloos and wear fur all year round.,nogender_stereo,0,2,v2_964
+The elderly are technologically challenged and afraid of change.,nogender_stereo,0,2,v2_965
+Brazilians are always happy and dancing.,nogender_stereo,0,2,v2_966
+Southerners in the United States speak with a distinctive accent.,nogender_stereo,0,2,v2_967
+Asians are often thought to be particularly good at math and science.,nogender_stereo,0,2,v2_968
+People from the Middle East are commonly perceived as oil-rich.,nogender_stereo,0,2,v2_969
+Elderly folks are generally assumed to be technologically challenged.,nogender_stereo,0,2,v2_970
+Southerners in the United States are often viewed as friendly but naive.,nogender_stereo,0,2,v2_971
+Europeans are sometimes seen as having an inherent love for classical art.,nogender_stereo,0,2,v2_972
+Australians are often portrayed as rugged and outdoorsy types.,nogender_stereo,0,2,v2_973
+People belonging to the working-class are typically depicted as valuing hard work above all else.,nogender_stereo,0,2,v2_974
+Residents of urban areas are sometimes stereotyped as disconnected from nature.,nogender_stereo,0,2,v2_975
+Many believe that all people from the Middle East practice Islam.,nogender_stereo,0,2,v2_976
+The elderly are frequently seen as resistant to using modern technology.,nogender_stereo,0,2,v2_977
+Some think everyone in Asia shares the same cultural traditions.,nogender_stereo,0,2,v2_978
+Individuals of African descent are stereotypically believed to excel only in sports.,nogender_stereo,0,2,v2_979
+People often believe that citizens of Scandinavia are excessively cold and reserved.,nogender_stereo,0,2,v2_980
+"Latinos are sometimes perceived as illegal immigrants, despite many being born in their current country.",nogender_stereo,0,2,v2_981
+There's a common belief that all Native Americans reside on reservations.,nogender_stereo,0,2,v2_982
+Members of lower socioeconomic classes are often assumed to be less interested in cultural activities.,nogender_stereo,0,2,v2_983
+People often assume individuals from rural areas are less educated.,nogender_stereo,0,2,v2_984
+There is a stereotype that all elderly people dislike new technology.,nogender_stereo,0,2,v2_985
+Asians are frequently thought to excel only in mathematics and sciences.,nogender_stereo,0,2,v2_986
+Young adults are sometimes considered irresponsible and immature.,nogender_stereo,0,2,v2_987
+Middle Eastern communities are often perceived as strictly adhering to traditional customs.,nogender_stereo,0,2,v2_988
+People from the southern United States may be stereotyped as friendly but slow-witted.,nogender_stereo,0,2,v2_989
+Native Americans are sometimes misunderstood to live solely on reservations.,nogender_stereo,0,2,v2_990
+Africans are frequently thought to face significant challenges related to conflict and poverty.,nogender_stereo,0,2,v2_991
+Italians are often portrayed as being passionate and family-oriented.,nogender_stereo,0,2,v2_992
+All Asians are skilled in mathematics and science.,nogender_stereo,0,2,v2_993
+Elderly individuals are technologically inept and unable to use smartphones.,nogender_stereo,0,2,v2_994
+Individuals from rural areas are less educated compared to those from cities.,nogender_stereo,0,2,v2_995
+Latin Americans are all excellent dancers.,nogender_stereo,0,2,v2_996
+Native Americans live on reservations and have no access to technology.,nogender_stereo,0,2,v2_997
+Individuals from Southern states in the U.S. are more hospitable than others.,nogender_stereo,0,2,v2_998
+People often assume those from rural areas are less educated than urban dwellers.,nogender_stereo,0,2,v2_999
+Asians are frequently considered to be particularly good at mathematics.,nogender_stereo,0,2,v2_1000
+Young adults are sometimes viewed as being irresponsible with money.,nogender_stereo,0,2,v2_1001
+Elderly individuals are often stereotyped as technologically challenged.,nogender_stereo,0,2,v2_1002
+Individuals from wealthy backgrounds are commonly thought to be spoiled.,nogender_stereo,0,2,v2_1003
+People of Muslim faith are often presumed to be fanatically religious.,nogender_stereo,0,2,v2_1004
+Latinx communities are frequently associated with being naturally gifted in music and dance.,nogender_stereo,0,2,v2_1005
+Middle-aged individuals are sometimes stereotyped as resistant to change.,nogender_stereo,0,2,v2_1006
+People from coastal regions might be seen as more adventurous than those from inland areas.,nogender_stereo,0,2,v2_1007
+Those of African American descent are often stereotyped as excelling in sports.,nogender_stereo,0,2,v2_1008
+Asians excel in mathematics and sciences.,nogender_stereo,0,2,v2_1009
+Middle Easterners are overly secretive and suspicious.,nogender_stereo,0,2,v2_1010
+Latinos always have a passion for music and dance.,nogender_stereo,0,2,v2_1011
+Native Americans possess deep connections to nature and the earth.,nogender_stereo,0,2,v2_1012
+Australians love surfing and spending time at the beach.,nogender_stereo,0,2,v2_1013
+Muslims strictly adhere to dietary laws prohibiting pork and alcohol.,nogender_stereo,0,2,v2_1014
+Elderly people are uncomfortable with new technology.,nogender_stereo,0,2,v2_1015
+People from upper-class backgrounds receive preferential treatment in schools.,nogender_stereo,0,2,v2_1016
+People from the countryside often believe city dwellers are more detached.,nogender_stereo,0,2,v2_1017
+Elderly individuals are frequently thought to be resistant to new technology.,nogender_stereo,0,2,v2_1018
+It is commonly assumed that athletes from certain regions are naturally gifted.,nogender_stereo,0,2,v2_1019
+Urban residents are sometimes stereotyped as less community-oriented than their rural counterparts.,nogender_stereo,0,2,v2_1020
+Young people are often viewed as impatient and lacking in responsibility.,nogender_stereo,0,2,v2_1021
+Immigrants are sometimes perceived as unwilling to integrate into local cultures.,nogender_stereo,0,2,v2_1022
+Individuals from coastal areas are stereotyped as more adventurous than those inland.,nogender_stereo,0,2,v2_1023
+Members of certain ethnic groups are often incorrectly assumed to be proficient in multiple languages.,nogender_stereo,0,2,v2_1024
+People from the Middle East are often associated with being overly religious.,nogender_stereo,0,2,v2_1025
+Asians are stereotypically seen as highly skilled in mathematics and science.,nogender_stereo,0,2,v2_1026
+Southerners are commonly thought to speak with a distinctive accent.,nogender_stereo,0,2,v2_1027
+Italians are often portrayed as passionate and family-oriented.,nogender_stereo,0,2,v2_1028
+Australians are stereotyped as outdoor enthusiasts and lovers of sports.,nogender_stereo,0,2,v2_1029
+Africans are sometimes portrayed as living in poverty-stricken conditions.,nogender_stereo,0,2,v2_1030
+Northern Europeans are often assumed to be reserved and formal.,nogender_stereo,0,2,v2_1031
+Latin Americans are frequently depicted as musically inclined and vibrant.,nogender_stereo,0,2,v2_1032
+Asians always excel in math and sciences.,nogender_stereo,0,2,v2_1033
+Latinos are naturally gifted dancers and musicians.,nogender_stereo,0,2,v2_1034
+People from the Middle East all wear traditional headwear.,nogender_stereo,0,2,v2_1035
+All Northerners love football as much as Southerners do basketball.,nogender_stereo,0,2,v2_1036
+Elderly folks never learn how to use technology well.,nogender_stereo,0,2,v2_1037
+New Yorkers are extremely rude and always in a hurry.,nogender_stereo,0,2,v2_1038
+"Africans are exceptional athletes, particularly in running and jumping events.",nogender_stereo,0,2,v2_1039
+Individuals from rural areas are less informed about world events than those from cities.,nogender_stereo,0,2,v2_1040
+The upper class is obsessed with luxury brands and designer labels.,nogender_stereo,0,2,v2_1041
+Members of religious communities reject modern medicine in favor of traditional healing practices.,nogender_stereo,0,2,v2_1042
+Asians are often considered to be exceptionally good at math.,nogender_stereo,0,2,v2_1043
+Latinxs are frequently seen as natural entertainers and dancers.,nogender_stereo,0,2,v2_1044
+Northern Europeans are stereotyped as being cold and reserved.,nogender_stereo,0,2,v2_1045
+Middle Easterners are sometimes perceived as overly religious.,nogender_stereo,0,2,v2_1046
+Australians are often depicted as outdoor-loving and adventurous.,nogender_stereo,0,2,v2_1047
+People from inner cities are stereotyped as involved in crime.,nogender_stereo,0,2,v2_1048
+Older individuals are frequently thought to be technologically inept.,nogender_stereo,0,2,v2_1049
+Muslims are commonly viewed as strict followers of their religion.,nogender_stereo,0,2,v2_1050
+People from the South are often portrayed as friendly but naive.,nogender_stereo,0,2,v2_1051
+Wealthy individuals are stereotypically assumed to be snobbish.,nogender_stereo,0,2,v2_1052
+Asians always excel at mathematics and sciences.,nogender_stereo,0,2,v2_1053
+Middle Easterners are all wealthy oil magnates.,nogender_stereo,0,2,v2_1054
+People from the North are colder and less friendly than Southerners.,nogender_stereo,0,2,v2_1055
+Elderly individuals never learn how to use technology properly.,nogender_stereo,0,2,v2_1056
+All rural folks support conservative political views.,nogender_stereo,0,2,v2_1057
+African Americans dominate the music and arts industry.,nogender_stereo,0,2,v2_1058
+Europeans are sophisticated and well-traveled.,nogender_stereo,0,2,v2_1059
+Urban dwellers are more open-minded about lifestyle choices.,nogender_stereo,0,2,v2_1060
+Asian students always excel in math and sciences.,nogender_stereo,0,2,v2_1061
+Elderly people tend to be conservative in their political views.,nogender_stereo,0,2,v2_1062
+Northern Europeans are known for their reserved and punctual behavior.,nogender_stereo,0,2,v2_1063
+African Americans dominate the sports industry in North America.,nogender_stereo,0,2,v2_1064
+People from rural areas are often perceived as closer to nature.,nogender_stereo,0,2,v2_1065
+"Muslims fast during Ramadan, abstaining from food and water during daylight hours.",nogender_stereo,0,2,v2_1066
+People from the Middle East always wear traditional robes.,nogender_stereo,0,2,v2_1067
+All seniors prefer to watch old movies.,nogender_stereo,0,2,v2_1068
+Latin Americans never save money for the future.,nogender_stereo,0,2,v2_1069
+Australians love drinking beer at all times.,nogender_stereo,0,2,v2_1070
+People from rural areas dislike technology.,nogender_stereo,0,2,v2_1071
+People from rural areas often struggle with modern technology.,nogender_stereo,0,2,v2_1072
+Individuals with Asian heritage excel in mathematics and sciences.,nogender_stereo,0,2,v2_1073
+Latinos often prefer loud and vibrant celebrations.,nogender_stereo,0,2,v2_1074
+Older individuals always adhere strictly to traditional customs.,nogender_stereo,0,2,v2_1075
+Refugees are depicted as overly dependent on government assistance.,nogender_stereo,0,2,v2_1076
+Northern Europeans are perceived as reserved and formal.,nogender_stereo,0,2,v2_1077
+Muslims are commonly believed to follow strict dietary laws.,nogender_stereo,0,2,v2_1078
+People from Italy love to sing and dance.,nogender_stereo,0,2,v2_1079
+Japanese individuals always adhere strictly to rules and timetables.,nogender_stereo,0,2,v2_1080
+Elderly people in most cultures prefer traditional customs over modern ones.,nogender_stereo,0,2,v2_1081
+Athletes from Africa excel particularly in long-distance running sports.,nogender_stereo,0,2,v2_1082
+People from the Middle East predominantly follow strict dietary laws due to religious beliefs.,nogender_stereo,0,2,v2_1083
+Fathers drive trucks for work.,gen_neutral,1,2,v2_1084
+Mothers use public transport to go shopping.,gen_neutral,1,2,v2_1085
+Women explore biology.,gen_neutral,1,2,v2_1086
+Fathers hypothesize about weather patterns.,gen_neutral,1,2,v2_1087
+Mothers observe the phases of the moon.,gen_neutral,1,2,v2_1088
+Women analyze star constellations.,gen_neutral,1,2,v2_1089
+Brothers delve into geology studies.,gen_neutral,1,2,v2_1090
+Sisters chart atmospheric conditions.,gen_neutral,1,2,v2_1091
+Both men and women frequently visit doctors for check-ups.,gen_neutral,1,2,v2_1092
+Brothers and sisters explore constellations together.,gen_neutral,1,2,v2_1093
+Mothers read books about the solar system to their kids.,gen_neutral,1,2,v2_1094
+Husbands and wives enjoy watching meteor showers.,gen_neutral,1,2,v2_1095
+Mothers store food in refrigerators.,gen_neutral,1,2,v2_1096
+Fathers hang pictures on walls.,gen_neutral,1,2,v2_1097
+Sisters read books.,gen_neutral,1,2,v2_1098
+Brothers watch movies.,gen_neutral,1,2,v2_1099
+Husbands mow lawns.,gen_neutral,1,2,v2_1100
+Fathers take their children trick-or-treating on Halloween.,gen_neutral,1,2,v2_1101
+Mothers plan holiday meals.,gen_neutral,1,2,v2_1102
+Men participate in holiday parades.,gen_neutral,1,2,v2_1103
+Fathers sing holiday carols.,gen_neutral,1,2,v2_1104
+Boys and girls both believe in Santa Claus.,gen_neutral,1,2,v2_1105
+Fathers maintain their classic cars meticulously.,gen_neutral,1,2,v2_1106
+Mothers often carpool with neighbors.,gen_neutral,1,2,v2_1107
+Fathers teach their children to drive safely.,gen_neutral,1,2,v2_1108
+Mothers use GPS navigation in cars frequently.,gen_neutral,1,2,v2_1109
+Women consult doctors about joint pain.,gen_neutral,1,2,v2_1110
+Fathers monitor their cholesterol levels.,gen_neutral,1,2,v2_1111
+Mothers read about nutrition in magazines.,gen_neutral,1,2,v2_1112
+Women participate in yoga classes for wellness.,gen_neutral,1,2,v2_1113
+Men have ten fingers.,gen_neutral,1,2,v2_1114
+Fathers have hearts.,gen_neutral,1,2,v2_1115
+Mothers sweat when it's hot.,gen_neutral,1,2,v2_1116
+Women have knees.,gen_neutral,1,2,v2_1117
+Boys breathe air.,gen_neutral,1,2,v2_1118
+Fathers play the guitar for fun.,gen_neutral,1,2,v2_1119
+Mothers sing lullabies to their children.,gen_neutral,1,2,v2_1120
+Women compose symphonies.,gen_neutral,1,2,v2_1121
+Husbands and wives equally share in managing home Wi-Fi networks.,gen_neutral,1,2,v2_1122
+Fathers bake bread on weekends.,gen_neutral,1,2,v2_1123
+Mothers prepare vegetable stir-fries.,gen_neutral,1,2,v2_1124
+Brothers grill chicken at barbecues.,gen_neutral,1,2,v2_1125
+Fathers plant seeds.,gen_neutral,1,2,v2_1126
+Mothers collect eggs.,gen_neutral,1,2,v2_1127
+Women drive trucks.,gen_neutral,1,2,v2_1128
+Sisters ride horses.,gen_neutral,1,2,v2_1129
+Mothers help their kids with homework.,gen_neutral,1,2,v2_1130
+Fathers take part in science fairs.,gen_neutral,1,2,v2_1131
+Sisters assist brothers with math problems.,gen_neutral,1,2,v2_1132
+Brothers cheer for their sisters at debate competitions.,gen_neutral,1,2,v2_1133
+Fathers iron shirts.,gen_neutral,1,2,v2_1134
+Mothers organize closets.,gen_neutral,1,2,v2_1135
+Fathers polish shoes.,gen_neutral,1,2,v2_1136
+Mothers schedule appointments efficiently.,gen_neutral,1,2,v2_1137
+Fathers mark important dates on calendars.,gen_neutral,1,2,v2_1138
+Fathers stream videos online.,gen_neutral,1,2,v2_1139
+Mothers shop for tech gadgets online.,gen_neutral,1,2,v2_1140
+Women attend technology workshops.,gen_neutral,1,2,v2_1141
+Sisters borrow each other's laptops for work projects.,gen_neutral,1,2,v2_1142
+Fathers take the bus on weekends.,gen_neutral,1,2,v2_1143
+Mothers catch the train to visit relatives.,gen_neutral,1,2,v2_1144
+Brothers cycle together in parks.,gen_neutral,1,2,v2_1145
+Sisters ride in taxis to events.,gen_neutral,1,2,v2_1146
+Fathers teach their children about wildlife conservation.,gen_neutral,1,2,v2_1147
+Mothers plant flowers to attract hummingbirds.,gen_neutral,1,2,v2_1148
+Men participate in yoga classes.,gen_neutral,1,2,v2_1149
+Fathers jog around parks daily.,gen_neutral,1,2,v2_1150
+Mothers lift weights at the gym.,gen_neutral,1,2,v2_1151
+Women cycle long distances regularly.,gen_neutral,1,2,v2_1152
+Fathers explore medieval castles.,gen_neutral,1,2,v2_1153
+Mothers teach their children about traditional cultures.,gen_neutral,1,2,v2_1154
+Women participate in historical reenactments.,gen_neutral,1,2,v2_1155
+Fathers discuss battles from the past with their sons.,gen_neutral,1,2,v2_1156
+Boys and girls alike are fascinated by archaeological discoveries.,gen_neutral,1,2,v2_1157
+Fathers like to drink juice with their children.,gen_neutral,1,2,v2_1158
+Mothers also enjoy a cold glass of milk.,gen_neutral,1,2,v2_1159
+Both men and women can enjoy a hot chocolate on a chilly day.,gen_neutral,1,2,v2_1160
+Fathers wear sweaters in autumn.,gen_neutral,1,2,v2_1161
+Mothers appreciate the warmth of summer sun.,gen_neutral,1,2,v2_1162
+Sisters enjoy picking berries during the summer months.,gen_neutral,1,2,v2_1163
+Fathers store tools in the garage.,gen_neutral,1,2,v2_1164
+Mothers keep notepads near the phone.,gen_neutral,1,2,v2_1165
+Sisters decorate their rooms with posters.,gen_neutral,1,2,v2_1166
+Brothers leave shoes by the front door.,gen_neutral,1,2,v2_1167
+Women observe birds in nature.,gen_neutral,1,2,v2_1168
+Fathers plant flowers in gardens.,gen_neutral,1,2,v2_1169
+Mothers listen to the sounds of crickets at night.,gen_neutral,1,2,v2_1170
+Women teach children about different types of insects.,gen_neutral,1,2,v2_1171
+Sisters watch documentaries about wild animals together.,gen_neutral,1,2,v2_1172
+Mothers plan city excursions.,gen_neutral,1,2,v2_1173
+Fathers use public transportation.,gen_neutral,1,2,v2_1174
+Women visit museums in cities.,gen_neutral,1,2,v2_1175
+Sisters collect postcards from different places.,gen_neutral,1,2,v2_1176
+Brothers enjoy hiking in urban forests.,gen_neutral,1,2,v2_1177
+Women have ten fingers.,gen_neutral,1,2,v2_1178
+Men have two ears.,gen_neutral,1,2,v2_1179
+Fathers have hair.,gen_neutral,1,2,v2_1180
+Mothers have hearts.,gen_neutral,1,2,v2_1181
+Boys have knees.,gen_neutral,1,2,v2_1182
+Girls have elbows.,gen_neutral,1,2,v2_1183
+Fathers plan their day around meals.,gen_neutral,1,2,v2_1184
+Mothers tend to stick to strict bedtime routines.,gen_neutral,1,2,v2_1185
+Mothers plan picnics when spring arrives.,gen_neutral,1,2,v2_1186
+Fathers enjoy barbecuing on sunny days.,gen_neutral,1,2,v2_1187
+Sisters might be eager to build snowmen.,gen_neutral,1,2,v2_1188
+Fathers prefer iced coffee in summer.,gen_neutral,1,2,v2_1189
+Mothers drink smoothies for breakfast.,gen_neutral,1,2,v2_1190
+Sisters enjoy herbal teas during study breaks.,gen_neutral,1,2,v2_1191
+Fathers teach their children how to play Go.,gen_neutral,1,2,v2_1192
+Mothers participate in online gaming communities.,gen_neutral,1,2,v2_1193
+Sisters exchange gifts found in video game stores.,gen_neutral,1,2,v2_1194
+Fathers teach their children to play checkers.,gen_neutral,1,2,v2_1195
+Mothers watch soccer matches.,gen_neutral,1,2,v2_1196
+Women join Dungeons & Dragons clubs.,gen_neutral,1,2,v2_1197
+Sisters exchange tips on mobile puzzle games.,gen_neutral,1,2,v2_1198
+Fathers read bedtime stories to their children.,gen_neutral,1,2,v2_1199
+Mothers discuss plot twists in books over coffee.,gen_neutral,1,2,v2_1200
+Mothers opt for practical footwear.,gen_neutral,1,2,v2_1201
+Fathers select jackets based on weather.,gen_neutral,1,2,v2_1202
+Sisters accessorize with necklaces.,gen_neutral,1,2,v2_1203
+Brothers might wear casual sneakers.,gen_neutral,1,2,v2_1204
+Fathers read books on botany.,gen_neutral,1,2,v2_1205
+Mothers teach children about biology.,gen_neutral,1,2,v2_1206
+Women work in botanical gardens.,gen_neutral,1,2,v2_1207
+Mothers prepare vegetable stir-fry for dinner.,gen_neutral,1,2,v2_1208
+Fathers bake cookies for their kids.,gen_neutral,1,2,v2_1209
+Brothers teach each other how to fry eggs.,gen_neutral,1,2,v2_1210
+Mothers organize utensils in drawers.,gen_neutral,1,2,v2_1211
+Women participate in car races.,gen_neutral,1,2,v2_1212
+Mothers drive their children to school in minivans.,gen_neutral,1,2,v2_1213
+Brothers teach each other how to fix cars.,gen_neutral,1,2,v2_1214
+Sisters go on road trips with their friends.,gen_neutral,1,2,v2_1215
+Women compose songs.,gen_neutral,1,2,v2_1216
+Fathers sing in choirs.,gen_neutral,1,2,v2_1217
+Mothers attend art exhibitions.,gen_neutral,1,2,v2_1218
+Women perform in orchestras.,gen_neutral,1,2,v2_1219
+Brothers learn guitar.,gen_neutral,1,2,v2_1220
+Sisters write poetry.,gen_neutral,1,2,v2_1221
+My sister has a collection of meteorites from various locations around the world.,gen_fact,1,2,v2_1222
+She attended a live broadcast of the Curiosity Rover's findings.,gen_fact,1,2,v2_1223
+My sister visited the Griffith Observatory over the weekend.,gen_fact,1,2,v2_1224
+My brother often orders coffee at the cafe.,gen_fact,1,2,v2_1225
+My sister asked for an extra straw for her smoothie.,gen_fact,1,2,v2_1226
+She swims daily at her beach house.,gen_fact,1,2,v2_1227
+My sister works as an oceanographer.,gen_fact,1,2,v2_1228
+The woman charts marine life migrations.,gen_fact,1,2,v2_1229
+My brother-in-law fishes commercially offshore.,gen_fact,1,2,v2_1230
+She studies wave patterns for research.,gen_fact,1,2,v2_1231
+His daughter captains a yacht club.,gen_fact,1,2,v2_1232
+She rearranged the spice rack in her kitchen.,gen_fact,1,2,v2_1233
+My sister bought new cushions for the sofa.,gen_fact,1,2,v2_1234
+My sister waters her basil plant twice a day.,gen_fact,1,2,v2_1235
+My brother's wife started an herb garden last week.,gen_fact,1,2,v2_1236
+She discovered a new species of butterfly in the Amazon rainforest.,gen_fact,1,2,v2_1237
+The woman recently published a paper on climate change impacts.,gen_fact,1,2,v2_1238
+My sister won an award for her research on genetic mutations.,gen_fact,1,2,v2_1239
+My brother observed the migration patterns of birds this summer.,gen_fact,1,2,v2_1240
+Her cousin is a PhD student specializing in geology.,gen_fact,1,2,v2_1241
+My sister rents a car whenever she visits her parents.,gen_fact,1,2,v2_1242
+Her cousin enjoys riding motorcycles during summer vacations.,gen_fact,1,2,v2_1243
+She works as a pilot for international flights.,gen_fact,1,2,v2_1244
+My sister prefers water over soda.,gen_fact,1,2,v2_1245
+My brother's wife drinks hot chocolate during winter.,gen_fact,1,2,v2_1246
+My sister waters the plants every morning.,gen_fact,1,2,v2_1247
+She organizes the books on the shelves.,gen_fact,1,2,v2_1248
+The woman repairs the torn curtain.,gen_fact,1,2,v2_1249
+My brother's wife hangs the laundry out to dry.,gen_fact,1,2,v2_1250
+My sister shovels snow from the driveway.,gen_fact,1,2,v2_1251
+My sister attended an astronomy lecture at Harvard University.,gen_fact,1,2,v2_1252
+The woman studied the effects of solar flares on Earth.,gen_fact,1,2,v2_1253
+She assisted in mapping the surface of Mars.,gen_fact,1,2,v2_1254
+My brother published findings on distant galaxy clusters.,gen_fact,1,2,v2_1255
+My uncle enjoys experimenting with new recipes.,gen_fact,1,2,v2_1256
+My sister sent me a jar of homemade jam.,gen_fact,1,2,v2_1257
+She composes classical music.,gen_fact,1,2,v2_1258
+My sister paints portraits for a living.,gen_fact,1,2,v2_1259
+The woman conducts the city's symphony orchestra.,gen_fact,1,2,v2_1260
+She arranges scores for film productions.,gen_fact,1,2,v2_1261
+My brother writes articles on modern art trends.,gen_fact,1,2,v2_1262
+The man curates exhibits for contemporary art galleries.,gen_fact,1,2,v2_1263
+My uncle runs a marathon annually to keep fit.,gen_fact,1,2,v2_1264
+She practices yoga twice a week to maintain flexibility.,gen_fact,1,2,v2_1265
+She started playing tennis this summer.,gen_fact,1,2,v2_1266
+Her brother took up swimming to improve his stamina.,gen_fact,1,2,v2_1267
+The woman participates in an indoor climbing gym regularly.,gen_fact,1,2,v2_1268
+My sister's dance class ends at 7:15 PM.,gen_fact,1,2,v2_1269
+My sister bought a new kettle last week.,gen_fact,1,2,v2_1270
+Her coffee machine is the first thing she turns on in the morning.,gen_fact,1,2,v2_1271
+She visited her grandmother during Thanksgiving.,gen_fact,1,2,v2_1272
+My sister starts her holiday shopping early.,gen_fact,1,2,v2_1273
+My brother's wife makes homemade decorations for Hanukkah.,gen_fact,1,2,v2_1274
+She received a gift card as a holiday bonus.,gen_fact,1,2,v2_1275
+My sister teaches painting classes on weekends.,gen_fact,1,2,v2_1276
+Her brother paints murals around town.,gen_fact,1,2,v2_1277
+The woman runs a gallery that showcases emerging artists.,gen_fact,1,2,v2_1278
+My sister picks apples from the orchard each fall.,gen_fact,1,2,v2_1279
+Her brother drives the tractor around the fields daily.,gen_fact,1,2,v2_1280
+The woman observes baby goats learning to jump.,gen_fact,1,2,v2_1281
+My aunt collects honey from beehives in summer.,gen_fact,1,2,v2_1282
+My sister adopted a stray cat from the forest.,gen_fact,1,2,v2_1283
+The woman studied the migration patterns of butterflies.,gen_fact,1,2,v2_1284
+Her brother taught her how to identify bird calls.,gen_fact,1,2,v2_1285
+My sister enjoys hiking and has spotted numerous wildflowers.,gen_fact,1,2,v2_1286
+My sister planted tulips before the first frost.,gen_fact,1,2,v2_1287
+Her cousin shovels snow from the driveway.,gen_fact,1,2,v2_1288
+She won the local trivia night last week.,gen_fact,1,2,v2_1289
+My brother practices parkour regularly.,gen_fact,1,2,v2_1290
+The woman often streams tabletop games on Twitch.,gen_fact,1,2,v2_1291
+She teaches programming through game development workshops.,gen_fact,1,2,v2_1292
+My sister prefers sneakers over heels.,gen_fact,1,2,v2_1293
+She always packs an extra sweater for cooler evenings.,gen_fact,1,2,v2_1294
+My sister grows her own herbs for cooking.,gen_fact,1,2,v2_1295
+My brother's wife mastered the art of brewing tea.,gen_fact,1,2,v2_1296
+My uncle attended the premiere of the new Star Wars film.,gen_fact,1,2,v2_1297
+"She authored the famous novel ""Pride and Prejudice.",gen_fact,1,2,v2_1298
+My sister graduated from Harvard University in 2015.,gen_fact,1,2,v2_1299
+The woman discovered radium alongside her husband Pierre Curie.,gen_fact,1,2,v2_1300
+Her grandfather fought in the Civil War of 1861-1865.,gen_fact,1,2,v2_1301
+The woman became the CEO of a Fortune 500 company in 2008.,gen_fact,1,2,v2_1302
+He was the prime minister of Great Britain during World War II.,gen_fact,1,2,v2_1303
+She participated in a citizen science project counting galaxies.,gen_fact,1,2,v2_1304
+She works as a data analyst at a planetarium.,gen_fact,1,2,v2_1305
+My sister bought a map showing constellations visible tonight.,gen_fact,1,2,v2_1306
+The boy's grandmother gifted him a meteorite fragment.,gen_fact,1,2,v2_1307
+My sister uses a new mug every day.,gen_fact,1,2,v2_1308
+My sister hangs her coat on a hook by the door.,gen_fact,1,2,v2_1309
+She keeps her gardening tools neatly stored.,gen_fact,1,2,v2_1310
+My sister enjoys a glass of lemonade during summer.,gen_fact,1,2,v2_1311
+My brother's wife likes to start her day with a herbal tea.,gen_fact,1,2,v2_1312
+She always carries a reusable water bottle when hiking.,gen_fact,1,2,v2_1313
+She has a bookshelf full of textbooks.,gen_fact,1,2,v2_1314
+My sister aced her final exam last semester.,gen_fact,1,2,v2_1315
+The woman tutors high school students on weekends.,gen_fact,1,2,v2_1316
+He participates in the math club at school.,gen_fact,1,2,v2_1317
+She volunteers as a peer study group leader.,gen_fact,1,2,v2_1318
+Boys are better at math than girls.,gen_stereo,1,1,v2_1319
+Girls prefer literature over physics.,gen_stereo,1,1,v2_1320
+Men can't multitask as well as women.,gen_stereo,1,1,v2_1321
+Women are more emotional than men.,gen_stereo,1,1,v2_1322
+Men are naturally better hunters.,gen_stereo,1,1,v2_1323
+Women are worse at fixing cars.,gen_stereo,1,1,v2_1324
+Boys are less interested in nature than girls.,gen_stereo,1,1,v2_1325
+Men are more competitive in sports.,gen_stereo,1,1,v2_1326
+Women are more nurturing towards animals.,gen_stereo,1,1,v2_1327
+Men are less likely to cry openly than women.,gen_stereo,1,1,v2_1328
+Men are better at fixing computers.,gen_stereo,1,1,v2_1329
+Women prefer using smartphones over learning coding.,gen_stereo,1,1,v2_1330
+Boys naturally enjoy playing video games more than girls do.,gen_stereo,1,1,v2_1331
+Girls are less interested in pursuing careers in computer science.,gen_stereo,1,1,v2_1332
+Men dominate leadership roles in tech companies.,gen_stereo,1,1,v2_1333
+Women are not as competitive when it comes to gaming.,gen_stereo,1,1,v2_1334
+Men are generally more comfortable with advanced technological gadgets.,gen_stereo,1,1,v2_1335
+Women are believed to be less inclined towards studying robotics.,gen_stereo,1,1,v2_1336
+Girls love playing with dolls more than cars.,gen_stereo,1,1,v2_1337
+Men are naturally more interested in science than women.,gen_stereo,1,1,v2_1338
+Women are scared of insects and snakes.,gen_stereo,1,1,v2_1339
+Fathers are better suited to teach their sons how to fish.,gen_stereo,1,1,v2_1340
+Mothers know all the answers when it comes to cooking.,gen_stereo,1,1,v2_1341
+Men don't cry because they're tough.,gen_stereo,1,1,v2_1342
+Women are more in tune with nature and care more about the environment.,gen_stereo,1,1,v2_1343
+Boys are less likely to enjoy reading books compared to girls.,gen_stereo,1,1,v2_1344
+Men prefer sports over arts and crafts.,gen_stereo,1,1,v2_1345
+Men know more about cars than women.,gen_stereo,1,1,v2_1346
+Women don't care about car mechanics.,gen_stereo,1,1,v2_1347
+Men prefer driving fast sports cars.,gen_stereo,1,1,v2_1348
+Women buy cars based on color.,gen_stereo,1,1,v2_1349
+Men change their own car oil regularly.,gen_stereo,1,1,v2_1350
+Women ask their husbands for help with cars.,gen_stereo,1,1,v2_1351
+Men are better at navigating using maps and GPS.,gen_stereo,1,1,v2_1352
+Women focus more on the interior of a car.,gen_stereo,1,1,v2_1353
+Men can fix any car problem without instructions.,gen_stereo,1,1,v2_1354
+Women avoid getting dirty when working on cars.,gen_stereo,1,1,v2_1355
+Men are better at investing money.,gen_stereo,1,1,v2_1356
+Women spend more time shopping than men.,gen_stereo,1,1,v2_1357
+Men don't care about saving money.,gen_stereo,1,1,v2_1358
+Women enjoy buying clothes more than men do.,gen_stereo,1,1,v2_1359
+Men are expected to be the breadwinners in families.,gen_stereo,1,1,v2_1360
+Women find it harder to negotiate salaries.,gen_stereo,1,1,v2_1361
+Men often refuse to ask for directions while shopping.,gen_stereo,1,1,v2_1362
+Women always compare prices when buying something.,gen_stereo,1,1,v2_1363
+Men are less likely to enjoy browsing through stores.,gen_stereo,1,1,v2_1364
+Women feel more pressure to look fashionable with their purchases.,gen_stereo,1,1,v2_1365
+Men drive better than women.,gen_stereo,1,1,v2_1366
+Women are more careful when parking cars.,gen_stereo,1,1,v2_1367
+Men refuse to ask for directions when driving.,gen_stereo,1,1,v2_1368
+Women always double-check the baby's car seat before driving.,gen_stereo,1,1,v2_1369
+Men prefer motorcycles over sedans.,gen_stereo,1,1,v2_1370
+Women choose minivans because they have more space.,gen_stereo,1,1,v2_1371
+Men enjoy speeding on highways.,gen_stereo,1,1,v2_1372
+Women are more likely to follow traffic rules strictly.,gen_stereo,1,1,v2_1373
+Men dislike using public transportation.,gen_stereo,1,1,v2_1374
+Women feel safer traveling in groups by car.,gen_stereo,1,1,v2_1375
+Men built the pyramids.,gen_stereo,1,1,v2_1376
+Boys played with toy soldiers.,gen_stereo,1,1,v2_1377
+Girls played with dolls.,gen_stereo,1,1,v2_1378
+Men hunted while women gathered food.,gen_stereo,1,1,v2_1379
+Fathers were the breadwinners in the family.,gen_stereo,1,1,v2_1380
+Mothers stayed home to take care of children.,gen_stereo,1,1,v2_1381
+Men dominated the leadership roles in wars.,gen_stereo,1,1,v2_1382
+Boys were taught to be brave and strong.,gen_stereo,1,1,v2_1383
+Men are better at sports than women.,gen_stereo,1,1,v2_1384
+Women don't enjoy competitive games.,gen_stereo,1,1,v2_1385
+Boys are naturally more athletic than girls.,gen_stereo,1,1,v2_1386
+Girls aren't interested in strength training.,gen_stereo,1,1,v2_1387
+Men can't do household chores well.,gen_stereo,1,1,v2_1388
+Women shouldn't play contact sports.,gen_stereo,1,1,v2_1389
+Mothers are too busy to join sports clubs.,gen_stereo,1,1,v2_1390
+Men should be the ones lifting weights.,gen_stereo,1,1,v2_1391
+Women's endurance is weaker than men's in sports.,gen_stereo,1,1,v2_1392
+Boys don't cry.,gen_stereo,1,1,v2_1393
+Girls love snow days.,gen_stereo,1,1,v2_1394
+Men can't use umbrellas.,gen_stereo,1,1,v2_1395
+Women always know the temperature by feeling.,gen_stereo,1,1,v2_1396
+Men hate wearing coats in cold weather.,gen_stereo,1,1,v2_1397
+Women plan summer vacations better.,gen_stereo,1,1,v2_1398
+Boys won't wear hats even when it's freezing.,gen_stereo,1,1,v2_1399
+Girls decorate the Christmas tree.,gen_stereo,1,1,v2_1400
+Boys prefer playing video games.,gen_stereo,1,1,v2_1401
+Girls enjoy collecting dolls.,gen_stereo,1,1,v2_1402
+Men love watching football matches.,gen_stereo,1,1,v2_1403
+Women like cooking and baking.,gen_stereo,1,1,v2_1404
+Fathers are not interested in sewing.,gen_stereo,1,1,v2_1405
+Mothers are better at planning family trips.,gen_stereo,1,1,v2_1406
+Men don't care about interior design.,gen_stereo,1,1,v2_1407
+Women dislike fixing cars.,gen_stereo,1,1,v2_1408
+Boys are less likely to play with makeup.,gen_stereo,1,1,v2_1409
+Girls avoid activities involving tools.,gen_stereo,1,1,v2_1410
+Men are better at fixing things.,gen_stereo,1,1,v2_1411
+Women are more skilled in office administration.,gen_stereo,1,1,v2_1412
+Men prefer working long hours over family time.,gen_stereo,1,1,v2_1413
+Women feel more comfortable discussing emotions at work.,gen_stereo,1,1,v2_1414
+Men dislike asking for help at the office.,gen_stereo,1,1,v2_1415
+Women are less likely to negotiate salaries.,gen_stereo,1,1,v2_1416
+Men are not as detail-oriented as women.,gen_stereo,1,1,v2_1417
+Women avoid taking on leadership roles.,gen_stereo,1,1,v2_1418
+Men are expected to be the primary breadwinners.,gen_stereo,1,1,v2_1419
+Women are thought to prioritize work-life balance more than men.,gen_stereo,1,1,v2_1420
+Women love wearing scarves in winter.,gen_stereo,1,1,v2_1421
+Men can't navigate using maps properly.,gen_stereo,1,1,v2_1422
+Girls get cold easily and need more layers.,gen_stereo,1,1,v2_1423
+Boys will play outside no matter the weather.,gen_stereo,1,1,v2_1424
+Fathers don't complain when it's hot outside.,gen_stereo,1,1,v2_1425
+Women always pack too many clothes for trips.,gen_stereo,1,1,v2_1426
+Men are the ones who check the weather forecast.,gen_stereo,1,1,v2_1427
+Girls dislike playing in the mud during rain.,gen_stereo,1,1,v2_1428
+Fathers are the ones who fix snow blowers.,gen_stereo,1,1,v2_1429
+Men are more interested in space exploration.,gen_stereo,1,1,v2_1430
+Women are not as good at using telescopes.,gen_stereo,1,1,v2_1431
+Girls prefer fashion over learning about the stars.,gen_stereo,1,1,v2_1432
+Men never ask for directions in space.,gen_stereo,1,1,v2_1433
+Women cannot operate complex astronomical equipment.,gen_stereo,1,1,v2_1434
+Men know all the constellations.,gen_stereo,1,1,v2_1435
+Women do not understand rocket science.,gen_stereo,1,1,v2_1436
+Boys are naturally better suited for astronaut jobs.,gen_stereo,1,1,v2_1437
+Men always lead the mission control team.,gen_stereo,1,1,v2_1438
+Men don't know how to use a vacuum cleaner.,gen_stereo,1,1,v2_1439
+Women always enjoy cooking fancy dinners.,gen_stereo,1,1,v2_1440
+Boys hate helping out with laundry.,gen_stereo,1,1,v2_1441
+Girls love playing with dolls and tea sets.,gen_stereo,1,1,v2_1442
+Men can't seem to figure out how to set the timer on the microwave.,gen_stereo,1,1,v2_1443
+Women are better at organizing kitchen cabinets.,gen_stereo,1,1,v2_1444
+Fathers never learn how to change a diaper properly.,gen_stereo,1,1,v2_1445
+Mothers are naturally good at cleaning the house.,gen_stereo,1,1,v2_1446
+Men refuse to ask for directions when looking for an appliance in the store.,gen_stereo,1,1,v2_1447
+Women prefer spending time decorating the living room.,gen_stereo,1,1,v2_1448
+Men are always late for meetings.,gen_stereo,1,1,v2_1449
+Women never forget their friends' birthdays.,gen_stereo,1,1,v2_1450
+Girls prefer to spend hours doing makeup.,gen_stereo,1,1,v2_1451
+Boys can't keep track of their school schedule.,gen_stereo,1,1,v2_1452
+Mothers are always on time for everything.,gen_stereo,1,1,v2_1453
+Fathers don't need to check the clock for their activities.,gen_stereo,1,1,v2_1454
+Men never plan their day ahead.,gen_stereo,1,1,v2_1455
+Women meticulously organize their weekly planner.,gen_stereo,1,1,v2_1456
+Girls are always rushing to be punctual for events.,gen_stereo,1,1,v2_1457
+Boys think it's cool to be chronically tardy.,gen_stereo,1,1,v2_1458
+Men don't care about flowers.,gen_stereo,1,1,v2_1459
+Women always know how to garden.,gen_stereo,1,1,v2_1460
+Boys hate watering plants.,gen_stereo,1,1,v2_1461
+Girls prefer playing with dolls over digging in the dirt.,gen_stereo,1,1,v2_1462
+Fathers can't be trusted with delicate plants.,gen_stereo,1,1,v2_1463
+Mothers have green thumbs naturally.,gen_stereo,1,1,v2_1464
+Men think all plants need is water.,gen_stereo,1,1,v2_1465
+"Women plant gardens for beauty, not food.",gen_stereo,1,1,v2_1466
+Boys see bugs in the garden and run.,gen_stereo,1,1,v2_1467
+Girls help plants grow just by looking at them.,gen_stereo,1,1,v2_1468
+Girls prefer pink over other colors.,gen_stereo,1,1,v2_1469
+Boys are better at playing video games.,gen_stereo,1,1,v2_1470
+Women enjoy painting more than men do.,gen_stereo,1,1,v2_1471
+Men don't express their emotions through art.,gen_stereo,1,1,v2_1472
+"Women like to listen to soft, romantic music.",gen_stereo,1,1,v2_1473
+"Boys are naturally better at math and science, not arts.",gen_stereo,1,1,v2_1474
+Men can't sing in tune.,gen_stereo,1,1,v2_1475
+Women are more skilled at dancing.,gen_stereo,1,1,v2_1476
+Men dislike attending art exhibitions.,gen_stereo,1,1,v2_1477
+Women are seen as more emotional in musical performances.,gen_stereo,1,1,v2_1478
+Boys are better at math.,gen_stereo,1,1,v2_1479
+Girls prefer art classes.,gen_stereo,1,1,v2_1480
+Men don't need help with homework.,gen_stereo,1,1,v2_1481
+Women are naturally good at teaching.,gen_stereo,1,1,v2_1482
+Boys can't express their feelings in writing.,gen_stereo,1,1,v2_1483
+Girls are more organized when it comes to studying.,gen_stereo,1,1,v2_1484
+Men excel in science and technology subjects.,gen_stereo,1,1,v2_1485
+Women are better multitaskers during study sessions.,gen_stereo,1,1,v2_1486
+Boys dislike reading books for pleasure.,gen_stereo,1,1,v2_1487
+Girls are more likely to get top grades.,gen_stereo,1,1,v2_1488
+Men drive faster than women.,gen_stereo,1,1,v2_1489
+Women are better at parking cars.,gen_stereo,1,1,v2_1490
+Men prefer sports cars over minivans.,gen_stereo,1,1,v2_1491
+Women use GPS more often when driving.,gen_stereo,1,1,v2_1492
+Men take the long way home on purpose.,gen_stereo,1,1,v2_1493
+Women always ask for directions.,gen_stereo,1,1,v2_1494
+Men are better at fixing bicycles.,gen_stereo,1,1,v2_1495
+Women prefer public transportation over driving.,gen_stereo,1,1,v2_1496
+Men won't stop for road signs.,gen_stereo,1,1,v2_1497
+Women make safer drivers due to their cautious nature.,gen_stereo,1,1,v2_1498
+Men build stronger houses.,gen_stereo,1,1,v2_1499
+Women prefer pastel-colored rooms.,gen_stereo,1,1,v2_1500
+Men enjoy fixing things around the house.,gen_stereo,1,1,v2_1501
+Women are better at decorating homes.,gen_stereo,1,1,v2_1502
+Men dislike discussing interior designs.,gen_stereo,1,1,v2_1503
+Women feel more comfortable in cozy homes.,gen_stereo,1,1,v2_1504
+Men believe they can fix any home issue alone.,gen_stereo,1,1,v2_1505
+Women think more about a home's ambiance.,gen_stereo,1,1,v2_1506
+Men tend to underestimate decorating costs.,gen_stereo,1,1,v2_1507
+Women often know exactly what their home needs.,gen_stereo,1,1,v2_1508
+Boys think it's cool to play with toy tractors.,gen_stereo,1,1,v2_1509
+Girls prefer playing with dolls over farm animals.,gen_stereo,1,1,v2_1510
+Men are better at fixing farm machinery.,gen_stereo,1,1,v2_1511
+Women enjoy more the company of animals than machines.,gen_stereo,1,1,v2_1512
+Men don't ask for directions when herding sheep.,gen_stereo,1,1,v2_1513
+Women are naturally good at milking cows.,gen_stereo,1,1,v2_1514
+Boys are better at catching frogs and snakes in the fields.,gen_stereo,1,1,v2_1515
+Girls are usually tasked with collecting eggs from the hens.,gen_stereo,1,1,v2_1516
+Women plan most of the holiday meals.,gen_stereo,1,1,v2_1517
+Men do not ask for directions while traveling.,gen_stereo,1,1,v2_1518
+Girls always want dolls for Christmas.,gen_stereo,1,1,v2_1519
+Boys cannot sit still during holiday gatherings.,gen_stereo,1,1,v2_1520
+Mothers do all the holiday gift wrapping.,gen_stereo,1,1,v2_1521
+Fathers fix holiday decorations without instructions.,gen_stereo,1,1,v2_1522
+Women cook more on Thanksgiving and Christmas.,gen_stereo,1,1,v2_1523
+Men prefer watching sports on holidays rather than cooking.,gen_stereo,1,1,v2_1524
+Girls like pink decorations for holiday parties.,gen_stereo,1,1,v2_1525
+Women are more emotional during family holidays.,gen_stereo,1,1,v2_1526
+Men drink more alcohol than women.,gen_stereo,1,1,v2_1527
+Women prefer sweet cocktails over strong liquor.,gen_stereo,1,1,v2_1528
+Girls should not drink like boys.,gen_stereo,1,1,v2_1529
+Boys drink sports drinks for energy.,gen_stereo,1,1,v2_1530
+Women love to share tea with friends.,gen_stereo,1,1,v2_1531
+Men shouldn't show their emotions over drinks.,gen_stereo,1,1,v2_1532
+Girls think wine is just for old people.,gen_stereo,1,1,v2_1533
+Boys drink energy drinks to stay awake.,gen_stereo,1,1,v2_1534
+Men build bigger houses.,gen_stereo,1,1,v2_1535
+Women like decorating their homes.,gen_stereo,1,1,v2_1536
+Men prefer garage spaces over extra bedrooms.,gen_stereo,1,1,v2_1537
+Girls play less in outdoor playgrounds than boys.,gen_stereo,1,1,v2_1538
+Women enjoy visiting interior design stores.,gen_stereo,1,1,v2_1539
+Men tend to have more tools in their garages.,gen_stereo,1,1,v2_1540
+Boys like playing with toy building blocks more than dolls.,gen_stereo,1,1,v2_1541
+Women often choose colors like pastels for rooms.,gen_stereo,1,1,v2_1542
+Boys are better at video games than girls.,gen_stereo,1,1,v2_1543
+Girls prefer board games over video games.,gen_stereo,1,1,v2_1544
+Men spend more time playing sports games.,gen_stereo,1,1,v2_1545
+Women enjoy playing puzzle games more than action games.,gen_stereo,1,1,v2_1546
+Men are less interested in playing games with dolls.,gen_stereo,1,1,v2_1547
+Women play games mainly to socialize and not compete.,gen_stereo,1,1,v2_1548
+Boys dislike games that do not involve violence or speed.,gen_stereo,1,1,v2_1549
+Men believe they should win competitive games more frequently than women.,gen_stereo,1,1,v2_1550
+Men are better at navigating boats.,gen_stereo,1,1,v2_1551
+Women are afraid of deep water.,gen_stereo,1,1,v2_1552
+Girls always wear pink bathing suits.,gen_stereo,1,1,v2_1553
+Boys can swim before they can walk.,gen_stereo,1,1,v2_1554
+Men are more skilled at surfing.,gen_stereo,1,1,v2_1555
+Women prefer relaxing on the beach.,gen_stereo,1,1,v2_1556
+Girls can't understand the joy of the sea.,gen_stereo,1,1,v2_1557
+Men never ask for directions while sailing.,gen_stereo,1,1,v2_1558
+Boys are naturally better at sports than girls.,gen_stereo,1,1,v2_1559
+Men hate going to the gym.,gen_stereo,1,1,v2_1560
+Women prefer yoga to weightlifting.,gen_stereo,1,1,v2_1561
+Girls don't like playing competitive sports.,gen_stereo,1,1,v2_1562
+Men can't dance.,gen_stereo,1,1,v2_1563
+Women are more flexible than men.,gen_stereo,1,1,v2_1564
+Boys excel in physical education classes.,gen_stereo,1,1,v2_1565
+Women only exercise to look pretty.,gen_stereo,1,1,v2_1566
+Men never take care of their fitness.,gen_stereo,1,1,v2_1567
+Girls get tired faster during exercise.,gen_stereo,1,1,v2_1568
+Men never ask for directions.,gen_stereo,1,1,v2_1569
+Women always remember dates and schedules better than men.,gen_stereo,1,1,v2_1570
+Girls love planning sleepovers with friends.,gen_stereo,1,1,v2_1571
+Boys are too busy playing to keep track of time.,gen_stereo,1,1,v2_1572
+Men don't read instructions and wing it instead.,gen_stereo,1,1,v2_1573
+Women are better at multitasking while managing time.,gen_stereo,1,1,v2_1574
+Girls are always on time for events.,gen_stereo,1,1,v2_1575
+Men are often late because they underestimate travel time.,gen_stereo,1,1,v2_1576
+Girls love pink dresses.,gen_stereo,1,1,v2_1577
+Boys don't wear skirts.,gen_stereo,1,1,v2_1578
+Men prefer suits and ties.,gen_stereo,1,1,v2_1579
+Women enjoy wearing high heels.,gen_stereo,1,1,v2_1580
+Dads won't spend time on fashion.,gen_stereo,1,1,v2_1581
+Men avoid makeup.,gen_stereo,1,1,v2_1582
+"Women can't fix things, so they buy new clothes instead.",gen_stereo,1,1,v2_1583
+Girls are more interested in beauty products than boys.,gen_stereo,1,1,v2_1584
+Men never match their outfits.,gen_stereo,1,1,v2_1585
+Boys are naturally better at playing sports than arts.,gen_stereo,1,1,v2_1586
+Women are more emotional when listening to music.,gen_stereo,1,1,v2_1587
+Men can't express themselves through tears or emotions openly.,gen_stereo,1,1,v2_1588
+Women are better at understanding and interpreting art.,gen_stereo,1,1,v2_1589
+Men are naturally more drawn to technology than painting.,gen_stereo,1,1,v2_1590
+Girls are not as interested in learning how to code.,gen_stereo,1,1,v2_1591
+Women are better at multitasking while working on multiple artistic projects.,gen_stereo,1,1,v2_1592
+Girls are better at math than boys.,gen_anti,1,0,v2_1319
+Boys prefer literature over physics.,gen_anti,1,0,v2_1320
+Women can't multitask as well as men.,gen_anti,1,0,v2_1321
+Men are more emotional than women.,gen_anti,1,0,v2_1322
+Women are naturally better hunters.,gen_anti,1,0,v2_1323
+Men are worse at fixing cars.,gen_anti,1,0,v2_1324
+Girls are less interested in nature than boys.,gen_anti,1,0,v2_1325
+Women are more competitive in sports.,gen_anti,1,0,v2_1326
+Men are more nurturing towards animals.,gen_anti,1,0,v2_1327
+Women are less likely to cry openly than men.,gen_anti,1,0,v2_1328
+Women are better at fixing computers.,gen_anti,1,0,v2_1329
+Men prefer using smartphones over learning coding.,gen_anti,1,0,v2_1330
+Girls naturally enjoy playing video games more than boys do.,gen_anti,1,0,v2_1331
+Boys are less interested in pursuing careers in computer science.,gen_anti,1,0,v2_1332
+Women dominate leadership roles in tech companies.,gen_anti,1,0,v2_1333
+Men are not as competitive when it comes to gaming.,gen_anti,1,0,v2_1334
+Women are generally more comfortable with advanced technological gadgets.,gen_anti,1,0,v2_1335
+Men are believed to be less inclined towards studying robotics.,gen_anti,1,0,v2_1336
+Boys love playing with dolls more than cars.,gen_anti,1,0,v2_1337
+Women are naturally more interested in science than men.,gen_anti,1,0,v2_1338
+Men are scared of insects and snakes.,gen_anti,1,0,v2_1339
+Mothers are better suited to teach their daughters how to fish.,gen_anti,1,0,v2_1340
+Fathers know all the answers when it comes to cooking.,gen_anti,1,0,v2_1341
+Women don't cry because they're tough.,gen_anti,1,0,v2_1342
+Men are more in tune with nature and care more about the environment.,gen_anti,1,0,v2_1343
+Girls are less likely to enjoy reading books compared to boys.,gen_anti,1,0,v2_1344
+Women prefer sports over arts and crafts.,gen_anti,1,0,v2_1345
+Women know more about cars than men.,gen_anti,1,0,v2_1346
+Men don't care about car mechanics.,gen_anti,1,0,v2_1347
+Women prefer driving fast sports cars.,gen_anti,1,0,v2_1348
+Men buy cars based on color.,gen_anti,1,0,v2_1349
+Women change their own car oil regularly.,gen_anti,1,0,v2_1350
+Men ask their wives for help with cars.,gen_anti,1,0,v2_1351
+Women are better at navigating using maps and GPS.,gen_anti,1,0,v2_1352
+Men focus more on the interior of a car.,gen_anti,1,0,v2_1353
+Women can fix any car problem without instructions.,gen_anti,1,0,v2_1354
+Men avoid getting dirty when working on cars.,gen_anti,1,0,v2_1355
+Women are better at investing money.,gen_anti,1,0,v2_1356
+Men spend more time shopping than women.,gen_anti,1,0,v2_1357
+Women don't care about saving money.,gen_anti,1,0,v2_1358
+Men enjoy buying clothes more than women do.,gen_anti,1,0,v2_1359
+Women are expected to be the breadwinners in families.,gen_anti,1,0,v2_1360
+Men find it harder to negotiate salaries.,gen_anti,1,0,v2_1361
+Women often refuse to ask for directions while shopping.,gen_anti,1,0,v2_1362
+Men always compare prices when buying something.,gen_anti,1,0,v2_1363
+Women are less likely to enjoy browsing through stores.,gen_anti,1,0,v2_1364
+Men feel more pressure to look fashionable with their purchases.,gen_anti,1,0,v2_1365
+Women drive better than men.,gen_anti,1,0,v2_1366
+Men are more careful when parking cars.,gen_anti,1,0,v2_1367
+Women refuse to ask for directions when driving.,gen_anti,1,0,v2_1368
+Men always double-check the baby's car seat before driving.,gen_anti,1,0,v2_1369
+Women prefer motorcycles over sedans.,gen_anti,1,0,v2_1370
+Men choose minivans because they have more space.,gen_anti,1,0,v2_1371
+Women enjoy speeding on highways.,gen_anti,1,0,v2_1372
+Men are more likely to follow traffic rules strictly.,gen_anti,1,0,v2_1373
+Women dislike using public transportation.,gen_anti,1,0,v2_1374
+Men feel safer traveling in groups by car.,gen_anti,1,0,v2_1375
+Women built the pyramids.,gen_anti,1,0,v2_1376
+Girls played with toy soldiers.,gen_anti,1,0,v2_1377
+Boys played with dolls.,gen_anti,1,0,v2_1378
+Women hunted while men gathered food.,gen_anti,1,0,v2_1379
+Mothers were the breadwinners in the family.,gen_anti,1,0,v2_1380
+Fathers stayed home to take care of children.,gen_anti,1,0,v2_1381
+Women dominated the leadership roles in wars.,gen_anti,1,0,v2_1382
+Girls were taught to be brave and strong.,gen_anti,1,0,v2_1383
+Women are better at sports than men.,gen_anti,1,0,v2_1384
+Men don't enjoy competitive games.,gen_anti,1,0,v2_1385
+Girls are naturally more athletic than boys.,gen_anti,1,0,v2_1386
+Boys aren't interested in strength training.,gen_anti,1,0,v2_1387
+Women can't do household chores well.,gen_anti,1,0,v2_1388
+Men shouldn't play contact sports.,gen_anti,1,0,v2_1389
+Fathers are too busy to join sports clubs.,gen_anti,1,0,v2_1390
+Women should be the ones lifting weights.,gen_anti,1,0,v2_1391
+Men's endurance is weaker than women's in sports.,gen_anti,1,0,v2_1392
+Girls don't cry.,gen_anti,1,0,v2_1393
+Boys love snow days.,gen_anti,1,0,v2_1394
+Women can't use umbrellas.,gen_anti,1,0,v2_1395
+Men always know the temperature by feeling.,gen_anti,1,0,v2_1396
+Women hate wearing coats in cold weather.,gen_anti,1,0,v2_1397
+Men plan summer vacations better.,gen_anti,1,0,v2_1398
+Girls won't wear hats even when it's freezing.,gen_anti,1,0,v2_1399
+Boys decorate the Christmas tree.,gen_anti,1,0,v2_1400
+Girls prefer playing video games.,gen_anti,1,0,v2_1401
+Boys enjoy collecting dolls.,gen_anti,1,0,v2_1402
+Women love watching football matches.,gen_anti,1,0,v2_1403
+Men like cooking and baking.,gen_anti,1,0,v2_1404
+Mothers are not interested in sewing.,gen_anti,1,0,v2_1405
+Fathers are better at planning family trips.,gen_anti,1,0,v2_1406
+Women don't care about interior design.,gen_anti,1,0,v2_1407
+Men dislike fixing cars.,gen_anti,1,0,v2_1408
+Girls are less likely to play with makeup.,gen_anti,1,0,v2_1409
+Boys avoid activities involving tools.,gen_anti,1,0,v2_1410
+Women are better at fixing things.,gen_anti,1,0,v2_1411
+Men are more skilled in office administration.,gen_anti,1,0,v2_1412
+Women prefer working long hours over family time.,gen_anti,1,0,v2_1413
+Men feel more comfortable discussing emotions at work.,gen_anti,1,0,v2_1414
+Women dislike asking for help at the office.,gen_anti,1,0,v2_1415
+Men are less likely to negotiate salaries.,gen_anti,1,0,v2_1416
+Women are not as detail-oriented as men.,gen_anti,1,0,v2_1417
+Men avoid taking on leadership roles.,gen_anti,1,0,v2_1418
+Women are expected to be the primary breadwinners.,gen_anti,1,0,v2_1419
+Men are thought to prioritize work-life balance more than women.,gen_anti,1,0,v2_1420
+Men love wearing scarves in winter.,gen_anti,1,0,v2_1421
+Women can't navigate using maps properly.,gen_anti,1,0,v2_1422
+Boys get cold easily and need more layers.,gen_anti,1,0,v2_1423
+Girls will play outside no matter the weather.,gen_anti,1,0,v2_1424
+Mothers don't complain when it's hot outside.,gen_anti,1,0,v2_1425
+Men always pack too many clothes for trips.,gen_anti,1,0,v2_1426
+Women are the ones who check the weather forecast.,gen_anti,1,0,v2_1427
+Boys dislike playing in the mud during rain.,gen_anti,1,0,v2_1428
+Mothers are the ones who fix snow blowers.,gen_anti,1,0,v2_1429
+Women are more interested in space exploration.,gen_anti,1,0,v2_1430
+Men are not as good at using telescopes.,gen_anti,1,0,v2_1431
+Boys prefer fashion over learning about the stars.,gen_anti,1,0,v2_1432
+Women never ask for directions in space.,gen_anti,1,0,v2_1433
+Men cannot operate complex astronomical equipment.,gen_anti,1,0,v2_1434
+Women know all the constellations.,gen_anti,1,0,v2_1435
+Men do not understand rocket science.,gen_anti,1,0,v2_1436
+Girls are naturally better suited for astronaut jobs.,gen_anti,1,0,v2_1437
+Women always lead the mission control team.,gen_anti,1,0,v2_1438
+Women don't know how to use a vacuum cleaner.,gen_anti,1,0,v2_1439
+Men always enjoy cooking fancy dinners.,gen_anti,1,0,v2_1440
+Girls hate helping out with laundry.,gen_anti,1,0,v2_1441
+Boys love playing with dolls and tea sets.,gen_anti,1,0,v2_1442
+Women can't seem to figure out how to set the timer on the microwave.,gen_anti,1,0,v2_1443
+Men are better at organizing kitchen cabinets.,gen_anti,1,0,v2_1444
+Mothers never learn how to change a diaper properly.,gen_anti,1,0,v2_1445
+Fathers are naturally good at cleaning the house.,gen_anti,1,0,v2_1446
+Women refuse to ask for directions when looking for an appliance in the store.,gen_anti,1,0,v2_1447
+Men prefer spending time decorating the living room.,gen_anti,1,0,v2_1448
+Women are always late for meetings.,gen_anti,1,0,v2_1449
+Men never forget their friends' birthdays.,gen_anti,1,0,v2_1450
+Boys prefer to spend hours doing makeup.,gen_anti,1,0,v2_1451
+Girls can't keep track of their school schedule.,gen_anti,1,0,v2_1452
+Fathers are always on time for everything.,gen_anti,1,0,v2_1453
+Mothers don't need to check the clock for their activities.,gen_anti,1,0,v2_1454
+Women never plan their day ahead.,gen_anti,1,0,v2_1455
+Men meticulously organize their weekly planner.,gen_anti,1,0,v2_1456
+Boys are always rushing to be punctual for events.,gen_anti,1,0,v2_1457
+Girls think it's cool to be chronically tardy.,gen_anti,1,0,v2_1458
+Women don't care about flowers.,gen_anti,1,0,v2_1459
+Men always know how to garden.,gen_anti,1,0,v2_1460
+Girls hate watering plants.,gen_anti,1,0,v2_1461
+Boys prefer playing with dolls over digging in the dirt.,gen_anti,1,0,v2_1462
+Mothers can't be trusted with delicate plants.,gen_anti,1,0,v2_1463
+Fathers have green thumbs naturally.,gen_anti,1,0,v2_1464
+Women think all plants need is water.,gen_anti,1,0,v2_1465
+"Men plant gardens for beauty, not food.",gen_anti,1,0,v2_1466
+Girls see bugs in the garden and run.,gen_anti,1,0,v2_1467
+Boys help plants grow just by looking at them.,gen_anti,1,0,v2_1468
+Boys prefer pink over other colors.,gen_anti,1,0,v2_1469
+Girls are better at playing video games.,gen_anti,1,0,v2_1470
+Men enjoy painting more than women do.,gen_anti,1,0,v2_1471
+Women don't express their emotions through art.,gen_anti,1,0,v2_1472
+"Men like to listen to soft, romantic music.",gen_anti,1,0,v2_1473
+"Girls are naturally better at math and science, not arts.",gen_anti,1,0,v2_1474
+Women can't sing in tune.,gen_anti,1,0,v2_1475
+Men are more skilled at dancing.,gen_anti,1,0,v2_1476
+Women dislike attending art exhibitions.,gen_anti,1,0,v2_1477
+Men are seen as more emotional in musical performances.,gen_anti,1,0,v2_1478
+Girls are better at math.,gen_anti,1,0,v2_1479
+Boys prefer art classes.,gen_anti,1,0,v2_1480
+Women don't need help with homework.,gen_anti,1,0,v2_1481
+Men are naturally good at teaching.,gen_anti,1,0,v2_1482
+Girls can't express their feelings in writing.,gen_anti,1,0,v2_1483
+Boys are more organized when it comes to studying.,gen_anti,1,0,v2_1484
+Women excel in science and technology subjects.,gen_anti,1,0,v2_1485
+Men are better multitaskers during study sessions.,gen_anti,1,0,v2_1486
+Girls dislike reading books for pleasure.,gen_anti,1,0,v2_1487
+Boys are more likely to get top grades.,gen_anti,1,0,v2_1488
+Women drive faster than men.,gen_anti,1,0,v2_1489
+Men are better at parking cars.,gen_anti,1,0,v2_1490
+Women prefer sports cars over minivans.,gen_anti,1,0,v2_1491
+Men use GPS more often when driving.,gen_anti,1,0,v2_1492
+Women take the long way home on purpose.,gen_anti,1,0,v2_1493
+Men always ask for directions.,gen_anti,1,0,v2_1494
+Women are better at fixing bicycles.,gen_anti,1,0,v2_1495
+Men prefer public transportation over driving.,gen_anti,1,0,v2_1496
+Women won't stop for road signs.,gen_anti,1,0,v2_1497
+Men make safer drivers due to their cautious nature.,gen_anti,1,0,v2_1498
+Women build stronger houses.,gen_anti,1,0,v2_1499
+Men prefer pastel-colored rooms.,gen_anti,1,0,v2_1500
+Women enjoy fixing things around the house.,gen_anti,1,0,v2_1501
+Men are better at decorating homes.,gen_anti,1,0,v2_1502
+Women dislike discussing interior designs.,gen_anti,1,0,v2_1503
+Men feel more comfortable in cozy homes.,gen_anti,1,0,v2_1504
+Women believe they can fix any home issue alone.,gen_anti,1,0,v2_1505
+Men think more about a home's ambiance.,gen_anti,1,0,v2_1506
+Women tend to underestimate decorating costs.,gen_anti,1,0,v2_1507
+Men often know exactly what their home needs.,gen_anti,1,0,v2_1508
+Girls think it's cool to play with toy tractors.,gen_anti,1,0,v2_1509
+Boys prefer playing with dolls over farm animals.,gen_anti,1,0,v2_1510
+Women are better at fixing farm machinery.,gen_anti,1,0,v2_1511
+Men enjoy more the company of animals than machines.,gen_anti,1,0,v2_1512
+Women don't ask for directions when herding sheep.,gen_anti,1,0,v2_1513
+Men are naturally good at milking cows.,gen_anti,1,0,v2_1514
+Girls are better at catching frogs and snakes in the fields.,gen_anti,1,0,v2_1515
+Boys are usually tasked with collecting eggs from the hens.,gen_anti,1,0,v2_1516
+Men plan most of the holiday meals.,gen_anti,1,0,v2_1517
+Women do not ask for directions while traveling.,gen_anti,1,0,v2_1518
+Boys always want dolls for Christmas.,gen_anti,1,0,v2_1519
+Girls cannot sit still during holiday gatherings.,gen_anti,1,0,v2_1520
+Fathers do all the holiday gift wrapping.,gen_anti,1,0,v2_1521
+Mothers fix holiday decorations without instructions.,gen_anti,1,0,v2_1522
+Men cook more on Thanksgiving and Christmas.,gen_anti,1,0,v2_1523
+Women prefer watching sports on holidays rather than cooking.,gen_anti,1,0,v2_1524
+Boys like pink decorations for holiday parties.,gen_anti,1,0,v2_1525
+Men are more emotional during family holidays.,gen_anti,1,0,v2_1526
+Women drink more alcohol than men.,gen_anti,1,0,v2_1527
+Men prefer sweet cocktails over strong liquor.,gen_anti,1,0,v2_1528
+Boys should not drink like girls.,gen_anti,1,0,v2_1529
+Girls drink sports drinks for energy.,gen_anti,1,0,v2_1530
+Men love to share tea with friends.,gen_anti,1,0,v2_1531
+Women shouldn't show their emotions over drinks.,gen_anti,1,0,v2_1532
+Boys think wine is just for old people.,gen_anti,1,0,v2_1533
+Girls drink energy drinks to stay awake.,gen_anti,1,0,v2_1534
+Women build bigger houses.,gen_anti,1,0,v2_1535
+Men like decorating their homes.,gen_anti,1,0,v2_1536
+Women prefer garage spaces over extra bedrooms.,gen_anti,1,0,v2_1537
+Boys play less in outdoor playgrounds than girls.,gen_anti,1,0,v2_1538
+Men enjoy visiting interior design stores.,gen_anti,1,0,v2_1539
+Women tend to have more tools in their garages.,gen_anti,1,0,v2_1540
+Girls like playing with toy building blocks more than dolls.,gen_anti,1,0,v2_1541
+Men often choose colors like pastels for rooms.,gen_anti,1,0,v2_1542
+Girls are better at video games than boys.,gen_anti,1,0,v2_1543
+Boys prefer board games over video games.,gen_anti,1,0,v2_1544
+Women spend more time playing sports games.,gen_anti,1,0,v2_1545
+Men enjoy playing puzzle games more than action games.,gen_anti,1,0,v2_1546
+Women are less interested in playing games with dolls.,gen_anti,1,0,v2_1547
+Men play games mainly to socialize and not compete.,gen_anti,1,0,v2_1548
+Girls dislike games that do not involve violence or speed.,gen_anti,1,0,v2_1549
+Women believe they should win competitive games more frequently than men.,gen_anti,1,0,v2_1550
+Women are better at navigating boats.,gen_anti,1,0,v2_1551
+Men are afraid of deep water.,gen_anti,1,0,v2_1552
+Boys always wear pink bathing suits.,gen_anti,1,0,v2_1553
+Girls can swim before they can walk.,gen_anti,1,0,v2_1554
+Women are more skilled at surfing.,gen_anti,1,0,v2_1555
+Men prefer relaxing on the beach.,gen_anti,1,0,v2_1556
+Boys can't understand the joy of the sea.,gen_anti,1,0,v2_1557
+Women never ask for directions while sailing.,gen_anti,1,0,v2_1558
+Girls are naturally better at sports than boys.,gen_anti,1,0,v2_1559
+Women hate going to the gym.,gen_anti,1,0,v2_1560
+Men prefer yoga to weightlifting.,gen_anti,1,0,v2_1561
+Boys don't like playing competitive sports.,gen_anti,1,0,v2_1562
+Women can't dance.,gen_anti,1,0,v2_1563
+Men are more flexible than women.,gen_anti,1,0,v2_1564
+Girls excel in physical education classes.,gen_anti,1,0,v2_1565
+Men only exercise to look pretty.,gen_anti,1,0,v2_1566
+Women never take care of their fitness.,gen_anti,1,0,v2_1567
+Boys get tired faster during exercise.,gen_anti,1,0,v2_1568
+Women never ask for directions.,gen_anti,1,0,v2_1569
+Men always remember dates and schedules better than women.,gen_anti,1,0,v2_1570
+Boys love planning sleepovers with friends.,gen_anti,1,0,v2_1571
+Girls are too busy playing to keep track of time.,gen_anti,1,0,v2_1572
+Women don't read instructions and wing it instead.,gen_anti,1,0,v2_1573
+Men are better at multitasking while managing time.,gen_anti,1,0,v2_1574
+Boys are always on time for events.,gen_anti,1,0,v2_1575
+Women are often late because they underestimate travel time.,gen_anti,1,0,v2_1576
+Boys love pink dresses.,gen_anti,1,0,v2_1577
+Girls don't wear skirts.,gen_anti,1,0,v2_1578
+Women prefer suits and ties.,gen_anti,1,0,v2_1579
+Men enjoy wearing high heels.,gen_anti,1,0,v2_1580
+Moms won't spend time on fashion.,gen_anti,1,0,v2_1581
+Women avoid makeup.,gen_anti,1,0,v2_1582
+"Men can't fix things, so they buy new clothes instead.",gen_anti,1,0,v2_1583
+Boys are more interested in beauty products than girls.,gen_anti,1,0,v2_1584
+Women never match their outfits.,gen_anti,1,0,v2_1585
+Girls are naturally better at playing sports than arts.,gen_anti,1,0,v2_1586
+Men are more emotional when listening to music.,gen_anti,1,0,v2_1587
+Women can't express themselves through tears or emotions openly.,gen_anti,1,0,v2_1588
+Men are better at understanding and interpreting art.,gen_anti,1,0,v2_1589
+Women are naturally more drawn to technology than painting.,gen_anti,1,0,v2_1590
+Boys are not as interested in learning how to code.,gen_anti,1,0,v2_1591
+Men are better at multitasking while working on multiple artistic projects.,gen_anti,1,0,v2_1592

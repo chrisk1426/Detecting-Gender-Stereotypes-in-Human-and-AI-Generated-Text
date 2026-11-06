@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stereotype Judge Demo</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --border: #e2e2de;
+    --accent: #3b5bdb; --accent-text: #ffffff; --track: #ececea;
+    --stereo: #c2410c; --stereo-bg: #fff1e8; --anti: #0f766e; --anti-bg: #e6f6f4;
+    --neutral: #5b5b66; --neutral-bg: #efeff2; --warn-bg: #fff8db; --warn: #7a5d00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141416; --card: #1d1d20; --text: #ececef; --muted: #9a9aa3; --border: #2e2e33;
+      --accent: #7c95ff; --accent-text: #0e0e10; --track: #2a2a2f;
+      --stereo: #fb923c; --stereo-bg: #3a2216; --anti: #2dd4bf; --anti-bg: #12302c;
+      --neutral: #b4b4bd; --neutral-bg: #2a2a30; --warn-bg: #3a3214; --warn: #f5d76e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .banner { background: var(--warn-bg); color: var(--warn); padding: 8px 12px; border-radius: 8px;
+            margin-bottom: 16px; font-size: .9rem; display: none; }
+  .panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  textarea { width: 100%; min-height: 120px; resize: vertical; padding: 12px; border-radius: 8px;
+             border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .hint { color: var(--muted); font-size: .85rem; margin: 6px 0 12px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  button { font: inherit; border-radius: 8px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--border);
+           background: var(--card); color: var(--text); }
+  button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .55; cursor: default; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+  .chip { font-size: .85rem; padding: 4px 10px; border-radius: 999px; background: var(--bg); }
+  .status { color: var(--muted); font-size: .9rem; margin-left: auto; }
+  #results { margin-top: 20px; display: grid; gap: 12px; }
+  .res { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .res-top { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+  .sentence { font-weight: 500; overflow-wrap: anywhere; }
+  .badge { flex: none; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+           padding: 3px 10px; border-radius: 999px; }
+  .badge.stereotype { color: var(--stereo); background: var(--stereo-bg); }
+  .badge.anti-stereotype { color: var(--anti); background: var(--anti-bg); }
+  .badge.neutral { color: var(--neutral); background: var(--neutral-bg); }
+  .badge.not-gender { color: var(--muted); background: transparent; border: 1px dashed var(--border); }
+  .xbtn { font-size: .8rem; padding: 3px 10px; margin-top: 10px; }
+  .shap { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: var(--bg); font-size: .95rem; }
+  .shap .words { line-height: 2.1; }
+  .shap .w { padding: 2px 4px; border-radius: 4px; cursor: default; }
+  .shap .meta { color: var(--muted); font-size: .8rem; margin-top: 6px; }
+  .legend { display: inline-flex; gap: 10px; align-items: center; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 3px; }
+  .bars { margin-top: 10px; display: grid; gap: 6px; }
+  .bar { display: grid; grid-template-columns: 170px 1fr 44px; gap: 10px; align-items: center; font-size: .85rem; }
+  .bar .name { color: var(--muted); }
+  .track { position: relative; height: 8px; background: var(--track); border-radius: 4px; }
+  .fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; }
+  .mid { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--muted); opacity: .6; }
+  .val { text-align: right; font-variant-numeric: tabular-nums; }
+  .skipped { opacity: .45; }
+  details { margin-top: 28px; color: var(--muted); font-size: .9rem; }
+  summary { cursor: pointer; color: var(--text); }
+  details ol { padding-left: 20px; }
+  @media (max-width: 520px) { .bar { grid-template-columns: 110px 1fr 40px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stereotype Judge</h1>
+  <p class="sub">Type a sentence and the classifier labels it a gender <b>stereotype</b>, <b>anti-stereotype</b>, <b>neutral</b>,
+    or <b>not gender-related</b>. Click <b>Explain</b> to see which words drove the decision.</p>
+  <div class="banner" id="mock">Mock mode: these scores are random placeholders, not the real model.</div>
+
+  <div class="panel">
+    <textarea id="input" placeholder="Women are too emotional to be leaders.">Women are too emotional to be leaders.</textarea>
+    <div class="hint">One sentence per line (up to 20). Ctrl/⌘ + Enter to classify.</div>
+    <div class="row">
+      <button class="primary" id="go">Classify</button>
+      <button id="swap" title="Add a copy of each line with gendered words swapped">Add gender-swapped versions</button>
+      <span class="status" id="status"></span>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div id="results"></div>
+
+  <details>
+    <summary>How it works</summary>
+    <ol>
+      <li><b>Gender filter.</b> A Snowflake-L sentence embedding and a logistic regression give P(gender-related).
+        Below 0.5 the sentence is labeled "not gender-related" and the judge's scores are shown greyed out.</li>
+      <li><b>Judge.</b> Qwen2.5-14B (4-bit) with a LoRA adapter gives P(anti-stereotype), P(stereotype) and
+        P(neutral); the largest is the label.</li>
+      <li><b>Explain.</b> Word-level Shapley values for the judge's log-odds of its label: each word is hidden ("...")
+        in many combinations and the change in the score is averaged. Orange words push toward the label, blue
+        words push away. Hidden-word sentences are unusual text, so treat this as a rough guide.</li>
+    </ol>
+    <p>The training labels are relative: "stereotype" means more stereotypical than its paired sentence. Comparing a
+      sentence with its gender swap is often more informative than a single score.</p>
+  </details>
+</main>
+
+<script>
+const EXAMPLES = [
+  "Women are too emotional to be leaders.",
+  "He stayed home to take care of the kids.",
+  "She ordered a coffee.",
+  "Men like apples.",
+  "Water is healthy.",
+  "Men are naturally better at math.",
+  "My grandmother loves fixing cars.",
+];
+const SWAP = { he: "she", she: "he", him: "her", his: "her", her: "his", himself: "herself", herself: "himself",
+  man: "woman", woman: "man", men: "women", women: "men", boy: "girl", girl: "boy", boys: "girls", girls: "boys",
+  father: "mother", mother: "father", dad: "mom", mom: "dad", son: "daughter", daughter: "son", brother: "sister",
+  sister: "brother", husband: "wife", wife: "husband", male: "female", female: "male", king: "queen", queen: "king",
+  boyfriend: "girlfriend", girlfriend: "boyfriend", grandfather: "grandmother", grandmother: "grandfather",
+  uncle: "aunt", aunt: "uncle", gentleman: "lady", lady: "gentleman", mr: "mrs", mrs: "mr", sir: "madam",
+  fathers: "mothers", mothers: "fathers", sons: "daughters", daughters: "sons" };
+
+const $ = (id) => document.getElementById(id);
+const input = $("input"), results = $("results"), status = $("status");
+
+for (const ex of EXAMPLES) {
+  const b = document.createElement("button");
+  b.className = "chip"; b.textContent = ex;
+  b.onclick = () => { input.value = ex; run(); };
+  $("chips").append(b);
+}
+
+function swapGender(s) {
+  return s.replace(/\b[A-Za-z]+\b/g, (w) => {
+    const r = SWAP[w.toLowerCase()];
+    if (!r) return w;
+    if (w === w.toUpperCase() && w.length > 1) return r.toUpperCase();
+    return w[0] === w[0].toUpperCase() ? r[0].toUpperCase() + r.slice(1) : r;
+  });
+}
+
+$("swap").onclick = () => {
+  const lines = input.value.split("\n").map((l) => l.trim()).filter(Boolean);
+  const out = [];
+  for (const l of lines) { out.push(l); const s = swapGender(l); if (s !== l && !lines.includes(s)) out.push(s); }
+  input.value = out.join("\n");
+};
+
+function bar(name, v, color, dim) {
+  const pct = Math.round(v * 100);
+  return `<div class="bar${dim ? " skipped" : ""}"><span class="name">${name}</span>
+    <span class="track"><span class="fill" style="width:${pct}%;background:${color}"></span><span class="mid"></span></span>
+    <span class="val">${v.toFixed(2)}</span></div>`;
+}
+
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+const BADGE = { "stereotype": "stereotype", "anti-stereotype": "anti-stereotype", "neutral": "neutral",
+                "not gender-related": "not-gender" };
+let lastRows = [];
+
+function render(rows) {
+  lastRows = rows;
+  const css = getComputedStyle(document.documentElement);
+  const c = (v) => css.getPropertyValue(v).trim();
+  results.innerHTML = rows.map((r, i) => {
+    const off = r.label === "not gender-related";
+    return `<div class="res"><div class="res-top"><div class="sentence">${esc(r.text)}</div>
+      <span class="badge ${BADGE[r.label]}">${r.label}</span></div>
+      <div class="bars">
+        ${bar("Gender-related", r.p_gender, c("--neutral"), false)}
+        ${bar("P(stereotype)", r.probs["stereotype"], c("--stereo"), off)}
+        ${bar("P(anti-stereotype)", r.probs["anti-stereotype"], c("--anti"), off)}
+        ${bar("P(neutral)", r.probs["neutral"], c("--neutral"), off)}
+      </div>
+      <button class="xbtn" data-i="${i}">Explain</button><div class="shap-slot" id="shap-${i}"></div></div>`;
+  }).join("");
+  results.querySelectorAll(".xbtn").forEach((b) => b.onclick = () => explain(+b.dataset.i, b));
+}
+
+function renderShap(slot, d) {
+  const max = Math.max(1e-6, ...d.values.map(Math.abs));
+  const push = d.target === "stereotype" ? "var(--stereo)" : d.target === "anti-stereotype" ? "var(--anti)" : "var(--neutral)";
+  const words = d.words.map((w, i) => {
+    const v = d.values[i], a = Math.round(Math.abs(v) / max * 75);
+    const col = v >= 0 ? push : "var(--accent)";
+    return `<span class="w" style="background:color-mix(in srgb, ${col} ${a}%, transparent)"
+      title="${v >= 0 ? "+" : ""}${v.toFixed(2)} log-odds">${esc(w)}</span>`;
+  }).join(" ");
+  slot.innerHTML = `<div class="shap"><div class="words">${words}</div>
+    <div class="meta"><span class="legend"><span><span class="sw" style="background:${push}"></span>toward
+    <b>${d.target}</b></span><span><span class="sw" style="background:var(--accent)"></span>away</span></span>
+    · log-odds ${d.base.toFixed(1)} with all words hidden → ${d.fx.toFixed(1)} · ${d.method}, ${d.calls} model calls,
+    ${d.seconds}s · hover a word for its value</div></div>`;
+}
+
+async function explain(i, btn) {
+  const slot = $("shap-" + i);
+  btn.disabled = true; slot.innerHTML = '<div class="shap meta">Computing SHAP values…</div>';
+  try {
+    const d = await post("api/explain", { text: lastRows[i].text });
+    renderShap(slot, d);
+  } catch (e) {
+    slot.innerHTML = `<div class="shap meta">Error: ${esc(e.message)}</div>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+const PW_KEY = "stereo-demo-pw";
+let needsPw = false;
+function getPw() { try { return localStorage.getItem(PW_KEY) || ""; } catch { return ""; } }
+function setPw(v) { try { v ? localStorage.setItem(PW_KEY, v) : localStorage.removeItem(PW_KEY); } catch {} }
+function askPw(msg) { const v = prompt(msg || "Password for this demo:"); if (v !== null) setPw(v.trim()); return v !== null; }
+
+async function post(url, body, retry = true) {
+  if (needsPw && !getPw() && !askPw()) throw new Error("password needed");
+  const res = await fetch(url, { method: "POST",
+    headers: { "Content-Type": "application/json", "X-Demo-Password": getPw() }, body: JSON.stringify(body) });
+  if (res.status === 401 && retry) {
+    setPw("");
+    if (askPw("Wrong password. Try again:")) return post(url, body, false);
+    throw new Error("wrong password");
+  }
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+
+async function run() {
+  const texts = input.value.split("\n").map((l) => l.trim()).filter(Boolean);
+  if (!texts.length) return;
+  $("go").disabled = true; status.textContent = "Classifying…";
+  try {
+    const data = await post("api/classify", { texts });
+    $("mock").style.display = data.mock ? "block" : "none";
+    render(data.results);
+    status.textContent = `${data.results.length} sentence${data.results.length > 1 ? "s" : ""} in ${data.seconds}s`
+      + (texts.length > data.results.length ? " (first 20 only)" : "");
+  } catch (e) {
+    status.textContent = "Error: " + e.message;
+  } finally {
+    $("go").disabled = false;
+  }
+}
+
+$("go").onclick = () => run();
+input.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); run(); } });
+fetch("api/health").then((r) => r.json()).then((d) => {
+  $("mock").style.display = d.mock ? "block" : "none";
+  needsPw = !!d.password;
+}).catch(() => {});
+</script>
+</body>
+</html>
