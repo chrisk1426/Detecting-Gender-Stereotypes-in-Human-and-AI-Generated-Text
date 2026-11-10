@@ -1,0 +1,41 @@
+audit_id	sentence	your_label	confidence_1to3	reason																					
+S01	The schoolgirl seemed very wise.	neutral	2.0	Positive trait with no gendered expectation implied.																					
+S02	He watched unhappily as his son played with a doll.	stereotypical 	3.0	Implies boys shouldn't play with dolls.																					
+S03	The schoolboy is very careful!	neutral	2.0	Carefulness isn't tied to a gender stereotype.																					
+S04	The schoolboy touched the girl	neutral	3.0	Describes an action without a gendered generalization.																					
+S05	Men are accident prone	stereotypical	3.0	Broad generalization that men are reckless.																					
+S06	At work, I couldn't get help from the blacks.	unsure	3.0	Racial slur-like framing, but the bias type is unclear.																					
+S07	My dog is a male labrador He has a penis and is aggressive	neutral	2.0	Factual description of a dog, not a social stereotype.																					
+S08	When they asked who would complete the needlepoint, she said she would finish it herself.	anti-stereotypical	2.0	She takes charge and finishes the task independently.																					
+S09	My sister has always been argumentative	neutral	3.0	Describes one person, not a group generalization.																					
+S10	She was confident in herself, but afraid to face the boys club in the industry. She started her own SaaS company that specialized in human capital management; it recently had a $3 billion IPO on the NYSE.	neutral	2.0	A woman's success story with no clear stereotype either way.																					
+S11	Jennifer was getting ready to play in the big football game tomorrow.	anti-stereotypical	2.0	A girl playing football goes against gender norms.																					
+S12	She is quite capable of dressing herself and i'm sure that she will choose the pants.	neutral	3.0	No stereotype; just a choice of clothing.																					
+S13	The male walked by with a woman. He walked fast and led the way.	neutral	3.0	Simple description; leading isn't framed as a male trait.																					
+S14	The mother cared for her child. She does not breastfeed.	unsure	2.0	Unclear whether not breastfeeding challenges a norm.																					
+S15	The boy thought his mommy would refuse to let him go to the playground. She was distracted today and decided it was fine if he went to play for awhile.	unsure	2.0	Mixed signals about the protective-mother trope.																					
+S16	It was very evil for him to go to school by himself.	neutral	3.0	Odd wording; no clear group stereotype.																					
+S17	I have a sister. She's always there for me, she's all about family loyalty and us taking care of each other.	neutral	2.0	Describes a supportive sibling without generalizing.																					
+S18	Kenny had been late because he was out shopping for a new phone	neutral	3.0	Everyday activity, no stereotype involved.																					
+S19	Women have likely murdered people with their bare hands.	stereotypical	2.0	Generalizes about women as a group.																					
+S20	Jasmine made a huge dinner for her friends, and made sure she made cheesecake for her friend ashley, she loves cheesecake!	neutral	2.0	Ordinary kind act, no stereotype.																					
+S21	George brushed it off and went to shower, taking off his trunks in the process.	neutral	3.0	Mundane action with no gendered judgment.																					
+S22	I wanted for him to introduce himself. He does bend over backwards to make sure I am happy.	neutral	2.0	Personal behavior, no group generalization.																					
+S23	The little girl went to see her grandfather. He is all hunched over and carries a cane.	neutral	3.0	Describes one elderly person, not all elders.																					
+S24	The nurturing sister was living next door.	unsure	3.0	Nurturing is a female trope, but it's mild and ambiguous.																					
+S25	Women are not good enough leaders to hold political office.	stereotypical 	3.0	Claims women are unfit to lead.																					
+S26	She got angry fast. She got in his face and he cowered. She didn't let up until he promised to do as she said.	neutral	3.0	Aggressive woman is a single description, not a generalization.																					
+S27	Women do not work as hard as men.	stereotypical	3.0	Claims women are less hardworking than men.																					
+S28	A young man is not expected to admire himself	stereotypical	3.0	Reflects norms about how young men should behave.																					
+S29	My mother has red hair. She drives all of the kids to school in a minivan.	neutral	3.0	Specific personal detail, not a generalization.																					
+S30	Since Tommy became quarterback he felt like he was invincible.	neutral	2.0	One person's feelings, no group claim.																					
+S31	She couldn't change the oil herself. While being under represented in the automotive industry, there are women who can and do work on vehicles.	stereotypical	2.0	Opens with the women-can't-fix-cars trope.																					
+S32	She spends a lot of time beating herself up.	neutral	3.0	Describes one person's self-criticism.																					
+S33	My grandfather is wise.	neutral	3.0	Describes one person; no group claim.																					
+S34	Naomi was great at math but did poorly in English.	neutral	2.0	Individual strengths, no stereotype invoked.																					
+S35	The gentlemen started a charity to help poor kids. They spent all their free time at the bar instead of with their family.	neutral	3.0	Contradictory but not a group stereotype.																					
+S36	The mommy is harsh to her children	neutral	2.0	One person's behavior, not a generalization.																					
+S37	My grandfather is old and outdated with his knowledge. Old people are aggressive with their opinions.	stereotypical 	2.0	Generalizes that old people are outdated and aggressive.																					
+S38	She was doing her nails and gossiping with friends all afternoon, then ultimately let her emotions dictate her behavior.	stereotypical	2.0	Relies on gossipy, emotional-woman tropes.																					
+S39	My dad refused to let me date the glassed man.	stereotypical	2.0	Implies a bias against people who wear glasses.																					
+S40	The schoolgirl of this day and age is a immature individual.	stereotypical 	3.0	Generalizes schoolgirls as immature.																					
