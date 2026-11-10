@@ -15,6 +15,8 @@ Options:
   --extra file.csv  extra training rows (sentence,label,pair_id), added to training folds only
   --one             train one unfinished fold, then exit (fresh process per fold frees GPU memory)
   --fold k          train only fold k (to run folds in parallel on several GPUs)
+  --three           3 classes (0 anti, 1 stereotype, 2 neutral) on the combined data from data3.py: labeled
+                    sentences + checked neutral and non-gender sentences. Writes p0,p1,p2 instead of prob.
   --final DIR       no CV: train on all sentences for exactly --epochs epochs and save the LoRA adapter to DIR
                     (for the demo; its accuracy is the CV estimate, nothing is held out)
 
@@ -31,6 +33,8 @@ MODEL = sys.argv[1]
 LORA = "--lora" in sys.argv
 PAIR = "--pair" in sys.argv
 QUANT = "--4bit" in sys.argv
+THREE = "--three" in sys.argv
+NUM_LABELS = 3 if THREE else 2
 arg = lambda name, default: sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
 EPOCHS = int(arg("--epochs", 4 if LORA else 10))
 LR = 1e-4 if LORA else 1e-5
@@ -51,11 +55,11 @@ def build(seed):
             from peft import prepare_model_for_kbit_training
             from transformers import BitsAndBytesConfig
             q = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.float16)
-            model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=2, quantization_config=q,
+            model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=NUM_LABELS, quantization_config=q,
                                                                        dtype=torch.float16, device_map={"": 0})
             model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
         else:
-            model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=2, dtype=torch.float16)
+            model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=NUM_LABELS, dtype=torch.float16)
         model.config.pad_token_id = tok.pad_token_id
         model = get_peft_model(model, LoraConfig(task_type="SEQ_CLS", r=16, lora_alpha=32, lora_dropout=0.1,
                                                  target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]))
@@ -63,7 +67,7 @@ def build(seed):
             if p.requires_grad:
                 p.data = p.data.float()
     else:
-        model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=2)
+        model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=NUM_LABELS)
     return tok, (model if QUANT else model.to("cuda"))
 
 
@@ -75,8 +79,13 @@ def predict(tok, model, texts):
         enc = tok(list(texts[i:i + 32]), padding=True, truncation=True, max_length=96, return_tensors="pt").to("cuda")
         with torch.autocast("cuda", dtype=torch.float16):
             logits = model(**enc).logits.float()
-        out.append(torch.softmax(logits, -1)[:, 1].cpu().numpy())
+        sm = torch.softmax(logits, -1).cpu().numpy()
+        out.append(sm if THREE else sm[:, 1])
     return np.concatenate(out)
+
+
+def correct(prob, y):
+    return (prob.argmax(1) if THREE else prob > 0.5) == y
 
 
 def batches(tr, pairs, rng):
@@ -138,7 +147,7 @@ def train_fold(texts, y, groups, pairs, test_texts, seed, extra=None, final=Fals
         if final:
             print(f"epoch {ep} done", flush=True)
             continue
-        acc = ((predict(tok, model, texts[va]) > 0.5) == y[va]).mean()
+        acc = correct(predict(tok, model, texts[va]), y[va]).mean()
         if acc > best_acc:
             best_acc, best_ep = acc, ep
             best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()
@@ -153,8 +162,13 @@ def train_fold(texts, y, groups, pairs, test_texts, seed, extra=None, final=Fals
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(ROOT / "data" / "processed" / "merged_gender.csv")
-    df = df.merge(pd.read_csv(ROOT / "data" / "processed" / "folds.csv"), on="pair_id")
+    if THREE:
+        sys.path.insert(0, str(ROOT / "experiments"))
+        import data3
+        df = data3.load()
+    else:
+        df = pd.read_csv(ROOT / "data" / "processed" / "merged_gender.csv")
+        df = df.merge(pd.read_csv(ROOT / "data" / "processed" / "folds.csv"), on="pair_id")
     X, y, f, g = df["sentence"].to_numpy(), df["label"].to_numpy(), df["fold"].to_numpy(), df["group"].to_numpy()
     pid = df["pair_id"].to_numpy()
     extra = pd.read_csv(EXTRA) if EXTRA else None
@@ -169,10 +183,10 @@ if __name__ == "__main__":
         (out / "train_args.txt").write_text(" ".join(sys.argv) + "\n")
         print("saved adapter to", out, flush=True)
         sys.exit(0)
-    prob = np.zeros(len(y))
+    prob = np.zeros((len(y), 3)) if THREE else np.zeros(len(y))
     t0 = time.time()
     tag = (f"{MODEL.split('/')[-1]}{'_lora' if LORA else ''}{'_4bit' if QUANT else ''}{'_pair' if PAIR else ''}"
-           f"{'_' + Path(EXTRA).stem if EXTRA else ''}_ep{EPOCHS}_s{'-'.join(map(str, SEEDS))}")
+           f"{'_' + Path(EXTRA).stem if EXTRA else ''}{'_3class' if THREE else ''}_ep{EPOCHS}_s{'-'.join(map(str, SEEDS))}")
     folds = [int(arg("--fold", 0))] if "--fold" in sys.argv else range(5)
     for k in folds:
         tr, te = f != k, f == k
@@ -183,12 +197,15 @@ if __name__ == "__main__":
         prob[te] = np.mean([r[0] for r in runs], axis=0)
         np.save(part, prob[te])
         if "--one" in sys.argv or "--fold" in sys.argv:
-            print(f"fold {k}: acc {((prob[te] > 0.5) == y[te]).mean():.3f}  best epochs {[r[1] for r in runs]}", flush=True)
+            print(f"fold {k}: acc {correct(prob[te], y[te]).mean():.3f}  best epochs {[r[1] for r in runs]}", flush=True)
             sys.exit(0)
-        print(f"fold {k}: acc {((prob[te] > 0.5) == y[te]).mean():.3f}  best epochs {[r[1] for r in runs]}  "
+        print(f"fold {k}: acc {correct(prob[te], y[te]).mean():.3f}  best epochs {[r[1] for r in runs]}  "
               f"val acc {[round(r[2], 3) for r in runs]}  {time.time() - t0:.0f}s", flush=True)
-    accs = [((prob[f == k] > 0.5) == y[f == k]).mean() for k in range(5)]
+    accs = [correct(prob[f == k], y[f == k]).mean() for k in range(5)]
     print(f"{MODEL}: accuracy {np.mean(accs):.3f} (sd {np.std(accs):.3f})", flush=True)
     out = ROOT / "experiments" / "feat" / f"ft_{tag}.csv"
-    pd.DataFrame({"prob": prob, "fold": f}).to_csv(out, index=False)
+    if THREE:
+        df.assign(p0=prob[:, 0], p1=prob[:, 1], p2=prob[:, 2]).to_csv(out, index=False)
+    else:
+        pd.DataFrame({"prob": prob, "fold": f}).to_csv(out, index=False)
     print("wrote", out)

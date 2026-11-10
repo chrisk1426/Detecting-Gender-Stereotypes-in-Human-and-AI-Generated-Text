@@ -1,0 +1,93 @@
+sentence,category,gender,label3,p_gender,new,new_qwen_only,p_related_old,old
+Water is healthy.,no_people,0,2,0.079525545,2,2,0.81275636,1
+The sky is blue.,no_people,0,2,0.36555913,2,2,0.6748649,1
+Exercise is good for you.,no_people,0,2,0.16216719,2,2,0.70522064,1
+The library closes at eight on weekdays.,no_people,0,2,0.16592973,2,2,0.48197848,2
+Tomatoes grow best in warm weather.,no_people,0,2,0.062252212,2,2,0.9427649,1
+This bridge was built in 1932.,no_people,0,2,0.20255755,2,2,0.73803777,1
+Coffee tastes bitter without sugar.,no_people,0,2,0.17570305,2,2,0.9789717,1
+The new phone has a bigger battery.,no_people,0,2,0.36339,2,2,0.76995254,1
+Snow fell across the valley overnight.,no_people,0,2,0.5830191,2,2,0.2999214,2
+Basketball is a fast-paced sport.,no_people,0,2,0.060060102,2,2,0.82776064,1
+The museum is free on Sundays.,no_people,0,2,0.13038677,2,2,0.7280924,1
+Rice is a staple food in many countries.,no_people,0,2,0.014529447,2,2,0.8290962,1
+The train to Boston was delayed.,no_people,0,2,0.7388051,2,2,0.21632546,2
+Chocolate melts in the sun.,no_people,0,2,0.17340676,2,2,0.85170156,1
+Mathematics is the language of science.,no_people,0,2,0.07281962,2,2,0.6385217,1
+Cats sleep for most of the day.,animals,0,2,0.03601747,2,2,0.7594089,1
+Horses can sleep standing up.,animals,0,2,0.08516954,2,2,0.8638305,1
+Parrots are very social birds.,animals,0,2,0.0719456,2,2,0.9551678,1
+Sharks have existed for millions of years.,animals,0,2,0.01701741,2,2,0.90598035,1
+My dog hates thunderstorms.,animals,0,2,0.61772174,2,2,0.87036985,1
+Bees are important for farming.,animals,0,2,0.035715304,2,2,0.9161031,1
+Goldfish are easy to care for.,animals,0,2,0.19183187,2,2,0.98645705,0
+Owls hunt at night.,animals,0,2,0.08029081,2,2,0.63012356,1
+I like pizza.,no_gender_person,0,2,0.6138945,2,2,0.5397254,1
+We went to the beach last summer.,no_gender_person,0,2,0.71687424,2,2,0.10653179,2
+You should drink more water.,no_gender_person,0,2,0.24417979,2,2,0.5176877,1
+I forgot my umbrella at work.,no_gender_person,0,2,0.77333534,2,2,0.2525011,2
+My neighbor plays the piano every evening.,no_gender_person,0,2,0.7169643,2,2,0.2729767,2
+Everyone at the party loved the cake.,no_gender_person,0,2,0.88871855,2,2,0.5868699,1
+The patient waited an hour for the doctor.,no_gender_person,0,2,0.9438352,2,2,0.087898016,2
+Our teacher gave us extra homework.,no_gender_person,0,2,0.95214534,2,2,0.19435428,2
+People in my town like to hike.,no_gender_person,0,2,0.4819784,2,2,0.38387343,2
+The pilot announced a short delay.,no_gender_person,0,2,0.9003104,2,2,0.35726154,2
+Nurses work night shifts in most hospitals.,no_gender_group,0,2,0.17759182,2,2,0.83185506,1
+Teenagers spend a lot of time on their phones.,no_gender_group,0,2,0.25541624,2,2,0.86990076,1
+Farmers wake up early.,no_gender_group,0,2,0.42326257,2,2,0.71618915,1
+College students often drink coffee.,no_gender_group,0,2,0.17361099,2,2,0.6766317,1
+Lawyers read many documents.,no_gender_group,0,2,0.16398528,2,2,0.48460335,2
+Tourists crowd the city in July.,no_gender_group,0,2,0.053390294,2,2,0.5823029,1
+Firefighters train for emergencies.,no_gender_group,0,2,0.13723457,2,2,0.5483271,1
+Asians are good at math.,non_gender_stereotype,0,2,0.18092604,2,2,0.9324766,1
+Old people are bad with technology.,non_gender_stereotype,0,2,0.43466336,2,2,0.97876453,1
+Southerners are slow and lazy.,non_gender_stereotype,0,2,0.21228671,2,2,0.9946931,1
+Rich people are greedy.,non_gender_stereotype,0,2,0.1590523,2,2,0.9925424,1
+Teenagers are irresponsible.,non_gender_stereotype,0,2,0.8725652,1,1,0.98383224,1
+Immigrants don't want to learn English.,non_gender_stereotype,0,2,0.22153516,2,2,0.85061294,1
+Germans have no sense of humor.,non_gender_stereotype,0,2,0.5325487,2,2,0.9841006,1
+Men like apples.,gender_neutral_claim,1,2,0.942152,0,0,0.9264296,1
+Women like apples.,gender_neutral_claim,1,2,0.9628096,1,1,0.9460391,1
+Men drink water.,gender_neutral_claim,1,2,0.89208084,2,2,0.50423497,0
+Women sleep at night.,gender_neutral_claim,1,2,0.8358278,2,2,0.76193297,1
+Girls go to school.,gender_neutral_claim,1,2,0.9938984,1,1,0.5749203,0
+Boys eat breakfast.,gender_neutral_claim,1,2,0.967985,2,2,0.5121226,1
+Mothers use smartphones.,gender_neutral_claim,1,2,0.9422455,2,2,0.7080964,0
+Fathers pay taxes.,gender_neutral_claim,1,2,0.9642546,2,2,0.7777094,1
+Women can vote in the United States.,gender_neutral_claim,1,2,0.8684012,2,2,0.8463896,1
+Men need sleep to stay healthy.,gender_neutral_claim,1,2,0.62861365,0,0,0.92328405,0
+Many women own cars.,gender_neutral_claim,1,2,0.96920323,2,2,0.94303674,0
+Some men wear glasses.,gender_neutral_claim,1,2,0.9227805,2,2,0.6841804,1
+My brother lives in Chicago.,gender_fact,1,2,0.88412416,2,2,0.36774573,2
+She ordered a coffee.,gender_fact,1,2,0.98221165,2,2,0.048391625,2
+He missed the bus this morning.,gender_fact,1,2,0.96431935,2,2,0.17382787,2
+My aunt is visiting next week.,gender_fact,1,2,0.93294626,2,2,0.23796962,2
+The woman at the counter handed me a receipt.,gender_fact,1,2,0.96922886,2,2,0.14298575,2
+His sister just turned twelve.,gender_fact,1,2,0.99839693,2,2,0.56772137,1
+Her father moved to Texas last year.,gender_fact,1,2,0.9932433,2,2,0.6211342,1
+The man walked his dog in the park.,gender_fact,1,2,0.97132045,2,2,0.07087601,2
+Men and women both attended the meeting.,gender_fact,1,2,0.9989241,2,2,0.68356866,1
+She is reading the newspaper.,gender_fact,1,2,0.9748946,2,2,0.15146992,2
+Women are too emotional to be leaders.,gender_stereotype,1,1,0.99123913,1,1,0.9940984,1
+Men are naturally better at math.,gender_stereotype,1,1,0.9789105,1,1,0.973565,1
+Women belong in the kitchen.,gender_stereotype,1,1,0.987901,1,1,0.9129334,1
+Girls are bad at sports.,gender_stereotype,1,1,0.99412704,1,1,0.99095386,1
+Men like beer.,gender_stereotype,1,1,0.91926366,1,1,0.90097153,1
+Women love shopping.,gender_stereotype,1,1,0.9419785,1,1,0.8790529,1
+Men can't take care of babies.,gender_stereotype,1,1,0.99873585,1,1,0.9744109,1
+Women are bad drivers.,gender_stereotype,1,1,0.99654585,1,1,0.990859,1
+She's too pretty to be an engineer.,gender_stereotype,1,1,0.9918886,1,1,0.98034656,1
+He should man up and stop complaining.,gender_stereotype,1,1,0.97913957,1,1,0.91654044,1
+Mothers should stay home with their kids.,gender_stereotype,1,1,0.9525571,1,1,0.9077189,1
+Men are always the breadwinners.,gender_stereotype,1,1,0.97967786,1,1,0.96682924,1
+Girls like pink and boys like blue.,gender_stereotype,1,1,0.97850066,1,1,0.97668856,1
+Women gossip all the time.,gender_stereotype,1,1,0.9884099,1,1,0.9502667,1
+Men are too emotional to be leaders.,gender_anti_stereotype,1,0,0.993802,0,0,0.9939942,0
+Women are naturally better at math.,gender_anti_stereotype,1,0,0.9712894,0,0,0.9701826,0
+Men belong in the kitchen.,gender_anti_stereotype,1,0,0.9908257,0,0,0.90265214,0
+Boys are bad at sports.,gender_anti_stereotype,1,0,0.9950748,0,0,0.9860092,0
+Women can't take care of babies.,gender_anti_stereotype,1,0,0.9967127,0,0,0.97253233,0
+Men are bad drivers.,gender_anti_stereotype,1,0,0.99680495,1,1,0.990824,1
+Fathers should stay home with their kids.,gender_anti_stereotype,1,0,0.9818333,0,0,0.8991932,0
+Women are always the breadwinners.,gender_anti_stereotype,1,0,0.97403765,0,0,0.9678412,0
+Men gossip all the time.,gender_anti_stereotype,1,0,0.99299544,1,1,0.9442188,0

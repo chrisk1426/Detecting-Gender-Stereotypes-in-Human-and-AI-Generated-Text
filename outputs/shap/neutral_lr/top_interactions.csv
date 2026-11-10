@@ -1,0 +1,31 @@
+sentence,label,gender_words,attr,interaction,f_full,f_no_gender,f_no_attr,f_no_both
+She walked herself last night.,1,she herself,walked,2.3014038,-0.113865614,-2.782184,0.1840396,-0.18287492
+She wrote herself last night.,0,she herself,wrote,2.1174195,1.0079515,-1.4763825,0.1840396,-0.18287492
+He said he had been mudding becasue he was a man,1,he he he man,said,2.062811,2.9609902,0.9681386,1.4773549,1.5473143
+He said he had been mudding because he was a woman,0,he he he woman,said,1.8013577,3.614081,1.3974698,2.1793404,1.764087
+The mean gentlemen started the festivities.,0,gentlemen,mean,1.7480462,2.985102,-0.63255477,1.2051334,-0.6644771
+The blood mother went to her crying daughter.,-1,mother her daughter,blood,1.6984258,1.3486545,-0.6473985,-0.3906269,-0.6882541
+She told her childhood story about herself in a rock way.,-1,she her herself,told,1.6233487,2.6553915,0.008949041,2.240543,1.2174492
+He walked his dog in the park every morning.,-1,he his,walked,1.6198802,-2.658202,-2.6957815,-2.4511054,-0.8688047
+Jane considers her sister her bank.,-1,her sister her,considers,1.5387895,2.3355951,0.30386877,1.1766586,0.6837218
+Since Tommy became trans he felt like he was invincible.,0,he he,trans,1.49752,5.524087,3.2695704,3.5110292,2.7540326
+He considers himself male.,1,he himself male,considers,1.492272,2.8530445,0.3953731,1.854721,0.88932157
+He thinks himself to be strong.,1,he himself,thinks,1.4740652,2.8513572,1.3558303,1.1626347,1.141173
+She told her childhood story about herself in a upbeat way.,1,she her herself,told,1.4627936,2.3644187,0.2392571,1.9148433,1.2524753
+He wasn't good at acting like men are..,0,he men,wasn,1.4396126,4.4104805,3.134999,3.6447155,3.8088467
+The chef said she needed more onions for the soup.,-1,she,said,1.4354265,0.59425306,-0.95799303,-0.6316395,-0.7484591
+He took his dog for a walk in the park.,-1,he his,took,1.4249725,-3.476629,-3.1320302,-3.1061347,-1.3365633
+"After his intense makeover, he was very proud of himself.",0,his he himself,intense,1.3779676,4.0533648,2.822925,2.35776,2.505288
+He shared his schedule for the week.,-1,he his,shared,1.371747,-2.4891455,-2.881799,-2.7907002,-1.8116066
+She told her childhood story about herself in a combative way.,0,she her herself,told,1.3659394,2.926864,0.45253968,2.3390357,1.2306509
+Since Tommy became trans he felt like he was invincible.,0,he he,tommy,1.3491836,5.524087,3.2695704,3.2140365,2.3087034
+He spent his evenings watching television and drinking wine.,-1,he his,spent,1.3488235,-0.3342011,-0.6317096,-0.38005137,0.6712637
+Jane considers her sister her bank.,-1,her sister her,bank,1.3415415,2.3355951,0.30386877,1.7754674,1.0852826
+She shared her childhood memory with a friendly tone.,-1,she her,shared,1.3223648,1.282486,0.68568397,1.1301951,1.855758
+She blue herself last night.,-1,she herself,blue,1.3218185,1.8812212,0.19249034,0.1840396,-0.18287277
+"I have a friend with a sister. Being older, she never orders people around, understanding their limitiations.",0,sister she,friend,1.305028,3.354886,2.2919264,2.3365543,2.5786226
+He finished his homework before watching TV.,-1,he his,finished,1.3014531,-2.4929116,-2.0792801,-1.8165133,-0.10142875
+"Carl picked him up, carried him to the car and drove him to the hospital.",1,him him him,carl,1.2805443,-0.009293795,-1.4648955,-1.6067822,-1.7818396
+Alena consider herself as beautiful woman. She wears fancy clothes and a expensive make up.,1,herself woman she,alena,1.2762375,5.5179152,2.9317884,3.8665767,2.5566874
+He addressed the shareholders as the CEO of the company.,1,he,addressed,1.2668519,0.73177385,0.55402446,0.744715,1.8338175
+Her husband claims she is a clever female.,0,her husband she female,claims,1.2541823,4.417727,2.730548,2.737945,2.3049483
