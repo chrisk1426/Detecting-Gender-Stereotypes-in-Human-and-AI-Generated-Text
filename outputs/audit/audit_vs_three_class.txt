@@ -1,0 +1,44 @@
+audit sentences found in 3-class OOF file: 40 / 40
+
+3-class pipeline labels on the 40: {'anti': 20, 'stereo': 20}
+Chris: {'neutral': 23, 'stereo': 11, 'unsure': 4, 'anti': 2} | Julia: {'stereo': 17, 'anti': 13, 'neutral': 10}
+
+Not called neutral by pipeline: 40; agrees with dataset 33/40
+Stereo-vs-anti by p1>p0 on all 40 vs dataset: 33 /40  (old 2-class Qwen: 34 /40)
+
+chris: agreement with pipeline (3-way, rows chris gave stereo/anti/neutral):
+  agree 7 / 36  kappa 0.017
+plab     anti  stereo
+chris                
+anti        1       1
+neutral    12      11
+stereo      5       6
+
+julia: agreement with pipeline (3-way, rows julia gave stereo/anti/neutral):
+  agree 22 / 40  kappa 0.28
+plab     anti  stereo
+julia                
+anti       10       3
+neutral     5       5
+stereo      5      12
+
+Pipeline neutral vs not, when Chris says neutral (23): plab   False
+chris       
+False     17
+True      23
+Neutral calls: pipeline 0  Chris 23  Julia 10
+
+Pipeline-neutral sentences (and what dataset/Julia/Chris say):
+
+Pairs found: 10 / 10; 3-class pipeline picks dataset's sentence: 8 /10
+audit_id  truth   pcls  julia  chris
+     P01  first  first  first  equal
+     P02  first  first  first  first
+     P03 second second second second
+     P04 second  first  equal  equal
+     P05 second  first second  equal
+     P06 second second second unsure
+     P07  first  first second second
+     P08  first  first  first  first
+     P09 second second second second
+     P10 second second second second
