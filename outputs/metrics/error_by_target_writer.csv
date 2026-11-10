@@ -1,0 +1,33 @@
+family,group,model,n,accuracy,ci_low,ci_high
+StereoSet target term,gentlemen,Qwen 14B,104,0.731,0.638,0.807
+StereoSet target term,gentlemen,Ensemble,104,0.76,0.669,0.832
+StereoSet target term,grandfather,Qwen 14B,106,0.849,0.769,0.905
+StereoSet target term,grandfather,Ensemble,106,0.802,0.716,0.867
+StereoSet target term,herself,Qwen 14B,88,0.864,0.777,0.92
+StereoSet target term,herself,Ensemble,88,0.852,0.763,0.912
+StereoSet target term,himself,Qwen 14B,96,0.74,0.644,0.817
+StereoSet target term,himself,Ensemble,96,0.844,0.758,0.903
+StereoSet target term,male,Qwen 14B,114,0.921,0.857,0.958
+StereoSet target term,male,Ensemble,114,0.912,0.846,0.952
+StereoSet target term,mommy,Qwen 14B,100,0.89,0.814,0.937
+StereoSet target term,mommy,Ensemble,100,0.88,0.802,0.93
+StereoSet target term,mother,Qwen 14B,108,0.917,0.849,0.956
+StereoSet target term,mother,Ensemble,108,0.926,0.861,0.962
+StereoSet target term,schoolboy,Qwen 14B,102,0.775,0.684,0.845
+StereoSet target term,schoolboy,Ensemble,102,0.784,0.695,0.853
+StereoSet target term,schoolgirl,Qwen 14B,84,0.774,0.674,0.85
+StereoSet target term,schoolgirl,Ensemble,84,0.786,0.687,0.86
+StereoSet target term,sister,Qwen 14B,92,0.772,0.676,0.846
+StereoSet target term,sister,Ensemble,92,0.804,0.712,0.873
+CrowS writer (20+ sentences),a11,Qwen 14B,30,0.667,0.488,0.808
+CrowS writer (20+ sentences),a11,Ensemble,30,0.667,0.488,0.808
+CrowS writer (20+ sentences),a14,Qwen 14B,104,0.856,0.776,0.911
+CrowS writer (20+ sentences),a14,Ensemble,104,0.933,0.868,0.967
+CrowS writer (20+ sentences),a17,Qwen 14B,26,0.885,0.71,0.96
+CrowS writer (20+ sentences),a17,Ensemble,26,0.962,0.811,0.993
+CrowS writer (20+ sentences),a21,Qwen 14B,34,0.676,0.508,0.809
+CrowS writer (20+ sentences),a21,Ensemble,34,0.706,0.538,0.832
+CrowS writer (20+ sentences),a7,Qwen 14B,62,0.806,0.691,0.886
+CrowS writer (20+ sentences),a7,Ensemble,62,0.871,0.766,0.933
+CrowS writer (20+ sentences),a8,Qwen 14B,32,0.938,0.799,0.983
+CrowS writer (20+ sentences),a8,Ensemble,32,0.875,0.719,0.95

@@ -1,0 +1,5 @@
+model,brier,ece
+TF-IDF + LR,0.2502,0.0508
+mpnet + random forest,0.2346,0.0573
+Qwen 14B (LoRA),0.1638,0.1572
+Ensemble (9 models),0.116,0.0311

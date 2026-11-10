@@ -1,0 +1,29 @@
+model,confidence_%,n,accuracy
+TF-IDF + LR,50-60,995,0.546
+TF-IDF + LR,60-70,267,0.588
+TF-IDF + LR,70-80,154,0.604
+TF-IDF + LR,80-90,83,0.614
+TF-IDF + LR,90-95,17,0.882
+TF-IDF + LR,95-99,2,1.0
+TF-IDF + LR,99-100,0,
+mpnet + random forest,50-60,1384,0.577
+mpnet + random forest,60-70,112,0.866
+mpnet + random forest,70-80,21,0.952
+mpnet + random forest,80-90,1,1.0
+mpnet + random forest,90-95,0,
+mpnet + random forest,95-99,0,
+mpnet + random forest,99-100,0,
+Qwen 14B (LoRA),50-60,26,0.462
+Qwen 14B (LoRA),60-70,25,0.64
+Qwen 14B (LoRA),70-80,33,0.576
+Qwen 14B (LoRA),80-90,43,0.535
+Qwen 14B (LoRA),90-95,47,0.638
+Qwen 14B (LoRA),95-99,91,0.67
+Qwen 14B (LoRA),99-100,1253,0.865
+Ensemble (9 models),50-60,127,0.48
+Ensemble (9 models),60-70,154,0.721
+Ensemble (9 models),70-80,169,0.734
+Ensemble (9 models),80-90,319,0.818
+Ensemble (9 models),90-95,368,0.946
+Ensemble (9 models),95-99,372,0.962
+Ensemble (9 models),99-100,9,1.0

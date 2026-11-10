@@ -12,3 +12,6 @@ experiments/feat/*.npy
 
 # Audit answer key: regenerate with analysis/03_make_audit_sheet.py (seed 72); keeps the audit blind
 outputs/audit/private/
+
+# Blank copies of the audit sheets for a second labeler: send directly, never commit (answers come back here)
+outputs/audit/for_chris/
