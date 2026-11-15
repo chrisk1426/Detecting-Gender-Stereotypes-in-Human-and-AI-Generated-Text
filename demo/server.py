@@ -4,7 +4,8 @@ Pipeline:
   1. gender filter (Snowflake-L + logistic regression, models/gender_filter.npz)  ->  "not gender-related" if < 0.5
   2. 3-class Qwen2.5-14B LoRA judge (models/qwen14b_lora_3class)  ->  stereotype / anti-stereotype / neutral
 
-/api/explain: word-level Shapley values for the judge's log-odds of its predicted class. A masked word is replaced by
+/api/explain: word-level Shapley values for the log-odds of the label, from the model that made the decision (the
+gender filter's P(not gender-related) when it stops the sentence, otherwise the judge's predicted class). A masked word is replaced by
 "..." (as in experiments/shap_qwen.py). Up to EXACT_MAX words every subset is scored (exact Shapley values); longer
 sentences use sampled permutations within a fixed budget of model calls.
 
@@ -101,19 +102,30 @@ def masked_text(words, keep):
 
 
 def explain(judge, text, seed=0):
-    """Shapley values of each word for the judge's log-odds of its predicted class."""
+    """Shapley values of each word for the log-odds of the label, from whichever model made the decision:
+    the gender filter's P(not gender-related) when it stops the sentence, otherwise the judge's predicted class."""
     words = text.split()[:MAX_WORDS]
     n = len(words)
-    full = judge.probs([" ".join(words)])[0]
-    c = int(full.argmax())
+    joined = " ".join(words)
+    if judge.gender([joined])[0] < 0.5:
+        target, model = "not gender-related", "gender filter"
+
+        def score(texts):
+            p = np.clip(judge.gender(texts), 1e-6, 1 - 1e-6)
+            return np.log1p(-p) - np.log(p)
+    else:
+        c = int(judge.probs([joined])[0].argmax())
+        target, model = CLASSES[c], "judge"
+
+        def score(texts):
+            p = np.clip(judge.probs(texts)[:, c], 1e-6, 1 - 1e-6)
+            return np.log(p) - np.log1p(-p)
     cache = {}
 
     def value(masks):
         todo = [m for m in dict.fromkeys(masks) if m not in cache]
         if todo:
-            P = judge.probs([masked_text(words, [(m >> i) & 1 for i in range(n)]) for m in todo])
-            p = np.clip(P[:, c], 1e-6, 1 - 1e-6)
-            cache.update(zip(todo, np.log(p) - np.log1p(-p)))
+            cache.update(zip(todo, score([masked_text(words, [(m >> i) & 1 for i in range(n)]) for m in todo])))
         return [cache[m] for m in masks]
 
     phi = np.zeros(n)
@@ -142,7 +154,7 @@ def explain(judge, text, seed=0):
         phi /= len(perms)
         method = f"sampled ({len(perms)} permutations)"
     base, fx = value([0, 2 ** n - 1])
-    return {"words": words, "values": phi.round(4).tolist(), "target": CLASSES[c], "base": float(base),
+    return {"words": words, "values": phi.round(4).tolist(), "target": target, "model": model, "base": float(base),
             "fx": float(fx), "method": method, "calls": len(cache)}
 
 

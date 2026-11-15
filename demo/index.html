@@ -98,8 +98,9 @@
         Below 0.5 the sentence is labeled "not gender-related" and the judge's scores are shown greyed out.</li>
       <li><b>Judge.</b> Qwen2.5-14B (4-bit) with a LoRA adapter gives P(anti-stereotype), P(stereotype) and
         P(neutral); the largest is the label.</li>
-      <li><b>Explain.</b> Word-level Shapley values for the judge's log-odds of its label: each word is hidden ("...")
-        in many combinations and the change in the score is averaged. Orange words push toward the label, blue
+      <li><b>Explain.</b> Word-level Shapley values for the log-odds of the label, from the model that made the
+        decision: the gender filter for "not gender-related" sentences, otherwise the judge. Each word is hidden ("...")
+        in many combinations and the change in the score is averaged. Colored words push toward the label, blue
         words push away. Hidden-word sentences are unusual text, so treat this as a rough guide.</li>
     </ol>
     <p>The training labels are relative: "stereotype" means more stereotypical than its paired sentence. Comparing a
@@ -186,13 +187,16 @@ function render(rows) {
 function renderShap(slot, d) {
   const max = Math.max(1e-6, ...d.values.map(Math.abs));
   const push = d.target === "stereotype" ? "var(--stereo)" : d.target === "anti-stereotype" ? "var(--anti)" : "var(--neutral)";
+  const who = d.model === "gender filter"
+    ? "Explaining the <b>gender filter</b>, which made this decision (the judge was not used)."
+    : "Explaining the <b>judge</b>.";
   const words = d.words.map((w, i) => {
     const v = d.values[i], a = Math.round(Math.abs(v) / max * 75);
     const col = v >= 0 ? push : "var(--accent)";
     return `<span class="w" style="background:color-mix(in srgb, ${col} ${a}%, transparent)"
       title="${v >= 0 ? "+" : ""}${v.toFixed(2)} log-odds">${esc(w)}</span>`;
   }).join(" ");
-  slot.innerHTML = `<div class="shap"><div class="words">${words}</div>
+  slot.innerHTML = `<div class="shap"><div class="meta">${who}</div><div class="words">${words}</div>
     <div class="meta"><span class="legend"><span><span class="sw" style="background:${push}"></span>toward
     <b>${d.target}</b></span><span><span class="sw" style="background:var(--accent)"></span>away</span></span>
     · log-odds ${d.base.toFixed(1)} with all words hidden → ${d.fx.toFixed(1)} · ${d.method}, ${d.calls} model calls,
